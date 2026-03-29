@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS-MOM 2027 | 1st International Conference on Smart & Sustainable Manufacturing, Operations, and Materials</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── ROOT TOKENS ─────────────────────────────── */
+:root {
+  --navy:    #0d2240;
+  --navy2:   #122952;
+  --maroon:  #7a1b2e;
+  --maroon2: #9b2338;
+  --gold:    #c8922a;
+  --gold2:   #e8b84b;
+  --gold-lt: #fdf3dc;
+  --teal:    #1a5c6b;
+  --teal2:   #236e80;
+  --white:   #ffffff;
+  --off:     #f5f4f0;
+  --off2:    #eceae4;
+  --mid:     #e0ddd6;
+  --txt:     #1e1e1e;
+  --txt2:    #3a3a3a;
+  --txt3:    #666;
+  --bdr:     #c8c4bc;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Source Sans 3',sans-serif; background:var(--off); color:var(--txt); font-size:15px; }
+img { max-width:100%; display:block; }
+a { color:var(--navy); text-decoration:none; }
+ul { list-style:none; }
+
+/* ── UTILITY ─────────────────────────────────── */
+.container { max-width:1140px; margin:0 auto; padding:0 20px; }
+.row { display:flex; flex-wrap:wrap; gap:0; }
+.col-8  { flex:0 0 66.66%; max-width:66.66%; }
+.col-4  { flex:0 0 33.33%; max-width:33.33%; }
+.col-6  { flex:0 0 50%; max-width:50%; }
+.col-3  { flex:0 0 25%; max-width:25%; }
+.col-9  { flex:0 0 75%; max-width:75%; }
+.section-title {
+  font-family:'Merriweather',serif; font-size:1.45rem; font-weight:700;
+  color:var(--navy); border-bottom:3px solid var(--gold);
+  padding-bottom:8px; margin-bottom:18px; display:inline-block;
+}
+.section-title.white { color:var(--white); border-bottom-color:var(--gold2); }
+.section-title.maroon { color:var(--maroon); }
+.badge {
+  display:inline-block; padding:3px 10px; border-radius:2px;
+  font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+}
+.badge-gold { background:var(--gold); color:white; }
+.badge-teal { background:var(--teal); color:white; }
+.badge-maroon { background:var(--maroon); color:white; }
+.btn {
+  display:inline-block; padding:9px 22px; border-radius:2px;
+  font-size:13.5px; font-weight:600; letter-spacing:0.4px;
+  transition:all 0.2s; cursor:pointer; border:none;
+}
+.btn-primary  { background:var(--navy);   color:white; }
+.btn-primary:hover  { background:var(--navy2); color:white; }
+.btn-gold     { background:var(--gold);   color:white; }
+.btn-gold:hover     { background:var(--gold2); color:white; }
+.btn-outline  { background:transparent;  color:var(--navy); border:2px solid var(--navy); }
+.btn-outline:hover  { background:var(--navy); color:white; }
+.btn-white    { background:white; color:var(--maroon); font-weight:700; }
+.btn-white:hover    { background:var(--gold-lt); }
+
+/* ── TOP BAR ─────────────────────────────────── */
+.topbar {
+  background:var(--maroon); color:rgba(255,255,255,0.88);
+  font-size:12.5px; padding:7px 0; border-bottom:2px solid var(--gold);
+}
+.topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.topbar-marquee { flex:1; overflow:hidden; white-space:nowrap; }
+.topbar-marquee span { display:inline-block; animation:marquee 28s linear infinite; }
+@keyframes marquee { from{transform:translateX(100%)} to{transform:translateX(-100%)} }
+.topbar-links { display:flex; gap:16px; flex-shrink:0; }
+.topbar-links a { color:rgba(255,255,255,0.8); font-size:12px; font-weight:600; letter-spacing:0.5px; }
+.topbar-links a:hover { color:var(--gold2); }
+
+/* ── HEADER ─────────────────────────────────── */
+.site-header {
+  background:var(--navy);
+  background-image:linear-gradient(135deg, #0d2240 0%, #163060 50%, #0d2240 100%);
+  padding:22px 0; border-bottom:4px solid var(--gold);
+  position:sticky; top:0; z-index:100;
+  box-shadow:0 4px 18px rgba(0,0,0,0.35);
+}
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.header-logos { display:flex; align-items:center; gap:16px; }
+.logo-box {
+  width:68px; height:68px; background:white; border-radius:3px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Merriweather',serif; font-size:11px; font-weight:700;
+  color:var(--navy); text-align:center; line-height:1.2; padding:4px;
+  border:2px solid var(--gold);
+}
+.logo-box img { width:100%; height:100%; object-fit:contain; }
+.header-text { text-align:center; flex:1; }
+.header-conf { font-family:'Merriweather',serif; font-size:clamp(13px,2vw,17px); font-weight:700; color:var(--white); line-height:1.3; }
+.header-name { font-family:'Merriweather',serif; font-size:clamp(20px,3.5vw,34px); font-weight:700; color:var(--gold2); line-height:1; margin:5px 0; letter-spacing:0.5px; }
+.header-date { font-size:13px; color:rgba(255,255,255,0.7); margin-top:4px; letter-spacing:0.5px; }
+.header-right { text-align:right; }
+.header-org { font-size:12px; color:rgba(255,255,255,0.6); line-height:1.8; }
+.header-org strong { color:var(--gold2); display:block; font-size:12.5px; }
+
+/* ── NAVBAR ─────────────────────────────────── */
+.navbar { background:var(--teal); border-bottom:3px solid var(--gold); }
+.nav-menu { display:flex; align-items:stretch; flex-wrap:wrap; }
+.nav-item { position:relative; }
+.nav-item > a {
+  display:block; padding:13px 18px; font-size:13.5px; font-weight:600;
+  color:rgba(255,255,255,0.88); letter-spacing:0.3px; transition:all 0.2s;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.nav-item > a:hover, .nav-item.active > a { background:var(--navy); color:var(--gold2); }
+.nav-dropdown { display:none; position:absolute; top:100%; left:0; background:var(--navy2); min-width:210px; z-index:200; box-shadow:0 8px 24px rgba(0,0,0,0.3); border-top:2px solid var(--gold); }
+.nav-item:hover .nav-dropdown { display:block; }
+.nav-dropdown a { display:block; padding:10px 18px; font-size:13px; color:rgba(255,255,255,0.78); border-bottom:1px solid rgba(255,255,255,0.06); }
+.nav-dropdown a:hover { background:var(--teal); color:white; padding-left:24px; }
+
+/* ── HERO / BANNER ─────────────────────────────── */
+.hero-banner {
+  position:relative; overflow:hidden; min-height:420px;
+  background:var(--navy);
+  display:flex; align-items:center;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80&fit=crop');
+  background-size:cover; background-position:center;
+  opacity:0.18; filter:grayscale(40%);
+}
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(100deg, rgba(13,34,64,0.97) 0%, rgba(13,34,64,0.88) 55%, rgba(13,34,64,0.55) 100%);
+}
+.hero-content { position:relative; z-index:2; padding:50px 0; }
+.hero-badge-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+.hero-h1 { font-family:'Merriweather',serif; font-size:clamp(22px,3.5vw,38px); font-weight:700; color:white; line-height:1.3; margin-bottom:14px; }
+.hero-h1 span { color:var(--gold2); }
+.hero-sub { font-size:15.5px; color:rgba(255,255,255,0.72); line-height:1.75; margin-bottom:28px; max-width:580px; }
+.hero-meta { display:flex; gap:0; flex-wrap:wrap; margin-bottom:32px; }
+.hero-meta-item { padding:12px 24px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-right:none; }
+.hero-meta-item:first-child { border-left:3px solid var(--gold); }
+.hero-meta-item:last-child  { border-right:1px solid rgba(255,255,255,0.12); }
+.hmi-label { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:4px; }
+.hmi-value { font-size:14px; font-weight:700; color:white; }
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+.hero-right-panel { padding:50px 0 50px 40px; }
+.countdown-box { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-top:3px solid var(--gold); padding:24px; margin-bottom:20px; }
+.countdown-box h4 { font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--gold2); margin-bottom:16px; text-align:center; }
+.cd-row { display:grid; grid-template-columns:repeat(4,1fr); gap:4px; }
+.cd-unit { background:rgba(0,0,0,0.25); padding:14px 8px; text-align:center; }
+.cd-num { font-family:'Merriweather',serif; font-size:34px; font-weight:700; color:white; line-height:1; }
+.cd-lbl { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:5px; }
+.quick-dates { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); }
+.qd-header { background:var(--maroon); padding:10px 16px; font-size:12px; font-weight:700; color:white; letter-spacing:1px; text-transform:uppercase; }
+.qd-row { display:flex; justify-content:space-between; align-items:center; padding:10px 16px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.qd-row:last-child { border-bottom:none; }
+.qd-event { font-size:12.5px; color:rgba(255,255,255,0.75); }
+.qd-date  { font-size:12.5px; font-weight:700; color:var(--gold2); }
+
+/* ── ANNOUNCEMENT BAR ─────────────────────────── */
+.announce-bar { background:var(--gold-lt); border-top:2px solid var(--gold); border-bottom:2px solid var(--gold); padding:10px 0; }
+.announce-inner { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.announce-tag { background:var(--maroon); color:white; font-size:11px; font-weight:700; padding:4px 12px; letter-spacing:1.5px; text-transform:uppercase; white-space:nowrap; }
+.announce-text { font-size:13.5px; color:var(--maroon); font-weight:600; }
+
+/* ── MAIN LAYOUT ─────────────────────────────── */
+.main-layout { padding:32px 0 48px; }
+.main-content { padding-right:28px; }
+.sidebar { padding-left:10px; }
+
+/* ── CONTENT CARDS ─────────────────────────────── */
+.card { background:white; border:1px solid var(--bdr); margin-bottom:24px; }
+.card-header { background:var(--navy); color:white; padding:11px 18px; display:flex; align-items:center; gap:10px; }
+.card-header h3 { font-family:'Merriweather',serif; font-size:1rem; font-weight:700; color:white; }
+.card-header .ch-icon { width:22px; height:22px; background:var(--gold); border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:11px; color:white; font-weight:700; flex-shrink:0; }
+.card-body { padding:20px 20px; }
+.card-body p { font-size:14px; color:var(--txt2); line-height:1.85; margin-bottom:12px; }
+.card-body p:last-child { margin-bottom:0; }
+
+/* ── ABOUT SECTION ─────────────────────────────── */
+.about-img-wrap { position:relative; float:right; margin:0 0 16px 22px; width:280px; }
+.about-img-wrap img { width:100%; height:190px; object-fit:cover; border:3px solid var(--gold); }
+.about-img-cap { background:var(--navy); color:rgba(255,255,255,0.8); font-size:11px; padding:6px 10px; text-align:center; }
+
+/* ── TRACKS ─────────────────────────────────── */
+.track-tabs { display:flex; border-bottom:3px solid var(--navy); margin-bottom:0; flex-wrap:wrap; }
+.ttab { padding:10px 20px; font-size:13px; font-weight:700; cursor:pointer; color:var(--txt2); background:var(--off2); border:1px solid var(--bdr); border-bottom:none; margin-bottom:-3px; transition:all 0.2s; }
+.ttab.active { background:var(--navy); color:white; border-color:var(--navy); }
+.ttab:hover:not(.active) { background:var(--mid); }
+.track-panel { display:none; background:white; border:1px solid var(--bdr); border-top:none; padding:22px; }
+.track-panel.active { display:block; }
+.track-panel h4 { font-family:'Merriweather',serif; font-size:1rem; color:var(--maroon); margin-bottom:8px; }
+.track-panel .focus-line { font-size:13px; color:var(--teal); font-style:italic; margin-bottom:16px; padding-bottom:12px; border-bottom:1px dashed var(--bdr); }
+.topic-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+.topic-item { font-size:13px; color:var(--txt2); padding:6px 10px; background:var(--off); display:flex; gap:8px; align-items:baseline; }
+.topic-item::before { content:'▸'; color:var(--gold); flex-shrink:0; font-size:10px; }
+
+/* ── DATES TABLE ─────────────────────────────── */
+.dates-table { width:100%; border-collapse:collapse; }
+.dates-table thead th { background:var(--navy); color:white; padding:11px 16px; font-size:13px; text-align:left; font-family:'Merriweather',serif; }
+.dates-table tbody tr:nth-child(odd) { background:var(--off); }
+.dates-table tbody tr:hover { background:var(--gold-lt); }
+.dates-table td { padding:12px 16px; font-size:13.5px; border-bottom:1px solid var(--bdr); }
+.dates-table td:first-child { color:var(--txt2); font-weight:600; }
+.dates-table td:last-child  { color:var(--maroon); font-weight:700; font-size:14px; }
+.dates-table tr.highlight td { background:var(--navy); color:white; }
+.dates-table tr.highlight td:last-child { color:var(--gold2); }
+
+/* ── SUBMISSION STEPS ─────────────────────────── */
+.steps-flow { display:grid; grid-template-columns:repeat(5,1fr); gap:0; }
+.step-box { text-align:center; padding:20px 12px; border-right:1px solid var(--bdr); position:relative; background:white; }
+.step-box:last-child { border-right:none; }
+.step-box::after { content:''; position:absolute; top:50%; right:-1px; transform:translateY(-50%); width:0; height:0; border-left:12px solid var(--bdr); border-top:10px solid transparent; border-bottom:10px solid transparent; z-index:2; }
+.step-box:last-child::after { display:none; }
+.step-num { width:44px; height:44px; background:var(--navy); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Merriweather',serif; font-size:18px; font-weight:700; margin:0 auto 12px; }
+.step-label { font-size:12.5px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.step-desc  { font-size:11.5px; color:var(--txt3); line-height:1.6; }
+
+/* ── WHO CAN PARTICIPATE ─────────────────────── */
+.who-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.who-item { background:var(--off); border-left:4px solid var(--teal); padding:14px 16px; }
+.who-item h5 { font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+.who-item p  { font-size:12.5px; color:var(--txt3); line-height:1.6; }
+
+/* ── SIDEBAR WIDGETS ─────────────────────────── */
+.widget { background:white; border:1px solid var(--bdr); margin-bottom:20px; }
+.widget-header { padding:10px 14px; font-size:13px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; border-bottom:2px solid var(--gold); }
+.widget-header.navy   { background:var(--navy);   color:white; }
+.widget-header.maroon { background:var(--maroon); color:white; }
+.widget-header.teal   { background:var(--teal);   color:white; }
+.widget-body { padding:14px; }
+.widget-list { }
+.widget-list li { padding:8px 0; border-bottom:1px solid var(--off2); font-size:13px; color:var(--txt2); display:flex; gap:8px; align-items:flex-start; }
+.widget-list li:last-child { border-bottom:none; }
+.widget-list li::before { content:'›'; color:var(--gold); font-size:16px; font-weight:700; line-height:1.2; flex-shrink:0; }
+.widget-date-item { padding:10px 0; border-bottom:1px solid var(--off2); }
+.widget-date-item:last-child { border-bottom:none; }
+.wdi-event { font-size:12.5px; color:var(--txt2); font-weight:600; }
+.wdi-date  { font-size:12px; color:var(--maroon); font-weight:700; margin-top:2px; }
+.widget-img { width:100%; height:130px; object-fit:cover; display:block; }
+.widget-img + .widget-body { padding:12px 14px; }
+.widget-body p { font-size:12.5px; color:var(--txt3); line-height:1.75; }
+.widget-body .btn { font-size:12px; padding:7px 16px; margin-top:10px; }
+.scope-badge-wrap { display:flex; flex-direction:column; gap:6px; }
+.scope-badge { display:flex; align-items:center; gap:10px; padding:9px 12px; border:1px solid var(--bdr); background:var(--off); font-size:12.5px; font-weight:600; color:var(--navy); }
+.scope-badge-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.sponsor-logos { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:14px; }
+.sponsor-logo-box { width:80px; height:44px; background:var(--off2); border:1px solid var(--bdr); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:var(--txt3); text-align:center; padding:4px; }
+
+/* ── COMMITTEE SECTION ─────────────────────────── */
+.committee-sec { background:var(--navy); padding:44px 0; }
+.comm-tabs { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:24px; }
+.ctab { padding:9px 18px; font-size:12.5px; font-weight:600; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.6); background:transparent; cursor:pointer; transition:all 0.2s; border-radius:2px; }
+.ctab.on, .ctab:hover { background:var(--gold); color:white; border-color:var(--gold); }
+.cpanel { display:none; }
+.cpanel.on { display:block; }
+.cgroup { margin-bottom:28px; }
+.cgroup-lbl { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold2); font-weight:700; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:8px; margin-bottom:14px; }
+.cm-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:6px; }
+.cm-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.07); padding:12px 16px; transition:background 0.2s; }
+.cm-card:hover { background:rgba(255,255,255,0.09); }
+.cm-name { font-size:13.5px; font-weight:600; color:rgba(255,255,255,0.9); margin-bottom:3px; }
+.cm-inst { font-size:11.5px; color:rgba(255,255,255,0.38); line-height:1.4; }
+
+/* ── BENEFITS STRIP ─────────────────────────────── */
+.benefits-strip { background:var(--teal); padding:36px 0; }
+.ben-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; }
+.ben-item { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); padding:24px 20px; text-align:center; }
+.ben-item h4 { font-size:14px; font-weight:700; color:white; margin-bottom:8px; }
+.ben-item p  { font-size:12.5px; color:rgba(255,255,255,0.6); line-height:1.65; }
+.ben-num { font-family:'Merriweather',serif; font-size:36px; font-weight:700; color:var(--gold2); line-height:1; margin-bottom:6px; }
+
+/* ── VENUE ─────────────────────────────────── */
+.venue-sec { background:var(--off); padding:44px 0; }
+.venue-imgs { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+.venue-imgs img { width:100%; height:175px; object-fit:cover; }
+.venue-imgs .wide { grid-column:1/-1; height:220px; }
+.venue-addr { background:white; border:1px solid var(--bdr); padding:18px; margin-top:16px; border-left:4px solid var(--teal); }
+.venue-addr p { font-size:13.5px; color:var(--txt2); line-height:2; }
+.jaipur-list { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:12px; }
+.jp-item { background:white; border:1px solid var(--bdr); padding:9px 12px; display:flex; gap:8px; align-items:center; }
+.jp-item-dash { width:3px; height:16px; background:var(--gold); flex-shrink:0; }
+.jp-item-text { font-size:12.5px; color:var(--txt2); font-weight:500; }
+
+/* ── CTA SECTION ─────────────────────────────── */
+.cta-sec { background:var(--maroon); background-image:linear-gradient(135deg,#7a1b2e 0%,#9b2338 60%,#7a1b2e 100%); padding:52px 0; }
+.cta-inner { display:grid; grid-template-columns:1.4fr 1fr; gap:50px; align-items:center; }
+.cta-text h2 { font-family:'Merriweather',serif; font-size:2rem; color:white; margin-bottom:14px; line-height:1.3; }
+.cta-text p  { font-size:15px; color:rgba(255,255,255,0.72); line-height:1.8; margin-bottom:24px; }
+.cta-contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.ccc { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); padding:16px; }
+.ccc-label { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:5px; }
+.ccc-value { font-size:14.5px; color:white; font-weight:600; }
+.ccc-sub   { font-size:11.5px; color:rgba(255,255,255,0.45); margin-top:3px; }
+
+/* ── FOOTER ─────────────────────────────────── */
+.footer-top { background:var(--navy2); padding:36px 0; border-top:3px solid var(--gold); }
+.footer-cols { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:32px; }
+.footer-brand { font-family:'Merriweather',serif; font-size:18px; color:var(--gold2); margin-bottom:10px; font-weight:700; }
+.footer-desc { font-size:12.5px; color:rgba(255,255,255,0.45); line-height:1.8; }
+.footer-col h4 { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold2); margin-bottom:12px; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.1); font-weight:700; }
+.footer-col ul li { padding:5px 0; }
+.footer-col ul li a { font-size:12.5px; color:rgba(255,255,255,0.5); transition:color 0.2s; }
+.footer-col ul li a:hover { color:var(--gold2); }
+.footer-bottom { background:#0a1a30; padding:14px 0; text-align:center; }
+.footer-bottom p { font-size:12px; color:rgba(255,255,255,0.3); }
+
+/* ── BACK TO TOP ─────────────────────────────── */
+#btt { position:fixed; bottom:24px; right:24px; background:var(--maroon); color:white; width:40px; height:40px; display:none; align-items:center; justify-content:center; font-size:18px; cursor:pointer; border:none; border-radius:2px; z-index:300; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+#btt.show { display:flex; }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width:900px) {
+  .col-8,.col-4,.col-6,.col-9,.col-3 { flex:0 0 100%; max-width:100%; }
+  .main-content { padding-right:0; }
+  .sidebar { padding-left:0; }
+  .hero-right-panel { padding:0 0 40px; }
+  .footer-cols { grid-template-columns:1fr 1fr; }
+  .ben-grid { grid-template-columns:1fr 1fr; }
+  .who-grid { grid-template-columns:1fr 1fr; }
+  .cta-inner { grid-template-columns:1fr; gap:32px; }
+  .steps-flow { grid-template-columns:1fr 1fr; }
+  .topic-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .header-inner { flex-direction:column; text-align:center; }
+  .header-logos { justify-content:center; }
+  .header-right { text-align:center; }
+  .nav-menu { flex-direction:column; display:none; }
+  .nav-menu.open { display:flex; }
+  .footer-cols { grid-template-columns:1fr; }
+  .who-grid { grid-template-columns:1fr; }
+  .ben-grid { grid-template-columns:1fr; }
+  .hero-meta { flex-direction:column; }
+  .dates-table { font-size:12px; }
+  .steps-flow { grid-template-columns:1fr; }
+  .cta-contact-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-marquee">
+        <span>
+          &nbsp;&nbsp;&nbsp;
+          *** PAPER SUBMISSION DEADLINE: APRIL 25, 2026 &nbsp;|&nbsp;
+          ACCEPTANCE NOTIFICATION: JUNE 15, 2026 &nbsp;|&nbsp;
+          EARLY BIRD REGISTRATION: JUNE 25, 2026 &nbsp;|&nbsp;
+          CONFERENCE: FEBRUARY 04-05, 2027, JAIPUR, INDIA &nbsp;|&nbsp;
+          SCOPUS-INDEXED PROCEEDINGS AND JOURNALS &nbsp;|&nbsp;
+          ALL ACCEPTED &amp; PRESENTED PAPERS WILL BE PUBLISHED ***
+          &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+      <div class="topbar-links">
+        <a href="#submit">Submit Paper</a>
+        <a href="#committee">Committee</a>
+        <a href="https://forms.gle/HneEUNqLh74J6a5H9" target="_blank">Join Review</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="header-logos">
+        <div class="logo-box" style="font-size:9px;font-weight:800;color:var(--navy);line-height:1.15;text-align:center">
+          <span>MANIPAL<br>UNIVERSITY<br>JAIPUR</span>
+        </div>
+        <div class="logo-box" style="background:var(--navy);border-color:rgba(255,255,255,0.3)">
+          <span style="font-family:'Merriweather',serif;font-size:18px;font-weight:900;color:var(--gold2);letter-spacing:-1px">SS<br>MOM</span>
+        </div>
+      </div>
+      <div class="header-text">
+        <div class="header-conf">1st International Conference on</div>
+        <div class="header-name">SS-MOM 2027</div>
+        <div class="header-conf" style="font-size:clamp(11px,1.5vw,14px);color:rgba(255,255,255,0.75)">Smart and Sustainable Manufacturing, Operations, and Materials</div>
+        <div class="header-date">February 04–05, 2027 &nbsp;|&nbsp; Manipal University Jaipur, India</div>
+      </div>
+      <div class="header-right">
+        <div class="header-org">
+          <strong>Organised by</strong>
+          Dept. of Mechanical Engineering<br>
+          Manipal University Jaipur<br>
+          <span style="color:rgba(255,255,255,0.45);font-size:11px">Co-organisers: BITS-Pilani Dubai &middot; NIT Agartala &middot; MNIT Jaipur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item active"><a href="#home">Home</a></li>
+      <li class="nav-item"><a href="#about">About &#9662;</a>
+        <div class="nav-dropdown">
+          <a href="#about">About Conference</a>
+          <a href="#about-muj">About MUJ</a>
+          <a href="#about-dept">About ME Dept.</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#tracks">Call for Papers</a></li>
+      <li class="nav-item"><a href="#dates">Important Dates</a></li>
+      <li class="nav-item"><a href="#submit">For Authors &#9662;</a>
+        <div class="nav-dropdown">
+          <a href="#submit">Paper Submission</a>
+          <a href="#review">Peer Review Process</a>
+          <a href="#submit">Publication Details</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#committee">Committee &#9662;</a>
+        <div class="nav-dropdown">
+          <a href="#committee">Organizing Committee</a>
+          <a href="#committee">International Advisory</a>
+          <a href="#committee">National Advisory</a>
+          <a href="#committee">Industry Advisory</a>
+          <a href="#committee">Peer Review</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#venue">Venue &amp; Travel &#9662;</a>
+        <div class="nav-dropdown">
+          <a href="#venue">Conference Venue</a>
+          <a href="#jaipur">Explore Jaipur</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <div class="container">
+    <div class="announce-inner">
+      <div class="announce-tag">Notice</div>
+      <div class="announce-text">
+        Accepted, Registered and Presented papers will be published in <strong>SCOPUS-Indexed Proceedings</strong> and International Journals of Repute. &nbsp;
+        <a href="#submit" style="color:var(--navy);text-decoration:underline;font-weight:700">Submit Full Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO BANNER -->
+<div class="hero-banner" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container" style="position:relative;z-index:2;width:100%">
+    <div class="row">
+      <div class="col-8">
+        <div class="hero-content">
+          <div class="hero-badge-row">
+            <span class="badge badge-gold">1st International Conference</span>
+            <span class="badge badge-teal">SCOPUS Indexed</span>
+            <span class="badge badge-maroon">Jaipur, India</span>
+          </div>
+          <h1 class="hero-h1">
+            Smart and Sustainable Manufacturing,<br>
+            <span>Operations, and Materials</span>
+          </h1>
+          <p class="hero-sub">An international platform for researchers, PhD scholars, postdoctoral fellows, professors, scientists, and industry experts to share cutting-edge research in AI/ML, digital twins, cyber-physical systems, IoT, and Industry 4.0/5.0 — targeting UN Sustainable Development Goals.</p>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <div class="hmi-label">Conference Dates</div>
+              <div class="hmi-value">Feb 04–05, 2027</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hmi-label">Submission Deadline</div>
+              <div class="hmi-value">April 25, 2026</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hmi-label">Organised By</div>
+              <div class="hmi-value">Dept. of ME, MUJ</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hmi-label">Mode</div>
+              <div class="hmi-value">Offline / Hybrid</div>
+            </div>
+          </div>
+          <div class="hero-btns">
+            <a href="#submit" class="btn btn-gold">Submit Paper Now</a>
+            <a href="#tracks" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white">Call for Papers</a>
+            <a href="#dates" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white">Important Dates</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="hero-right-panel">
+          <div class="countdown-box">
+            <h4>Submission Deadline Countdown</h4>
+            <div class="cd-row">
+              <div class="cd-unit"><div class="cd-num" id="cd-d">--</div><div class="cd-lbl">Days</div></div>
+              <div class="cd-unit"><div class="cd-num" id="cd-h">--</div><div class="cd-lbl">Hours</div></div>
+              <div class="cd-unit"><div class="cd-num" id="cd-m">--</div><div class="cd-lbl">Mins</div></div>
+              <div class="cd-unit"><div class="cd-num" id="cd-s">--</div><div class="cd-lbl">Secs</div></div>
+            </div>
+          </div>
+          <div class="quick-dates">
+            <div class="qd-header">Important Dates</div>
+            <div class="qd-row"><span class="qd-event">Full Paper Submission</span><span class="qd-date">Apr 25, 2026</span></div>
+            <div class="qd-row"><span class="qd-event">Acceptance Notice</span><span class="qd-date">Jun 15, 2026</span></div>
+            <div class="qd-row"><span class="qd-event">Early Bird Reg.</span><span class="qd-date">Jun 25, 2026</span></div>
+            <div class="qd-row"><span class="qd-event">Last Registration</span><span class="qd-date">Jul 15, 2026</span></div>
+            <div class="qd-row" style="background:rgba(200,146,42,0.15)"><span class="qd-event" style="color:var(--gold2);font-weight:700">Conference</span><span class="qd-date">Feb 04–05, 2027</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT AREA -->
+<div class="main-layout">
+  <div class="container">
+    <div class="row">
+
+      <!-- LEFT: MAIN CONTENT -->
+      <div class="col-8">
+        <div class="main-content">
+
+          <!-- ABOUT CONFERENCE -->
+          <div id="about" class="card">
+            <div class="card-header">
+              <div class="ch-icon">A</div>
+              <h3>About SS-MOM 2027</h3>
+            </div>
+            <div class="card-body">
+              <div class="about-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&fit=crop" alt="Smart Manufacturing">
+                <div class="about-img-cap">Smart &amp; Sustainable Manufacturing Research</div>
+              </div>
+              <p>SSMOM 2027 is an international platform for researchers, PhD scholars, postdoctoral fellows, professors, scientists, and industry experts to share cutting-edge research in smart, digital, and sustainable industrial systems. The conference focuses on emerging technologies including AI/ML, digital twins, cyber-physical systems, IoT, Industry 4.0/5.0, and sustainable manufacturing, applied to materials, manufacturing, and operations.</p>
+              <p>The conference promotes interdisciplinary collaboration and targets sustainable development goals (SDGs) by exploring energy-efficient, environmentally responsible, and resource-optimized engineering solutions. SSMOM 2027 brings together global researchers on a single platform to exchange knowledge, foster innovation, and build lasting academic and industry networks.</p>
+              <p>We cordially invite Academicians, Researchers, Technocrats, and Students to share their findings and experiences in the field of smart and sustainable manufacturing, operations, and materials on behalf of the <strong>Department of Mechanical Engineering, Manipal University Jaipur, India.</strong></p>
+              <div style="clear:both"></div>
+            </div>
+          </div>
+
+          <!-- ABOUT MUJ -->
+          <div id="about-muj" class="card">
+            <div class="card-header" style="background:var(--teal)">
+              <div class="ch-icon" style="background:var(--gold)">U</div>
+              <h3>About Manipal University Jaipur</h3>
+            </div>
+            <div class="card-body">
+              <div class="row" style="gap:16px">
+                <div class="col-6" style="max-width:48%;flex:0 0 48%">
+                  <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80&fit=crop" alt="MUJ Campus" style="width:100%;height:160px;object-fit:cover;border:2px solid var(--bdr)">
+                </div>
+                <div style="flex:1">
+                  <p>The Manipal Education and Medical Group is an established leader in the field of education, research and healthcare. In a span of over seven decades, it has transformed the lives of more than <strong>3,00,000 students from over 59 countries</strong>. The group includes five universities across India, Caribbean Islands, and Malaysia.</p>
+                  <p>Manipal University Jaipur (MUJ) was launched in 2011 on an invitation from the Government of Rajasthan. Situated on <strong>122 Acres</strong> at Dehmi Kalan village near Jaipur, MUJ offers career-oriented multi-disciplinary programmes at UG, PG, and doctoral levels.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ABOUT DEPT -->
+          <div id="about-dept" class="card">
+            <div class="card-header" style="background:var(--maroon)">
+              <div class="ch-icon" style="background:var(--navy)">D</div>
+              <h3>About the Department of Mechanical Engineering</h3>
+            </div>
+            <div class="card-body">
+              <p>Mechanical Engineering is a diverse and dynamic field encompassing the design of intricate components to the development of large-scale systems. The B.Tech programme equips students with skills to design and build the machines of the future, with access to state-of-the-art laboratories and a well-stocked library.</p>
+              <p>In addition to undergraduate studies, the department offers a rigorous <strong>Ph.D. programme</strong> that fosters advanced research in core and interdisciplinary areas of Mechanical Engineering, guided by experienced faculty and supported by well-equipped research labs. The department also covers emerging fields like medical engineering and defence technology.</p>
+            </div>
+          </div>
+
+          <!-- CALL FOR PAPERS / TRACKS -->
+          <div id="tracks" class="card">
+            <div class="card-header" style="background:var(--maroon)">
+              <div class="ch-icon" style="background:var(--gold)">T</div>
+              <h3>Call for Papers — Research Tracks</h3>
+            </div>
+            <div class="card-body" style="padding-bottom:0">
+              <p style="margin-bottom:16px">Full-length papers relating to smart and sustainable manufacturing, operations, and materials tracks are invited. Only <strong>original research articles</strong> will be accepted. Topics include, but are not restricted to:</p>
+              <div class="track-tabs">
+                <div class="ttab active" onclick="showTrack('t1',this)">Track 1: Manufacturing</div>
+                <div class="ttab" onclick="showTrack('t2',this)">Track 2: Operations & IE</div>
+                <div class="ttab" onclick="showTrack('t3',this)">Track 3: Materials</div>
+              </div>
+              <div id="tp-t1" class="track-panel active">
+                <h4>Smart &amp; Sustainable Manufacturing</h4>
+                <div class="focus-line">Focus: Intelligent, digital, and sustainable manufacturing technologies leveraging AI, CPS, and Industry 4.0/5.0</div>
+                <div class="topic-grid">
+                  <div class="topic-item">3D Printing / Additive Manufacturing</div>
+                  <div class="topic-item">Bio-Printing &amp; Tissue Engineering</div>
+                  <div class="topic-item">Micro and Nano Machining</div>
+                  <div class="topic-item">Extreme Manufacturing Processes</div>
+                  <div class="topic-item">Hybrid Manufacturing Processes</div>
+                  <div class="topic-item">Precision &amp; Ultra-Precision Manufacturing</div>
+                  <div class="topic-item">AI/ML-Driven Process Optimization</div>
+                  <div class="topic-item">Digital Manufacturing &amp; Industry 4.0/5.0</div>
+                  <div class="topic-item">Predictive Quality Control &amp; Maintenance</div>
+                  <div class="topic-item">Digital Twin-Based Process Modeling</div>
+                  <div class="topic-item">Welding, Laser &amp; Friction Stir Welding</div>
+                  <div class="topic-item">Robotics, Automation &amp; Cobots</div>
+                  <div class="topic-item">IoT-Enabled Smart Factories</div>
+                  <div class="topic-item">AR/VR-Assisted Manufacturing</div>
+                  <div class="topic-item">Cyber-Physical Systems for Manufacturing</div>
+                  <div class="topic-item">Green &amp; Sustainable Manufacturing</div>
+                </div>
+              </div>
+              <div id="tp-t2" class="track-panel">
+                <h4>Smart &amp; Sustainable Operations &amp; Industrial Engineering</h4>
+                <div class="focus-line">Focus: Data-driven, smart, and sustainable industrial operations, supply chain, and decision-making systems</div>
+                <div class="topic-grid">
+                  <div class="topic-item">Digital Twin-Driven Industrial Operations</div>
+                  <div class="topic-item">AI/ML-Enabled Supply Chain Optimization</div>
+                  <div class="topic-item">Cyber-Physical Systems for Operations</div>
+                  <div class="topic-item">Lean, Agile &amp; Resilient Operations</div>
+                  <div class="topic-item">Industrial IoT &amp; Sensor-Enabled Operations</div>
+                  <div class="topic-item">Predictive Maintenance &amp; Reliability Engineering</div>
+                  <div class="topic-item">Energy-Efficient &amp; Low-Carbon Systems</div>
+                  <div class="topic-item">Circular Economy &amp; Resource Recovery</div>
+                  <div class="topic-item">Data-Driven Decision Support Systems</div>
+                  <div class="topic-item">Multi-Objective Optimization in Operations</div>
+                  <div class="topic-item">Risk Assessment &amp; Mitigation</div>
+                  <div class="topic-item">Smart Factory Modeling &amp; Simulation</div>
+                  <div class="topic-item">Production Scheduling &amp; Logistics</div>
+                  <div class="topic-item">Big Data Analytics &amp; Process Mining</div>
+                  <div class="topic-item">Operations Intelligence for Industry 4.0/5.0</div>
+                  <div class="topic-item">Decision Analytics for Circular Economy</div>
+                </div>
+              </div>
+              <div id="tp-t3" class="track-panel">
+                <h4>Smart &amp; Sustainable Materials</h4>
+                <div class="focus-line">Focus: Development, characterization, and applications of multifunctional, intelligent, and sustainable materials</div>
+                <div class="topic-grid">
+                  <div class="topic-item">Smart Materials (Shape-Memory, Piezoelectric)</div>
+                  <div class="topic-item">Nanomaterials &amp; Nanocomposites</div>
+                  <div class="topic-item">2D Materials &amp; Metamaterials</div>
+                  <div class="topic-item">Hybrid &amp; Multifunctional Materials</div>
+                  <div class="topic-item">Biomimetic &amp; Bio-Inspired Materials</div>
+                  <div class="topic-item">Sustainable &amp; Biodegradable Materials</div>
+                  <div class="topic-item">AI/ML-Driven Materials Design</div>
+                  <div class="topic-item">High-Throughput Experimentation</div>
+                  <div class="topic-item">Functional Coatings &amp; Surface Engineering</div>
+                  <div class="topic-item">Multi-Scale Modeling</div>
+                  <div class="topic-item">Digital Twin-Based Materials Modeling</div>
+                  <div class="topic-item">Additive Manufacturing of Novel Materials</div>
+                  <div class="topic-item">Materials for Energy &amp; Biomedical Applications</div>
+                  <div class="topic-item">Life-Cycle Assessment &amp; Circular Economy</div>
+                  <div class="topic-item">Advanced Characterization (XRD, SEM, TEM, AFM)</div>
+                  <div class="topic-item">Advanced Ceramics &amp; High-Performance Composites</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMPORTANT DATES -->
+          <div id="dates" class="card">
+            <div class="card-header" style="background:var(--teal)">
+              <div class="ch-icon" style="background:var(--gold)">D</div>
+              <h3>Important Dates</h3>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="dates-table">
+                <thead>
+                  <tr>
+                    <th>Milestone</th>
+                    <th>Deadline / Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Full Paper Submission Deadline</td>
+                    <td>April 25, 2026</td>
+                  </tr>
+                  <tr>
+                    <td>Notification of Paper Acceptance</td>
+                    <td>June 15, 2026</td>
+                  </tr>
+                  <tr>
+                    <td>Early Bird Registration</td>
+                    <td>June 25, 2026</td>
+                  </tr>
+                  <tr>
+                    <td>Last Date for Registration</td>
+                    <td>July 15, 2026</td>
+                  </tr>
+                  <tr class="highlight">
+                    <td><strong>Conference</strong></td>
+                    <td><strong>February 04–05, 2027</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- FOR AUTHORS / SUBMISSION -->
+          <div id="submit" class="card">
+            <div class="card-header" style="background:var(--navy)">
+              <div class="ch-icon" style="background:var(--gold)">P</div>
+              <h3>Paper Submission Guidelines</h3>
+            </div>
+            <div class="card-body">
+              <p>Full-length papers relating to smart and sustainable manufacturing, operations, and materials tracks are invited to this conference. Only <strong>original research articles</strong> will be accepted for publication. SS-MOM attracts submissions from different countries worldwide.</p>
+              <div class="steps-flow" id="review">
+                <div class="step-box">
+                  <div class="step-num">1</div>
+                  <div class="step-label">Submission</div>
+                  <div class="step-desc">Upload full-length original paper. Receive unique Paper ID.</div>
+                </div>
+                <div class="step-box">
+                  <div class="step-num" style="background:var(--teal)">2</div>
+                  <div class="step-label">Initial Screening</div>
+                  <div class="step-desc">Check for conference scope, originality, and formatting.</div>
+                </div>
+                <div class="step-box">
+                  <div class="step-num" style="background:var(--maroon)">3</div>
+                  <div class="step-label">Technical Review</div>
+                  <div class="step-desc">Sent for rigorous double-blind peer review by domain experts.</div>
+                </div>
+                <div class="step-box">
+                  <div class="step-num" style="background:var(--teal)">4</div>
+                  <div class="step-label">Revision</div>
+                  <div class="step-desc">Author notified. Revision to be submitted within 15 days.</div>
+                </div>
+                <div class="step-box">
+                  <div class="step-num" style="background:var(--gold)">5</div>
+                  <div class="step-label">Publication</div>
+                  <div class="step-desc">Accepted papers published in SCOPUS-indexed proceedings.</div>
+                </div>
+              </div>
+              <div style="background:var(--gold-lt);border:1px solid var(--gold);padding:16px 20px;margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--navy)">Ready to Submit Your Paper?</div>
+                  <div style="font-size:12.5px;color:var(--txt3);margin-top:3px">Contact: Dr. Ajay &nbsp;|&nbsp; +91 9467717120 &nbsp;|&nbsp; Deadline: April 25, 2026</div>
+                </div>
+                <a href="mailto:ajay@jaipur.manipal.edu" class="btn btn-primary">Submit Paper Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- WHO CAN PARTICIPATE -->
+          <div class="card">
+            <div class="card-header" style="background:var(--teal)">
+              <div class="ch-icon" style="background:var(--maroon)">W</div>
+              <h3>Who Can Participate?</h3>
+            </div>
+            <div class="card-body">
+              <p>All the topics including cutting-edge research related to all fields of manufacturing, operations, and materials are welcome. Participants may include:</p>
+              <div class="who-grid" style="margin-top:16px">
+                <div class="who-item">
+                  <h5>Academicians &amp; Researchers</h5>
+                  <p>Professors, PhD scholars, postdoctoral fellows from universities and research institutions worldwide.</p>
+                </div>
+                <div class="who-item" style="border-color:var(--maroon)">
+                  <h5>Industry Professionals</h5>
+                  <p>Engineers, technocrats, and IT specialists working in industries, SMEs, and government agencies.</p>
+                </div>
+                <div class="who-item" style="border-color:var(--gold)">
+                  <h5>Scientists &amp; Students</h5>
+                  <p>Research scientists and graduate/postgraduate students contributing to emerging engineering fields.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end main-content -->
+      </div>
+
+      <!-- RIGHT: SIDEBAR -->
+      <div class="col-4">
+        <div class="sidebar">
+
+          <!-- Publication -->
+          <div class="widget">
+            <div class="widget-header teal">Publication Details</div>
+            <div class="widget-body">
+              <div class="scope-badge-wrap">
+                <div class="scope-badge"><div class="scope-badge-dot" style="background:var(--maroon)"></div>SCOPUS-Indexed Proceedings</div>
+                <div class="scope-badge"><div class="scope-badge-dot" style="background:var(--teal)"></div>International Journals of Repute</div>
+                <div class="scope-badge"><div class="scope-badge-dot" style="background:var(--gold)"></div>Springer / Elsevier (Proposed)</div>
+                <div class="scope-badge"><div class="scope-badge-dot" style="background:var(--navy)"></div>Web of Science / SCIE (Proposed)</div>
+              </div>
+              <p style="font-size:12px;color:var(--txt3);margin-top:12px;line-height:1.7">Accepted, registered and presented papers will be published in SCOPUS-indexed proceedings and international journals, subject to meeting journal criteria.</p>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="widget">
+            <div class="widget-header navy">Quick Links</div>
+            <div class="widget-body" style="padding:8px 14px">
+              <ul class="widget-list">
+                <li><a href="#submit">Submit Full Paper</a></li>
+                <li><a href="https://forms.gle/HneEUNqLh74J6a5H9" target="_blank">Join Review Committee</a></li>
+                <li><a href="#tracks">Call for Papers</a></li>
+                <li><a href="#dates">Important Dates</a></li>
+                <li><a href="#committee">Organizing Committee</a></li>
+                <li><a href="#venue">Venue &amp; Travel Info</a></li>
+                <li><a href="#contact">Contact Organizers</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Organiser Widget -->
+          <div class="widget">
+            <div class="widget-header maroon">Organised By</div>
+            <img class="widget-img" src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&q=80&fit=crop" alt="MUJ Campus">
+            <div class="widget-body">
+              <p><strong>Department of Mechanical Engineering</strong><br>Manipal University Jaipur<br>Dehmi Kalan, Off Jaipur&ndash;Ajmer Expressway<br>Jaipur, Rajasthan &mdash; 303007</p>
+              <br>
+              <p style="font-size:12px;color:var(--txt3)"><strong>Co-Organisers (Proposed):</strong><br>BITS-Pilani, Dubai Campus, UAE<br>NIT Agartala, India<br>MNIT Jaipur, India</p>
+            </div>
+          </div>
+
+          <!-- Contact Widget -->
+          <div class="widget">
+            <div class="widget-header teal">Contact Details</div>
+            <div class="widget-body">
+              <ul class="widget-list">
+                <li><strong>Dr. Ajay</strong> — Conference Chair &amp; Convener, Professor, ME Dept., MUJ</li>
+                <li>+91 9467717120</li>
+                <li><a href="mailto:ajay@jaipur.manipal.edu">ajay@jaipur.manipal.edu</a></li>
+              </ul>
+              <a href="mailto:ajay@jaipur.manipal.edu" class="btn btn-primary" style="width:100%;text-align:center;display:block;margin-top:12px">Send Enquiry</a>
+            </div>
+          </div>
+
+          <!-- Session Chairs CTA -->
+          <div class="widget">
+            <div class="widget-header" style="background:var(--gold);color:white">Call for Session Chairs</div>
+            <div class="widget-body">
+              <p style="font-size:13px;color:var(--txt2);line-height:1.75">Senior researchers and industry experts are invited to serve as <strong>Track Session Chairs</strong>. Benefits include recognition in proceedings, networking with journal editors, and priority for invited papers.</p>
+              <a href="mailto:ajay@jaipur.manipal.edu" class="btn btn-gold" style="width:100%;text-align:center;display:block;margin-top:12px">Express Interest</a>
+            </div>
+          </div>
+
+        </div><!-- end sidebar -->
+      </div>
+
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div><!-- end main-layout -->
+
+<!-- BENEFITS STRIP -->
+<div class="benefits-strip">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:28px">
+      <h2 class="section-title white" style="display:block;border-color:var(--gold2)">Why Participate in SS-MOM 2027?</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-item">
+        <div class="ben-num">01</div>
+        <h4>SCOPUS Publication</h4>
+        <p>Accepted, registered and presented papers will be published in SCOPUS-indexed proceedings and international journals of repute.</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-num">02</div>
+        <h4>Global Networking</h4>
+        <p>Connect with international researchers, industry leaders, journal editors, and global academic institutions.</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-num">03</div>
+        <h4>Workshops &amp; Tutorials</h4>
+        <p>Attend specialized workshops on AI/ML, Digital Twins, Industry 4.0/5.0, and sustainable manufacturing practices.</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-num">04</div>
+        <h4>Industry Insights</h4>
+        <p>Gain practical insights into smart factories, predictive maintenance, additive manufacturing, and circular economy.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMMITTEE SECTION -->
+<div id="committee" class="committee-sec">
+  <div class="container">
+    <h2 class="section-title white">Organizing Committee</h2>
+    <div class="comm-tabs">
+      <button class="ctab on"  onclick="showComm('org',this)">Organizing Committee</button>
+      <button class="ctab"     onclick="showComm('intl',this)">International Advisory</button>
+      <button class="ctab"     onclick="showComm('natl',this)">National Advisory</button>
+      <button class="ctab"     onclick="showComm('intrnl',this)">Internal Advisory</button>
+      <button class="ctab"     onclick="showComm('ind',this)">Industry Advisory</button>
+      <button class="ctab"     onclick="showComm('peer',this)">Peer Review Committee</button>
+    </div>
+
+    <!-- ORGANIZING -->
+    <div id="c-org" class="cpanel on">
+      <div class="cgroup"><div class="cg-lbl">Chief Patron</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Shri S Vaitheeswaran</div><div class="cm-inst">Chairperson, Manipal University Jaipur, India</div></div>
+      </div></div>
+      <div class="cgroup"><div class="cg-lbl">Patrons</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Prof. N N Sharma</div><div class="cm-inst">President, Manipal University Jaipur</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Souri Banerjee</div><div class="cm-inst">Director, BITS Pilani Dubai Campus, UAE</div></div>
+      </div></div>
+      <div class="cgroup"><div class="cg-lbl">Co-Patrons</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Prof. Karunakar A Kotegar</div><div class="cm-inst">Pro-President, MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Amit Soni</div><div class="cm-inst">Registrar, MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Nitu Bhatnagar</div><div class="cm-inst">Pro-Vost, MUJ</div></div>
+      </div></div>
+      <div class="cgroup"><div class="cg-lbl">Honorary &amp; General Chairs</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Prof. Ravi Kant Mittal</div><div class="cm-inst">Honorary Chair — Retired Professor, BITS Pilani</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Kuldip Singh Sangwan</div><div class="cm-inst">General Chair — Dean, Faculty of S&T, MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. R K Gupta</div><div class="cm-inst">General Co-Chair — Associate Dean, Engineering, MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Raviraja Adhikari</div><div class="cm-inst">General Co-Chair — Head, ME Dept., MUJ</div></div>
+      </div></div>
+      <div class="cgroup"><div class="cg-lbl">Conference Chair &amp; Conveners</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Dr. Ajay</div><div class="cm-inst">Conference Chair &amp; Convener — Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Gulshan Kumar</div><div class="cm-inst">Conference Chair — BITS Pilani Dubai Campus, UAE</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Dhaneshwar Mishra</div><div class="cm-inst">Convener — Associate Professor (Sr. Scale), ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Vinod Yadav</div><div class="cm-inst">Convener — Assistant Professor (SG), ME Dept., MUJ</div></div>
+      </div></div>
+      <div class="cgroup"><div class="cg-lbl">Core Organizing Committee</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Dr. Vimal Pathak</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Ramanpreet Singh</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Ashish Kumar Srivastava</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Ashish Goyal</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Krishna Kant Pandey</div><div class="cm-inst">Mechatronics Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Dalip Singh Shekhawat</div><div class="cm-inst">Mechatronics Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Vaibhav Srivastava</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Biswesh Ranjan Acharya</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Ashu Yadav</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Rakesh Kumar</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Dharmesh Yadav</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Vishal Kadian</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Upendra Kulshrestha</div><div class="cm-inst">ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Harpreet Singh Bedi</div><div class="cm-inst">ME Dept., BITS Pilani Dubai Campus, UAE</div></div>
+        <div class="cm-card"><div class="cm-name">Mr. Sunil Kumar</div><div class="cm-inst">ME Dept., MUJ</div></div>
+      </div></div>
+    </div>
+
+    <!-- INTERNATIONAL ADVISORY -->
+    <div id="c-intl" class="cpanel">
+      <div class="cgroup"><div class="cg-lbl">International Advisory Committee</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Prof. Y. Eugene Pak</div><div class="cm-inst">Dean (International Collaboration), SUNY Korea</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Yongho Jeon</div><div class="cm-inst">Dept. of ME, Ajou University, South Korea</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Yang Liu</div><div class="cm-inst">Senior Associate Professor, Linköping University, Sweden</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Vijayakumar B.</div><div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Hansraj Bangar</div><div class="cm-inst">Scientist, Amazon, Ohio, USA</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Santosh Kumar</div><div class="cm-inst">Research Professor, Konkuk University, Seoul, S. Korea</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Lailesh Kumar</div><div class="cm-inst">Senior Research Scientist, Pinetree PosMagnesium, S. Korea</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Periasamy C.</div><div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Deepak Dahiya</div><div class="cm-inst">Professor, Majmaah University, Saudi Arabia</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Surbhi Bhatia</div><div class="cm-inst">King Faisal University, Saudi Arabia</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Udayakumar R</div><div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Sumit Chakrabarty</div><div class="cm-inst">Kennesaw State University, USA</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Mehedi Masud</div><div class="cm-inst">Professor, Taif University, Saudi Arabia</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Sumit Sakhuja</div><div class="cm-inst">Higher Colleges of Technology, Abu Dhabi, UAE</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Malkeshkumar Patel</div><div class="cm-inst">Incheon National University, South Korea</div></div>
+      </div></div>
+    </div>
+
+    <!-- NATIONAL ADVISORY -->
+    <div id="c-natl" class="cpanel">
+      <div class="cgroup"><div class="cg-lbl">National Advisory Committee</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Prof. Indra Vir Singh</div><div class="cm-inst">IIT Roorkee</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. R K Mittal</div><div class="cm-inst">Senior Professor (Ex.), BITS Pilani, Rajasthan</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Abid Haleem</div><div class="cm-inst">Jamia Millia Islamia, New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Pradeep Kumar</div><div class="cm-inst">IIT Roorkee</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Shatendra K. Sharma</div><div class="cm-inst">Jawaharlal Nehru University, New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Hari Singh</div><div class="cm-inst">NIT Kurukshetra, Haryana</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Puneet Tandon</div><div class="cm-inst">IIITDM Jabalpur, Madhya Pradesh</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Morapakala Srinivas</div><div class="cm-inst">BITS Pilani, Hyderabad Campus</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Bijay Kumar Rout</div><div class="cm-inst">BITS Pilani, Pilani Campus</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Sandeep Grover</div><div class="cm-inst">J.C. Bose University of S&T, YMCA, Faridabad</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Vishal Gulati</div><div class="cm-inst">Guru Jambheshwar University, Hisar</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Rakesh Jain</div><div class="cm-inst">Malaviya NIT Jaipur</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Gunjan Soni</div><div class="cm-inst">Malaviya NIT Jaipur</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Anil Kumar</div><div class="cm-inst">Delhi Technological University, New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Sanjeev Kumar</div><div class="cm-inst">J.C. Bose University, YMCA, Faridabad</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Munish Gupta</div><div class="cm-inst">Guru Jambheshwar University, Hisar</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Milind Kumar Sharma</div><div class="cm-inst">MBM University, Jodhpur</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Om Ji Shukla</div><div class="cm-inst">NIT Patna</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Basab Nath</div><div class="cm-inst">Bennett University, Greater Noida</div></div>
+      </div></div>
+    </div>
+
+    <!-- INTERNAL ADVISORY -->
+    <div id="c-intrnl" class="cpanel">
+      <div class="cgroup"><div class="cg-lbl">Internal Advisory Committee</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Dr. Ravi Kumar Sharma</div><div class="cm-inst">Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Ashok Kumar Sharma</div><div class="cm-inst">Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Subrata Bandhu Ghosh</div><div class="cm-inst">Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Sanchita Bandyopadhyay Ghosh</div><div class="cm-inst">Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Anand Pandey</div><div class="cm-inst">Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Rahul Goyal</div><div class="cm-inst">Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Santosh Patil</div><div class="cm-inst">Professor, ME Dept., MUJ</div></div>
+        <div class="cm-card"><div class="cm-name">Prof. Ramachandran S.</div><div class="cm-inst">Associate Dean, BITS Pilani Dubai Campus, UAE</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Vincent Shantha Kumar</div><div class="cm-inst">ME Dept., BITS Pilani Dubai Campus, UAE</div></div>
+      </div></div>
+    </div>
+
+    <!-- INDUSTRY ADVISORY -->
+    <div id="c-ind" class="cpanel">
+      <div class="cgroup"><div class="cg-lbl">Industry Advisory Committee</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Mr. Khushpal Singh</div><div class="cm-inst">Director, Geo Solutions, Gurugram</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Meenal Borkar</div><div class="cm-inst">Technical Trainer (Data &amp; ML), Google Cloud Platform, India</div></div>
+        <div class="cm-card"><div class="cm-name">Mr. Kulbir</div><div class="cm-inst">Principal Member of Technical Staff, Oracle, Gurugram</div></div>
+        <div class="cm-card"><div class="cm-name">Ms. Seema Pannu</div><div class="cm-inst">Associate Consultant, Tata Consultancy Services</div></div>
+        <div class="cm-card"><div class="cm-name">Mr. Pankaj Kataria</div><div class="cm-inst">Senior Manager, Newgen Software Technologies, New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Sachin Maheshwari</div><div class="cm-inst">General Manager HR, Sage Metals Ltd., New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Mr. Rakesh Kumar</div><div class="cm-inst">Business Head, Sigma Engineering Solution, Jaipur</div></div>
+        <div class="cm-card"><div class="cm-name">Mr. Amit Soman</div><div class="cm-inst">Managing Partner, AR2 Holding, Michigan, USA</div></div>
+        <div class="cm-card"><div class="cm-name">John Pitsowaki</div><div class="cm-inst">Regional Director, Shaw Development, Indianapolis, USA</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. (Hc) Navnath Ganpat Tarle</div><div class="cm-inst">COO &amp; EVP, Global Autotech Ltd., Pune</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Ganesh Tanpure</div><div class="cm-inst">Tech Lead, Boston Scientific, Gurugram</div></div>
+        <div class="cm-card"><div class="cm-name">Mr. Manoj Meshram</div><div class="cm-inst">Chairman, Quality Circle Forum of India, Jaipur Chapter</div></div>
+        <div class="cm-card"><div class="cm-name">Mr. Rattan Sharma</div><div class="cm-inst">President – North Region, Growell Chemical Industries</div></div>
+        <div class="cm-card"><div class="cm-name">Rajesh Goel</div><div class="cm-inst">Vice President, India Operations, Sage Metals Ltd.</div></div>
+      </div></div>
+    </div>
+
+    <!-- PEER REVIEW -->
+    <div id="c-peer" class="cpanel">
+      <div class="cgroup"><div class="cg-lbl">Peer Review Committee</div><div class="cm-grid">
+        <div class="cm-card"><div class="cm-name">Dr. Hadeel Alsolai</div><div class="cm-inst">Princess Nourah Bint Abdulrahman University, Saudi Arabia</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Mahmoud Othman</div><div class="cm-inst">Future University in Egypt</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Vikas Mittal</div><div class="cm-inst">NIT Kurukshetra, Haryana</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Sandeep Rathee</div><div class="cm-inst">NIT Srinagar, J&K</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Vikash Kumar</div><div class="cm-inst">NIT Kurukshetra, Haryana</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Mohmad Javaid</div><div class="cm-inst">Jamia Millia Islamia, New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Neeraj Mehla</div><div class="cm-inst">NIT Kurukshetra, Haryana</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Neeraj Sharma</div><div class="cm-inst">MM University, Mullana, Haryana</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Puneet Katyal</div><div class="cm-inst">Guru Jambheshwar University, Hisar</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Nripendra Narayan Das</div><div class="cm-inst">Manipal University Jaipur</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Vikas Goyat</div><div class="cm-inst">SRM Institute of Science and Technology</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Naveen Sharma</div><div class="cm-inst">Netaji Subhash Institute of Technology, New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Mukesh Kumar Sahu</div><div class="cm-inst">Cambridge Institute of Technology, Ranchi</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Harish Kumar Banga</div><div class="cm-inst">Guru Nanak Dev Engineering College, Ludhiana</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Yugal Kumar</div><div class="cm-inst">Jaypee University of Information Technology</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Mamta Mittal</div><div class="cm-inst">G.B. Pant Government Engineering College, New Delhi</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Meghna Chhabra</div><div class="cm-inst">Manav Rachna International Institute, Faridabad</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Jyotsna Sharma</div><div class="cm-inst">Amity University Manesar, Gurgaon</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Rohit Singh Lather</div><div class="cm-inst">The NorthCap University, Gurgaon</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Surjeet Dalal</div><div class="cm-inst">SRM University, Sonepat, Haryana</div></div>
+        <div class="cm-card"><div class="cm-name">Dr. Sachin Gupta</div><div class="cm-inst">Mohanlal Sukhadia University, Udaipur</div></div>
+      </div></div>
+      <div style="background:rgba(200,146,42,0.12);border:1px solid rgba(200,146,42,0.3);padding:20px 24px;margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:13.5px;font-weight:700;color:var(--gold2)">Interested in Joining the Peer Review Committee?</div>
+          <div style="font-size:12.5px;color:rgba(255,255,255,0.5);margin-top:4px">We invite qualified researchers and academics to serve as reviewers. Fill out the Google Form below.</div>
+        </div>
+        <a href="https://forms.gle/HneEUNqLh74J6a5H9" target="_blank" class="btn btn-gold">Apply via Google Form</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VENUE SECTION -->
+<div id="venue" class="venue-sec">
+  <div class="container">
+    <div class="row" style="gap:32px">
+      <div class="col-6" style="max-width:48%;flex:0 0 48%">
+        <h2 class="section-title">Conference Venue</h2>
+        <div class="venue-imgs">
+          <img class="wide" src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=900&q=80&fit=crop" alt="MUJ Campus">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&q=80&fit=crop" alt="Conference Hall">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&q=80&fit=crop" alt="Conference Room">
+        </div>
+        <div class="venue-addr">
+          <p><strong>Manipal University Jaipur</strong><br>Department of Mechanical Engineering<br>Dehmi Kalan, Off Jaipur&ndash;Ajmer Expressway<br>Jaipur, Rajasthan &mdash; 303007, India</p>
+        </div>
+      </div>
+      <div style="flex:1">
+        <h2 class="section-title" id="jaipur">Explore Jaipur — The Pink City</h2>
+        <p style="font-size:13.5px;color:var(--txt2);line-height:1.8;margin-bottom:16px">Jaipur — the "Pink City" and "Paris of India" — is a UNESCO World Heritage city forming part of the Golden Triangle. February is an ideal time to visit with clear skies and pleasant weather. The city is renowned for its magnificent palaces, forts, culture, and Rajasthani cuisine.</p>
+        <div class="jaipur-list">
+          <div class="jp-item"><div class="jp-item-dash"></div><div class="jp-item-text">Hawa Mahal — UNESCO Heritage</div></div>
+          <div class="jp-item"><div class="jp-item-dash" style="background:var(--teal)"></div><div class="jp-item-text">Amber Fort — UNESCO Heritage</div></div>
+          <div class="jp-item"><div class="jp-item-dash"></div><div class="jp-item-text">City Palace — Royal Architecture</div></div>
+          <div class="jp-item"><div class="jp-item-dash" style="background:var(--teal)"></div><div class="jp-item-text">Jantar Mantar — UNESCO Heritage</div></div>
+          <div class="jp-item"><div class="jp-item-dash"></div><div class="jp-item-text">Jal Mahal — Landmark</div></div>
+          <div class="jp-item"><div class="jp-item-dash" style="background:var(--teal)"></div><div class="jp-item-text">Nahargarh Fort — Historic Fort</div></div>
+          <div class="jp-item"><div class="jp-item-dash"></div><div class="jp-item-text">Albert Hall Museum</div></div>
+          <div class="jp-item"><div class="jp-item-dash" style="background:var(--teal)"></div><div class="jp-item-text">Jaigarh Fort — Historic Fort</div></div>
+          <div class="jp-item"><div class="jp-item-dash"></div><div class="jp-item-text">Birla Mandir — Temple</div></div>
+          <div class="jp-item"><div class="jp-item-dash" style="background:var(--teal)"></div><div class="jp-item-text">Galta Ji — Monkey Temple</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA SECTION -->
+<div id="contact" class="cta-sec">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="badge badge-gold" style="margin-bottom:14px;letter-spacing:1.5px">Join SS-MOM 2027</div>
+        <h2>Be Part of this Premier International Conference</h2>
+        <p>Join researchers, academics, and industry professionals from across the globe. Submit your research, attend cutting-edge workshops, and connect with the worldwide community of engineers and scientists.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="mailto:ajay@jaipur.manipal.edu" class="btn btn-white">Submit a Paper</a>
+          <a href="https://forms.gle/HneEUNqLh74J6a5H9" target="_blank" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:white">Join Review Committee</a>
+        </div>
+      </div>
+      <div class="cta-contact-grid">
+        <div class="ccc"><div class="ccc-label">Conference Chair</div><div class="ccc-value">Dr. Ajay</div><div class="ccc-sub">Professor, ME Dept., MUJ</div></div>
+        <div class="ccc"><div class="ccc-label">Mobile</div><div class="ccc-value">+91 9467717120</div></div>
+        <div class="ccc"><div class="ccc-label">Organised by</div><div class="ccc-value" style="font-size:13px">Dept. of ME, Manipal University Jaipur</div></div>
+        <div class="ccc"><div class="ccc-label">Co-Organisers</div><div class="ccc-value" style="font-size:12.5px;line-height:1.8">BITS-Pilani Dubai<br>NIT Agartala &middot; MNIT Jaipur</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-top">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <div class="footer-brand">SS-MOM 2027</div>
+        <div class="footer-desc">1st International Conference on Smart and Sustainable Manufacturing, Operations, and Materials. Organised by the Department of Mechanical Engineering, Manipal University Jaipur, India.</div>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a href="#submit" class="btn btn-gold" style="font-size:12px;padding:7px 16px">Submit Paper</a>
+          <a href="https://forms.gle/HneEUNqLh74J6a5H9" class="btn btn-outline" style="font-size:12px;padding:7px 16px;border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.6)">Join Review</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Conference</a></li>
+          <li><a href="#tracks">Call for Papers</a></li>
+          <li><a href="#dates">Important Dates</a></li>
+          <li><a href="#submit">For Authors</a></li>
+          <li><a href="#committee">Committee</a></li>
+          <li><a href="#venue">Venue &amp; Travel</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Research Tracks</h4>
+        <ul>
+          <li><a href="#tracks">Track 1: Manufacturing</a></li>
+          <li><a href="#tracks">Track 2: Operations &amp; IE</a></li>
+          <li><a href="#tracks">Track 3: Materials</a></li>
+          <li><a href="#tracks">Call for Session Chairs</a></li>
+        </ul>
+        <h4 style="margin-top:16px">Dates</h4>
+        <ul>
+          <li><a href="#dates">Submission: Apr 25, 2026</a></li>
+          <li><a href="#dates">Acceptance: Jun 15, 2026</a></li>
+          <li><a href="#dates">Conference: Feb 04–05, 2027</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Venue</h4>
+        <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8">Manipal University Jaipur<br>Dehmi Kalan, Off Jaipur&ndash;Ajmer Expressway<br>Jaipur, Rajasthan 303007<br>India</p>
+        <h4 style="margin-top:16px">Contact</h4>
+        <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8">Dr. Ajay (Conference Chair)<br>+91 9467717120<br>ajay@jaipur.manipal.edu</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>&copy; 2027 SS-MOM Conference. All rights reserved. &nbsp;|&nbsp; Department of Mechanical Engineering, Manipal University Jaipur, India.</p>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8679;</button>
+
+<script>
+/* Countdown */
+(function tick(){
+  const t=new Date('2026-04-25T23:59:59'),n=new Date(),d=t-n;
+  const p=x=>String(Math.max(0,x)).padStart(2,'0');
+  if(d>0){
+    document.getElementById('cd-d').textContent=p(Math.floor(d/86400000));
+    document.getElementById('cd-h').textContent=p(Math.floor((d%86400000)/3600000));
+    document.getElementById('cd-m').textContent=p(Math.floor((d%3600000)/60000));
+    document.getElementById('cd-s').textContent=p(Math.floor((d%60000)/1000));
+  }
+  setTimeout(tick,1000);
+})();
+
+/* Back to top */
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('show',scrollY>400);
+});
+
+/* Track tabs */
+function showTrack(id,btn){
+  document.querySelectorAll('.track-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ttab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tp-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* Committee tabs */
+function showComm(id,btn){
+  document.querySelectorAll('.cpanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('c-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+
+/* Active nav on scroll */
+const sections=['home','about','tracks','dates','submit','committee','venue','contact'];
+window.addEventListener('scroll',()=>{
+  const y=scrollY+80;
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el && y>=el.offsetTop && y<el.offsetTop+el.offsetHeight){
+      document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+    }
+  });
+});
+</script>
+</body>
+</html>
