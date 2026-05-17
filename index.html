@@ -12,1752 +12,20 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --navy: #1d3655;
-        --navy2: #173660;
-        --navy3: #1e4475;
-        --blue: #1a56a0;
-        --blue2: #2268bc;
-        --sky: #e8f0fb;
-        --sky2: #d6e5f8;
-        --amber: #baccd9;
-        --amber2: #bdcfdd;
-        --amber-lt: #fef3e2;
-        --amber-pale: #fdf7ee;
-        --teal: #0d6b74;
-        --teal2: #0f8492;
-        --teal-lt: #e2f4f5;
-        --white: #ffffff;
-        --off: #f8f9fc;
-        --off2: #f1f3f8;
-        --border: #dde3ee;
-        --border2: #c8d2e8;
-        --txt: #111827;
-        --txt2: #374151;
-        --txt3: #6b7280;
-        --txt4: #9ca3af;
-        --shadow-xs: 0 1px 3px rgba(15, 42, 74, 0.08);
-        --shadow-sm: 0 2px 8px rgba(15, 42, 74, 0.1);
-        --shadow-md: 0 6px 24px rgba(15, 42, 74, 0.12);
-        --shadow-lg: 0 16px 48px rgba(15, 42, 74, 0.14);
-        --r: 6px;
-        --r2: 10px;
-      }
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-        font-size: 15px;
-      }
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background: var(--off);
-        color: var(--txt);
-        -webkit-font-smoothing: antialiased;
-      }
-      img {
-        display: block;
-        max-width: 100%;
-      }
-      a {
-        text-decoration: none;
-        color: var(--blue);
-      }
-      ul {
-        list-style: none;
-      }
-
-      /* ── SCROLLBAR ── */
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--off2);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--blue);
-        border-radius: 3px;
-      }
-
-      /* ── UTILS ── */
-      .wrap {
-        max-width: 2380px;
-        margin: 0 8rem;
-        padding: 0 28px;
-      }
-      .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-      }
-      .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-      .grid-4 {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-      }
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 11.5px;
-        font-weight: 600;
-        letter-spacing: 0.4px;
-        text-transform: uppercase;
-      }
-      .pill-blue {
-        background: var(--sky);
-        color: var(--blue);
-        border: 1px solid var(--sky2);
-      }
-      .pill-amber {
-        background: var(--amber-lt);
-        color: var(--amber);
-        border: 1px solid #f0d8a8;
-      }
-      .pill-teal {
-        background: var(--teal-lt);
-        color: var(--teal);
-        border: 1px solid #a8dde2;
-      }
-      .pill-navy {
-        background: var(--navy);
-        color: white;
-      }
-      .pill-dot::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: currentColor;
-      }
-      .sec-eyebrow {
-        font-size: 11.5px;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--blue);
-        margin-bottom: 10px;
-      }
-      .sec-title {
-        font-family: "Lora", serif;
-        font-size: clamp(24px, 3vw, 36px);
-        font-weight: 700;
-        color: var(--navy);
-        line-height: 1.2;
-      }
-      .sec-title em {
-        font-style: italic;
-        color: var(--blue);
-      }
-      .sec-sub {
-        font-size: 15px;
-        color: var(--txt3);
-        line-height: 1.8;
-        margin-top: 12px;
-      }
-      .divider {
-        width: 40px;
-        height: 3px;
-        background: linear-gradient(90deg, var(--blue), var(--teal));
-        border-radius: 2px;
-        margin: 14px 0 20px;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 11px 24px;
-        border-radius: var(--r);
-        font-size: 13.5px;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-        transition: all 0.22s;
-        cursor: pointer;
-        border: none;
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-      .btn-navy {
-        background: var(--navy);
-        color: white;
-      }
-      .btn-navy:hover {
-        background: var(--navy2);
-        transform: translateY(-1px);
-        box-shadow: var(--shadow-md);
-      }
-      .btn-blue {
-        background: var(--blue);
-        color: white;
-      }
-      .btn-blue:hover {
-        background: var(--blue2);
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(26, 86, 160, 0.3);
-      }
-      .btn-amber {
-        background: var(--amber);
-        color: white;
-      }
-      .btn-amber:hover {
-        background: var(--amber2);
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(192, 122, 30, 0.3);
-      }
-      .btn-outline {
-        background: transparent;
-        color: var(--navy);
-        border: 1.5px solid var(--border2);
-      }
-      .btn-outline:hover {
-        border-color: var(--blue);
-        color: var(--blue);
-        background: var(--sky);
-      }
-      .btn-ghost-white {
-        background: rgba(255, 255, 255, 0.12);
-        color: white;
-        border: 1.5px solid rgba(255, 255, 255, 0.3);
-      }
-      .btn-ghost-white:hover {
-        background: rgba(255, 255, 255, 0.22);
-      }
-      .btn-sm {
-        padding: 8px 18px;
-        font-size: 12.5px;
-      }
-
-      /* ── TOPBAR ── */
-      .topbar {
-        background: var(--navy);
-        border-bottom: 2px solid var(--amber);
-        overflow: hidden;
-      }
-      .topbar-inner {
-        display: flex;
-        align-items: center;
-        height: 38px;
-      }
-      .topbar-label {
-        background: var(--amber);
-        color: white;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        padding: 0 16px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-        white-space: nowrap;
-      }
-      .topbar-ticker {
-        flex: 1;
-        overflow: hidden;
-      }
-      .topbar-ticker span {
-        display: inline-block;
-        white-space: nowrap;
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.65);
-        animation: roll 32s linear infinite;
-        padding-left: 100%;
-      }
-      @keyframes roll {
-        to {
-          transform: translateX(-100%);
-        }
-      }
-      .topbar-ticker span strong {
-        color: var(--amber2);
-        font-weight: 600;
-      }
-
-      /* ── HEADER ── */
-      .site-header {
-        background: white;
-        border-bottom: 1px solid var(--border);
-        position: sticky;
-        top: 0;
-        z-index: 200;
-        box-shadow: var(--shadow-sm);
-      }
-      .header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 72px;
-        gap: 20px;
-      }
-      .hlogo {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .hlogo-mark {
-        width: 46px;
-        height: 46px;
-        background: var(--navy);
-        border-radius: var(--r);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-family: "Lora", serif;
-        font-size: 13px;
-        font-weight: 700;
-        color: white;
-        line-height: 1;
-        flex-shrink: 0;
-        border-bottom: 3px solid var(--amber);
-      }
-      .hlogo-mark span {
-        font-size: 9px;
-        color: rgba(255, 255, 255, 0.55);
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        margin-top: 2px;
-      }
-      .hconf-name {
-        font-family: "Lora", serif;
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--navy);
-        line-height: 1.2;
-      }
-      .hconf-sub {
-        font-size: 11px;
-        color: var(--txt3);
-        margin-top: 2px;
-      }
-      .hnav {
-        display: flex;
-        align-items: center;
-        gap: 2px;
-      }
-      .hnav a {
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--txt2);
-        padding: 8px 14px;
-        border-radius: var(--r);
-        transition: all 0.18s;
-        white-space: nowrap;
-      }
-      .hnav a:hover {
-        color: var(--blue);
-        background: var(--sky);
-      }
-      .hnav .hnav-cta {
-        background: var(--blue);
-        color: white;
-        margin-left: 8px;
-      }
-      .hnav .hnav-cta:hover {
-        background: var(--blue2);
-      }
-      /* dropdown */
-      .hnav-item {
-        position: relative;
-      }
-      .hnav-item > a::after {
-        content: " ▾";
-        font-size: 10px;
-        opacity: 0.5;
-      }
-      .hnav-drop {
-        display: none;
-        position: absolute;
-        top: calc(100%+8px);
-        left: 0;
-        background: white;
-        border: 1px solid var(--border);
-        border-radius: var(--r2);
-        min-width: 210px;
-        box-shadow: var(--shadow-lg);
-        padding: 6px 0;
-        z-index: 300;
-      }
-      .hnav-item:hover .hnav-drop {
-        display: block;
-      }
-      .hnav-drop a {
-        display: block;
-        padding: 9px 18px;
-        font-size: 13px;
-        color: var(--txt2);
-        border-radius: 0;
-        transition: all 0.15s;
-      }
-      .hnav-drop a:hover {
-        background: var(--sky);
-        color: var(--blue);
-        padding-left: 24px;
-      }
-      .hnav-drop::before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: 18px;
-        width: 10px;
-        height: 10px;
-        background: white;
-        border-left: 1px solid var(--border);
-        border-top: 1px solid var(--border);
-        transform: rotate(45deg);
-      }
-      .hamburger {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .hamburger span {
-        width: 22px;
-        height: 2px;
-        background: var(--navy);
-        display: block;
-        border-radius: 2px;
-        transition: all 0.3s;
-      }
-      .mobile-drawer {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 280px;
-        background: white;
-        z-index: 400;
-        box-shadow: var(--shadow-lg);
-        padding: 24px;
-        flex-direction: column;
-        gap: 4px;
-        transform: translateX(100%);
-        transition: transform 0.3s;
-      }
-      .mobile-drawer.open {
-        transform: translateX(0);
-        display: flex;
-      }
-      .mobile-drawer a {
-        display: block;
-        padding: 13px 16px;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--txt2);
-        border-radius: var(--r);
-        border-bottom: 1px solid var(--off2);
-      }
-      .mobile-drawer a:last-child {
-        margin-top: 12px;
-        background: var(--blue);
-        color: white;
-        text-align: center;
-      }
-      .drawer-close {
-        align-self: flex-end;
-        background: none;
-        border: none;
-        font-size: 22px;
-        cursor: pointer;
-        color: var(--txt3);
-        margin-bottom: 8px;
-      }
-      .drawer-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 399;
-      }
-      .drawer-overlay.open {
-        display: block;
-      }
-
-      /* ── HERO ── */
-      .hero {
-        background: var(--navy);
-        min-height: 92vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-bg {
-        position: absolute;
-        inset: 0;
-        background-image: url("./images/manipal-image-one.jpeg");
-        background-size: cover;
-        background-position: center;
-        opacity: 0.32;
-        filter: grayscale(50%);
-      }
-      .hero-grid-pattern {
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        background-size: 50px 50px;
-      }
-      .hero-glow {
-        position: absolute;
-        top: -200px;
-        right: -200px;
-        width: 700px;
-        height: 700px;
-        background: radial-gradient(
-          circle,
-          rgba(26, 86, 160, 0.25) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .hero-glow2 {
-        position: absolute;
-        bottom: -150px;
-        left: -150px;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(
-          circle,
-          rgba(13, 107, 116, 0.2) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .hero-inner {
-        position: relative;
-        z-index: 2;
-        padding: 80px 0 60px;
-      }
-      .hero-layout {
-        display: grid;
-        grid-template-columns: 1fr 380px;
-        gap: 48px;
-        align-items: center;
-      }
-      .hero-pills {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-bottom: 24px;
-      }
-      .hero-title {
-        font-family: "Lora", serif;
-        font-size: clamp(28px, 4vw, 50px);
-        font-weight: 700;
-        color: white;
-        line-height: 1.15;
-        margin-bottom: 18px;
-      }
-      .hero-title em {
-        font-style: italic;
-        color: var(--amber2);
-      }
-      .hero-desc {
-        font-size: 15.5px;
-        color: rgba(255, 255, 255, 0.62);
-        line-height: 1.8;
-        margin-bottom: 32px;
-        max-width: 580px;
-      }
-      .hero-facts {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: var(--r2);
-        overflow: hidden;
-        margin-bottom: 36px;
-      }
-      .hf-cell {
-        padding: 14px 18px;
-        background: rgba(255, 255, 255, 0.04);
-      }
-      .hf-lbl {
-        font-size: 10.5px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.38);
-        margin-bottom: 4px;
-      }
-      .hf-val {
-        font-size: 14px;
-        font-weight: 700;
-        color: white;
-      }
-      .hero-btns {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-      /* countdown panel */
-      .cd-panel {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: var(--r2);
-        overflow: hidden;
-      }
-      .cd-panel-header {
-        background: var(--amber);
-        padding: 14px 20px;
-      }
-      .cd-panel-header h4 {
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: white;
-      }
-      .cd-panel-header p {
-        font-size: 11.5px;
-        color: rgba(255, 255, 255, 0.75);
-        margin-top: 3px;
-      }
-      .cd-cells {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1px;
-        background: rgba(255, 255, 255, 0.06);
-      }
-      .cd-cell {
-        background: rgba(15, 42, 74, 0.8);
-        padding: 22px 8px;
-        text-align: center;
-      }
-      .cd-n {
-        font-family: "Lora", serif;
-        font-size: 40px;
-        font-weight: 700;
-        color: white;
-        line-height: 1;
-      }
-      .cd-l {
-        font-size: 9.5px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.35);
-        margin-top: 6px;
-      }
-      .cd-dates-list {
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 1px;
-      }
-      .cdl-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 9px 10px;
-        border-radius: 5px;
-        transition: background 0.15s;
-      }
-      .cdl-row:hover {
-        background: rgba(255, 255, 255, 0.05);
-      }
-      .cdl-event {
-        font-size: 12.5px;
-        color: rgba(255, 255, 255, 0.6);
-      }
-      .cdl-date {
-        font-size: 12.5px;
-        font-weight: 700;
-        color: var(--amber2);
-      }
-      .cdl-row.conf {
-        background: rgba(192, 122, 30, 0.12);
-        border-radius: 5px;
-      }
-      .cdl-row.conf .cdl-event {
-        color: var(--amber2);
-        font-weight: 600;
-      }
-
-      /* ── NOTICE BAR ── */
-      .notice-bar {
-        background: white;
-        border-bottom: 1px solid var(--border);
-      }
-      .notice-inner {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 10px 0;
-        flex-wrap: wrap;
-      }
-      .notice-tag {
-        background: var(--teal);
-        color: white;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        padding: 5px 14px;
-        border-radius: 20px;
-        flex-shrink: 0;
-      }
-      .notice-text {
-        font-size: 13.5px;
-        color: var(--txt2);
-      }
-      .notice-text a {
-        color: var(--blue);
-        font-weight: 600;
-      }
-
-      /* ── SECTION LAYOUT ── */
-      .section {
-        padding: 80px 0;
-      }
-      .section-alt {
-        background: var(--off);
-      }
-      .section-white {
-        background: white;
-      }
-      .section-navy {
-        background: var(--navy);
-      }
-      .section-hdr {
-        margin-bottom: 44px;
-      }
-      .section-hdr.center {
-        text-align: center;
-      }
-      .section-hdr.center .divider {
-        margin: 14px auto 20px;
-      }
-      .two-col {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 44px;
-        align-items: start;
-      }
-      .two-col-rev {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 44px;
-        align-items: start;
-      }
-
-      /* ── CONTENT CARDS ── */
-      .ccard {
-        background: white;
-        border: 1px solid var(--border);
-        border-radius: var(--r2);
-        overflow: hidden;
-        transition: box-shadow 0.2s;
-      }
-      .ccard:hover {
-        box-shadow: var(--shadow-md);
-      }
-      .ccard-head {
-        padding: 14px 20px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        border-bottom: 1px solid var(--border);
-      }
-      .ccard-head.navy {
-        background: var(--navy);
-      }
-      .ccard-head.blue {
-        background: var(--blue);
-      }
-      .ccard-head.teal {
-        background: var(--teal);
-      }
-      .ccard-head.amber {
-        background: var(--amber);
-      }
-      .ccard-head h3 {
-        font-size: 14.5px;
-        font-weight: 700;
-        color: white;
-      }
-      .ccard-icon {
-        width: 28px;
-        height: 28px;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-        font-weight: 800;
-        color: white;
-        flex-shrink: 0;
-      }
-      .ccard-body {
-        padding: 22px 22px;
-      }
-      .ccard-body p {
-        font-size: 14px;
-        color: var(--txt2);
-        line-height: 1.85;
-        margin-bottom: 14px;
-      }
-      .ccard-body p:last-child {
-        margin-bottom: 0;
-      }
-
-      /* ── ABOUT IMAGE ── */
-      .about-img {
-        position: relative;
-      }
-      .about-img img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: var(--r2);
-      }
-      .about-img-badge {
-        position: absolute;
-        bottom: -16px;
-        left: 20px;
-        background: var(--navy);
-        color: white;
-        border-radius: var(--r);
-        padding: 14px 18px;
-        display: flex;
-        gap: 14px;
-        align-items: center;
-        box-shadow: var(--shadow-md);
-      }
-      .aib-num {
-        font-family: "Lora", serif;
-        font-size: 32px;
-        font-weight: 700;
-        color: var(--amber2);
-        line-height: 1;
-      }
-      .aib-txt {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.5;
-      }
-
-      /* ── TRACKS ── */
-      .track-tabs-row {
-        display: flex;
-        gap: 4px;
-        border-bottom: 2px solid var(--border);
-        margin-bottom: 0;
-        flex-wrap: wrap;
-      }
-      .ttab {
-        padding: 11px 22px;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--txt3);
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        border-bottom: 2px solid transparent;
-        margin-bottom: -2px;
-        transition: all 0.2s;
-        border-radius: var(--r) var(--r) 0 0;
-      }
-      .ttab:hover {
-        color: var(--navy);
-        background: var(--off2);
-      }
-      .ttab.on {
-        color: var(--blue);
-        border-bottom-color: var(--blue);
-        background: var(--sky);
-      }
-      .tpanel {
-        display: none;
-        background: white;
-        border: 1px solid var(--border);
-        border-top: none;
-        border-radius: 0 0 var(--r2) var(--r2);
-        padding: 28px;
-      }
-      .tpanel.on {
-        display: block;
-      }
-      .tpanel-head {
-        display: flex;
-        gap: 16px;
-        align-items: flex-start;
-        margin-bottom: 20px;
-      }
-      .tpanel-num {
-        font-family: "Lora", serif;
-        font-size: 48px;
-        font-weight: 700;
-        color: var(--sky2);
-        line-height: 1;
-        flex-shrink: 0;
-      }
-      .tpanel-info h4 {
-        font-family: "Lora", serif;
-        font-size: 18px;
-        font-weight: 700;
-        color: var(--navy);
-        margin-bottom: 6px;
-      }
-      .tpanel-info .focus {
-        font-size: 13px;
-        color: var(--teal);
-        font-weight: 500;
-        line-height: 1.5;
-      }
-      .topic-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 4px;
-        margin-top: 20px;
-      }
-      .ti {
-        background: var(--off);
-        border-left: 3px solid var(--border2);
-        padding: 10px 14px;
-        font-size: 12.5px;
-        color: var(--txt2);
-        line-height: 1.5;
-        transition: all 0.15s;
-      }
-      .ti:hover {
-        background: var(--sky);
-        border-left-color: var(--blue);
-      }
-
-      /* ── DATES TABLE ── */
-      .dates-table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0;
-        border-radius: var(--r2);
-        overflow: hidden;
-        border: 1px solid var(--border);
-      }
-      .dates-table thead th {
-        background: var(--navy);
-        color: white;
-        padding: 13px 20px;
-        font-size: 13px;
-        font-weight: 700;
-        text-align: left;
-      }
-      .dates-table tbody tr:nth-child(odd) {
-        background: var(--off);
-      }
-      .dates-table tbody tr:hover {
-        background: var(--sky);
-      }
-      .dates-table td {
-        padding: 14px 20px;
-        font-size: 14px;
-        border-bottom: 1px solid var(--border);
-      }
-      .dates-table td:first-child {
-        color: var(--txt2);
-        font-weight: 500;
-      }
-      .dates-table td:last-child {
-        color: var(--blue);
-        font-weight: 700;
-      }
-      .dates-table tr.conf-row td {
-        background: var(--navy);
-        color: white;
-        font-weight: 700;
-        border-bottom: none;
-      }
-      .dates-table tr.conf-row td:last-child {
-        color: var(--amber2);
-      }
-      .dates-table tr.conf-row:hover td {
-        background: var(--navy2);
-      }
-
-      /* ── STEPS ── */
-      .steps-row {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 0;
-        position: relative;
-        margin-top: 40px;
-      }
-      .steps-row::before {
-        content: "";
-        position: absolute;
-        top: 28px;
-        left: 10%;
-        right: 10%;
-        height: 2px;
-        background: var(--border2);
-        z-index: 0;
-      }
-      .step-item {
-        text-align: center;
-        padding: 0 10px;
-        position: relative;
-        z-index: 1;
-      }
-      .step-circle {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: white;
-        border: 2px solid var(--border2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 16px;
-        font-family: "Lora", serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--navy);
-        transition: all 0.25s;
-        position: relative;
-      }
-      .step-item:nth-child(1) .step-circle {
-        background: var(--navy);
-        color: white;
-        border-color: var(--navy);
-      }
-      .step-item:nth-child(2) .step-circle {
-        background: var(--blue);
-        color: white;
-        border-color: var(--blue);
-      }
-      .step-item:nth-child(3) .step-circle {
-        background: var(--teal);
-        color: white;
-        border-color: var(--teal);
-      }
-      .step-item:nth-child(4) .step-circle {
-        background: var(--amber);
-        color: white;
-        border-color: var(--amber);
-      }
-      .step-item:nth-child(5) .step-circle {
-        background: var(--navy2);
-        color: white;
-        border-color: var(--navy2);
-      }
-      .step-label {
-        font-size: 12.5px;
-        font-weight: 700;
-        color: var(--navy);
-        margin-bottom: 6px;
-      }
-      .step-desc {
-        font-size: 11.5px;
-        color: var(--txt3);
-        line-height: 1.65;
-      }
-
-      /* ── BENEFITS ── */
-      .ben-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-      }
-      .ben-card {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: var(--r2);
-        padding: 28px 22px;
-        transition: all 0.25s;
-      }
-      .ben-card:hover {
-        background: rgba(255, 255, 255, 0.1);
-        transform: translateY(-3px);
-      }
-      .ben-num {
-        font-family: "Lora", serif;
-        font-size: 38px;
-        font-weight: 700;
-        color: var(--amber2);
-        opacity: 0.5;
-        line-height: 1;
-        margin-bottom: 14px;
-      }
-      .ben-card h4 {
-        font-size: 14.5px;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 8px;
-      }
-      .ben-card p {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.52);
-        line-height: 1.7;
-      }
-
-      /* ── SIDEBAR WIDGETS ── */
-      .widget {
-        background: white;
-        border: 1px solid var(--border);
-        border-radius: var(--r2);
-        overflow: hidden;
-        margin-bottom: 20px;
-      }
-      .w-head {
-        padding: 12px 16px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        border-bottom: 1px solid var(--border);
-      }
-      .w-head.navy {
-        background: var(--navy);
-      }
-      .w-head.blue {
-        background: var(--blue);
-      }
-      .w-head.teal {
-        background: var(--teal);
-      }
-      .w-head.amber {
-        background: var(--amber);
-      }
-      .w-head h4 {
-        font-size: 13px;
-        font-weight: 700;
-        color: white;
-      }
-      .w-head-icon {
-        width: 26px;
-        height: 26px;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        font-weight: 800;
-        color: white;
-        flex-shrink: 0;
-      }
-      .w-body {
-        padding: 16px;
-      }
-      .w-body p {
-        font-size: 13px;
-        color: var(--txt2);
-        line-height: 1.8;
-      }
-      .wlist li {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        padding: 9px 0;
-        border-bottom: 1px solid var(--off2);
-        font-size: 13px;
-        color: var(--txt2);
-      }
-      .wlist li:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-      .wlist li::before {
-        content: "›";
-        color: var(--blue);
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 1.1;
-        flex-shrink: 0;
-      }
-      .wlist li a {
-        color: var(--txt2);
-        transition: color 0.15s;
-      }
-      .wlist li a:hover {
-        color: var(--blue);
-      }
-      .pub-item {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        padding: 9px 0;
-        border-bottom: 1px solid var(--off2);
-      }
-      .pub-item:last-child {
-        border-bottom: none;
-      }
-      .pub-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-      .pub-text {
-        font-size: 13px;
-        color: var(--txt2);
-        line-height: 1.5;
-      }
-      .date-widget-item {
-        padding: 10px 0;
-        border-bottom: 1px solid var(--off2);
-      }
-      .date-widget-item:last-child {
-        border-bottom: none;
-      }
-      .dwi-ev {
-        font-size: 12.5px;
-        font-weight: 600;
-        color: var(--txt2);
-      }
-      .dwi-dt {
-        font-size: 12.5px;
-        color: var(--blue);
-        font-weight: 700;
-        margin-top: 2px;
-      }
-      .w-img {
-        width: 100%;
-        height: 140px;
-        object-fit: cover;
-      }
-
-      /* ── COMMITTEE ── */
-      .comm-tabs {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        margin-bottom: 24px;
-      }
-      .ctab {
-        padding: 9px 18px;
-        font-size: 12.5px;
-        font-weight: 600;
-        border: 1.5px solid var(--border);
-        color: var(--txt3);
-        background: white;
-        cursor: pointer;
-        border-radius: 20px;
-        transition: all 0.2s;
-      }
-      .ctab:hover {
-        border-color: var(--blue);
-        color: var(--blue);
-      }
-      .ctab.on {
-        background: var(--blue);
-        border-color: var(--blue);
-        color: white;
-      }
-      .cpanel {
-        display: none;
-      }
-      .cpanel.on {
-        display: block;
-      }
-      .cgroup {
-        margin-bottom: 32px;
-      }
-      .cg-label {
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--blue);
-        padding-bottom: 10px;
-        border-bottom: 2px solid var(--sky2);
-        margin-bottom: 14px;
-      }
-      .cm-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-        gap: 8px;
-      }
-      .cm-card {
-        background: var(--off);
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        padding: 14px 18px;
-        transition: all 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-      .cm-card img{
-        height: 6rem;
-        width: 6rem;
-        padding-bottom: 12px;
-        border-radius: 50%;
-      }
-      .cm-card:hover {
-        background: var(--sky);
-        border-color: var(--sky2);
-      }
-      .cm-name {
-        font-size: 13.5px;
-        font-weight: 700;
-        color: var(--navy);
-        margin-bottom: 3px;
-      }
-      .cm-inst {
-        font-size: 11.5px;
-        color: var(--txt3);
-        line-height: 1.45;
-      }
-      .comm-cta {
-        background: var(--sky);
-        border: 1px solid var(--sky2);
-        border-radius: var(--r2);
-        padding: 20px 24px;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .comm-cta p {
-        font-size: 13.5px;
-        color: var(--txt2);
-        line-height: 1.7;
-        max-width: 500px;
-      }
-
-      /* ── WHO CAN PARTICIPATE ── */
-      .who-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-      }
-      .who-card {
-        background: var(--off);
-        border-radius: var(--r2);
-        padding: 20px 18px;
-        border-top: 3px solid var(--blue);
-      }
-      .who-card:nth-child(2) {
-        border-top-color: var(--teal);
-      }
-      .who-card:nth-child(3) {
-        border-top-color: var(--amber);
-      }
-      .who-card h5 {
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--navy);
-        margin-bottom: 6px;
-      }
-      .who-card p {
-        font-size: 13px;
-        color: var(--txt3);
-        line-height: 1.7;
-      }
-
-      /* ── VENUE ── */
-      .venue-imgs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-      .venue-imgs .wide {
-        grid-column: 1/-1;
-      }
-      .venue-imgs img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: var(--r);
-      }
-      .venue-imgs .wide img {
-        height: 230px;
-      }
-      .venue-imgs img {
-        height: 160px;
-      }
-      .venue-addr {
-        background: var(--sky);
-        border: 1px solid var(--sky2);
-        border-left: 4px solid var(--blue);
-        border-radius: var(--r);
-        padding: 18px 20px;
-        margin-top: 16px;
-      }
-      .venue-addr p {
-        font-size: 13.5px;
-        color: var(--txt2);
-        line-height: 2;
-      }
-      .jaipur-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 6px;
-        margin-top: 16px;
-      }
-      .jp-item {
-        background: white;
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        padding: 10px 14px;
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        transition: all 0.15s;
-      }
-      .jp-item:hover {
-        background: var(--sky);
-        border-color: var(--sky2);
-      }
-      .jp-bar {
-        width: 3px;
-        height: 18px;
-        background: var(--blue);
-        border-radius: 2px;
-        flex-shrink: 0;
-      }
-      .jp-item img{
-        height: 8rem;
-        border-radius: 6px;
-        padding-bottom: 12px;
-      } 
-      .jp-bar.teal {
-        background: var(--teal);
-      }
-      .jp-name {
-        font-size: 12.5px;
-        font-weight: 600;
-        color: var(--txt2);
-      }
-      .jp-type {
-        font-size: 11px;
-        color: var(--txt4);
-      }
-
-      /* ── CTA ── */
-      .cta-section {
-        background: linear-gradient(
-          135deg,
-          var(--navy) 0%,
-          var(--navy3) 60%,
-          var(--navy) 100%
-        );
-        padding: 80px 0;
-        position: relative;
-        overflow: hidden;
-      }
-      .cta-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-        background-size: 60px 60px;
-      }
-      .cta-inner {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 60px;
-        align-items: center;
-      }
-      .cta-text h2 {
-        font-family: "Lora", serif;
-        font-size: clamp(24px, 3.5vw, 40px);
-        color: white;
-        line-height: 1.25;
-        margin-bottom: 14px;
-      }
-      .cta-text p {
-        font-size: 15px;
-        color: rgba(255, 255, 255, 0.62);
-        line-height: 1.8;
-        margin-bottom: 28px;
-      }
-      .cta-cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      .cta-card {
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: var(--r2);
-        padding: 18px 18px;
-      }
-      .cta-card-lbl {
-        font-size: 10px;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.38);
-        margin-bottom: 6px;
-      }
-      .cta-card-val {
-        font-size: 14.5px;
-        color: white;
-        font-weight: 600;
-        line-height: 1.4;
-      }
-      .cta-card-sub {
-        font-size: 11.5px;
-        color: rgba(255, 255, 255, 0.38);
-        margin-top: 3px;
-      }
-
-      /* ── FOOTER ── */
-      .footer {
-        background: #0a1e38;
-        padding: 60px 0 0;
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 40px;
-        padding-bottom: 48px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .footer-brand {
-        font-family: "Lora", serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 10px;
-      }
-      .footer-tagline {
-        font-size: 12.5px;
-        color: rgba(255, 255, 255, 0.38);
-        line-height: 1.85;
-      }
-      .footer-ctas {
-        display: flex;
-        gap: 10px;
-        margin-top: 20px;
-        flex-wrap: wrap;
-      }
-      .footer-col h5 {
-        font-size: 11.5px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
-        margin-bottom: 16px;
-      }
-      .footer-col ul li {
-        padding: 5px 0;
-      }
-      .footer-col ul li a {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.5);
-        transition: color 0.15s;
-      }
-      .footer-col ul li a:hover {
-        color: var(--amber2);
-      }
-      .footer-bottom {
-        padding: 16px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-      .footer-bottom p {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.22);
-      }
-
-      /* ── BACK TO TOP ── */
-      #btt {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        background: var(--blue);
-        color: white;
-        width: 42px;
-        height: 42px;
-        border-radius: var(--r);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        cursor: pointer;
-        border: none;
-        z-index: 300;
-        box-shadow: var(--shadow-md);
-        transition: all 0.2s;
-      }
-      #btt.show {
-        display: flex;
-      }
-      #btt:hover {
-        background: var(--navy);
-        transform: translateY(-2px);
-      }
-
-      /* ── REVEAL ANIMATIONS ── */
-      .rev {
-        opacity: 0;
-        transform: translateY(20px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-      }
-      .rev.in {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .d1 {
-        transition-delay: 0.1s;
-      }
-      .d2 {
-        transition-delay: 0.18s;
-      }
-      .d3 {
-        transition-delay: 0.26s;
-      }
-      .d4 {
-        transition-delay: 0.34s;
-      }
-
-      /* ── RESPONSIVE ── */
-      @media (max-width: 1024px) {
-        .hero-layout,
-        .two-col,
-        .two-col-rev,
-        .cta-inner {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
-        .hnav {
-          display: none;
-        }
-        .hamburger {
-          display: flex;
-        }
-        .ben-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .steps-row {
-          grid-template-columns: 1fr 1fr;
-        }
-        .steps-row::before {
-          display: none;
-        }
-        .topic-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 768px) {
-        .section {
-          padding: 56px 0;
-        }
-        .grid-2 {
-          grid-template-columns: 1fr;
-        }
-        .who-grid {
-          grid-template-columns: 1fr;
-        }
-        .hero-facts {
-          grid-template-columns: 1fr 1fr;
-        }
-        .ben-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .cta-cards {
-          grid-template-columns: 1fr;
-        }
-        .jaipur-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .jaipur-grid .jp-bar{
-          display: none;
-        }
-        .cm-grid {
-          grid-template-columns: 1fr;
-        }
-        .topic-grid {
-          grid-template-columns: 1fr;
-        }
-        .header-inner .hconf-sub {
-          display: none;
-        }
-        .wrap {
-          max-width: 1380px;
-          margin: 0 auto;
-          padding: 0 18px;
-        }
-      }
-      @media (max-width: 560px) {
-        .ben-grid {
-          grid-template-columns: 1fr;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr;
-        }
-        .steps-row {
-          grid-template-columns: 1fr;
-        }
-        .hero-facts {
-          grid-template-columns: 1fr;
-        }
-        .dates-table {
-          font-size: 13px;
-        }
-        .dates-table th,
-        .dates-table td {
-          padding: 11px 14px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <!-- TOP BAR -->
-    <div class="topbar">
-      <div class="wrap">
-        <div class="topbar-inner">
-          <div class="topbar-label">Announcement</div>
-          <div class="topbar-ticker">
-            <span>
-              &nbsp;&nbsp; Paper Submission Deadline:
-              <strong>April 25, 2026</strong> &nbsp;|&nbsp; Acceptance
-              Notification: <strong>June 15, 2026</strong> &nbsp;|&nbsp; Early
-              Bird Registration: <strong>June 25, 2026</strong> &nbsp;|&nbsp;
-              Conference:
-              <strong>February 04–05, 2027 — Jaipur, India</strong>
-              &nbsp;|&nbsp; Accepted Papers:
-              <strong
-                >SCOPUS-Indexed Proceedings &amp; International Journals</strong
-              >
-              &nbsp;|&nbsp; Organised by:
-              <strong>Dept. of ME, Manipal University Jaipur</strong>
-              &nbsp;&nbsp;
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HEADER -->
+    <!-- WhatsApp Button -->
+    <a 
+      href="https://api.whatsapp.com/send?phone=919467717120"
+      class="whatsapp-btn"
+      target="_blank"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <header class="site-header">
       <div class="wrap">
         <div class="header-inner">
@@ -1792,16 +60,9 @@
               </div>
             </div>
             <div class="hnav-item">
-              <a href="#committee">Committee</a>
-              <div class="hnav-drop">
-                <a href="#committee">Organizing</a>
-                <a href="#committee">International Advisory</a>
-                <a href="#committee">National Advisory</a>
-                <a href="#committee">Industry Advisory</a>
-                <a href="#committee">Peer Review</a>
-              </div>
+              <a href="./committee.html">Committee</a>
             </div>
-            <a href="#venue">Venue</a>
+            <a href="https://maps.app.goo.gl/8AR5DtM85iN7j6Bg8">Venue</a>
             <a href="#contact" class="hnav-cta">Submit Paper</a>
           </nav>
           <button
@@ -1816,7 +77,6 @@
       </div>
     </header>
 
-    <!-- MOBILE DRAWER -->
     <div
       class="drawer-overlay"
       id="drawerOverlay"
@@ -1833,7 +93,6 @@
       <a href="#contact" onclick="closeDrawer()">Submit Paper</a>
     </nav>
 
-    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-bg"></div>
       <div class="hero-grid-pattern"></div>
@@ -1882,7 +141,7 @@
               </div>
               <div class="hf-cell">
                 <div class="hf-lbl">Submission Deadline</div>
-                <div class="hf-val">April 25, 2026</div>
+                <div class="hf-val">August 25, 2026</div>
               </div>
               <div class="hf-cell">
                 <div class="hf-lbl">Publication</div>
@@ -1901,12 +160,11 @@
             </div>
           </div>
 
-          <!-- Countdown + dates panel -->
           <div>
             <div class="cd-panel">
               <div class="cd-panel-header">
                 <h4>Submission Deadline Countdown</h4>
-                <p>April 25, 2026 — Last date for full paper submission</p>
+                <p>August 25, 2026 — Last date for full paper submission</p>
               </div>
               <div class="cd-cells">
                 <div class="cd-cell">
@@ -1929,19 +187,19 @@
               <div class="cd-dates-list">
                 <div class="cdl-row">
                   <span class="cdl-event">Full Paper Submission</span
-                  ><span class="cdl-date">Apr 25, 2026</span>
+                  ><span class="cdl-date">Aug 25, 2026</span>
                 </div>
                 <div class="cdl-row">
                   <span class="cdl-event">Acceptance Notice</span
-                  ><span class="cdl-date">Jun 15, 2026</span>
+                  ><span class="cdl-date">Sep 15, 2026</span>
                 </div>
                 <div class="cdl-row">
                   <span class="cdl-event">Early Bird Reg.</span
-                  ><span class="cdl-date">Jun 25, 2026</span>
+                  ><span class="cdl-date">Sep 25, 2026</span>
                 </div>
                 <div class="cdl-row">
                   <span class="cdl-event">Last Registration</span
-                  ><span class="cdl-date">Jul 15, 2026</span>
+                  ><span class="cdl-date">Oct 15, 2026</span>
                 </div>
                 <div class="cdl-row conf">
                   <span class="cdl-event">Conference</span
@@ -1954,7 +212,6 @@
       </div>
     </section>
 
-    <!-- NOTICE BAR -->
     <div class="notice-bar">
       <div class="wrap">
         <div class="notice-inner">
@@ -1969,13 +226,10 @@
       </div>
     </div>
 
-    <!-- MAIN CONTENT + SIDEBAR -->
     <div class="section section-alt" id="about">
       <div class="wrap">
         <div class="two-col">
-          <!-- MAIN COLUMN -->
           <div>
-            <!-- About Conference -->
             <div id="about-conf" class="ccard rev" style="margin-bottom: 20px">
               <div class="ccard-head navy">
                 <div class="ccard-icon">A</div>
@@ -2021,7 +275,6 @@
               </div>
             </div>
 
-            <!-- About MUJ -->
             <div id="about-muj" class="ccard rev" style="margin-bottom: 20px">
               <div class="ccard-head teal">
                 <div class="ccard-icon">U</div>
@@ -2038,9 +291,9 @@
                     <p>
                       The Manipal Education and Medical Group has transformed
                       the lives of
-                      <strong>3,00,000+ students from 59 countries</strong>
+                      <strong>more than 300,000 students from over 59 countries</strong>
                       across five universities. MUJ was launched in 2011 on an
-                      invitation from the Government of Rajasthan.
+                      invitation from the Government of Rajasthan as a self-financed state private university.
                     </p>
                     <p>
                       Situated on <strong>122 Acres</strong> near Jaipur, MUJ
@@ -2053,7 +306,6 @@
               </div>
             </div>
 
-            <!-- About ME Dept -->
             <div id="about-dept" class="ccard rev" style="margin-bottom: 20px">
               <div class="ccard-head blue">
                 <div class="ccard-icon">D</div>
@@ -2076,7 +328,6 @@
               </div>
             </div>
 
-            <!-- TRACKS -->
             <div id="tracks" class="ccard rev" style="margin-bottom: 20px">
               <div class="ccard-head" style="background: var(--navy2)">
                 <div class="ccard-icon">T</div>
@@ -2085,7 +336,7 @@
               <div class="ccard-body" style="padding-bottom: 0">
                 <p style="margin-bottom: 18px">
                   Full-length papers relating to smart and sustainable
-                  manufacturing, operations, and materials are invited. Only
+                  manufacturing, operations, and materials tracks are invited. Only
                   <strong>original research articles</strong> will be accepted.
                 </p>
                 <div class="track-tabs-row">
@@ -2099,7 +350,6 @@
                     Track 3: Materials
                   </button>
                 </div>
-                <!-- Track 1 -->
                 <div id="tp-t1" class="tpanel on">
                   <div class="tpanel-head">
                     <div class="tpanel-num">01</div>
@@ -2112,33 +362,28 @@
                     </div>
                   </div>
                   <div class="topic-grid">
-                    <div class="ti">3D Printing / Additive Manufacturing</div>
-                    <div class="ti">Bio-Printing &amp; Tissue Engineering</div>
-                    <div class="ti">Micro and Nano Machining</div>
-                    <div class="ti">Extreme Manufacturing Processes</div>
-                    <div class="ti">Hybrid Manufacturing Processes</div>
-                    <div class="ti">
-                      Precision &amp; Ultra-Precision Manufacturing
-                    </div>
-                    <div class="ti">AI/ML-Driven Process Optimization</div>
-                    <div class="ti">
-                      Digital Manufacturing &amp; Industry 4.0/5.0
-                    </div>
-                    <div class="ti">
-                      Predictive Quality Control &amp; Maintenance
-                    </div>
-                    <div class="ti">Digital Twin-Based Process Modeling</div>
-                    <div class="ti">Robotics, Automation &amp; Cobots</div>
-                    <div class="ti">IoT-Enabled Smart Factories</div>
-                    <div class="ti">AR/VR-Assisted Manufacturing</div>
-                    <div class="ti">Cyber-Physical Systems for Mfg.</div>
-                    <div class="ti">Green &amp; Sustainable Manufacturing</div>
-                    <div class="ti">
-                      Welding, Laser &amp; Friction Stir Welding
-                    </div>
+                    <div class="ti">3D printing / additive manufacturing</div>
+                    <div class="ti">Bio-printing and tissue engineering manufacturing</div>
+                    <div class="ti">Micro and nanomachining</div>
+                    <div class="ti">Extreme manufacturing processes (high-speed, high-precision, ultra-hard materials)</div>
+                    <div class="ti">Hybrid manufacturing processes</div>
+                    <div class="ti">Hybrid machining, hybrid forming, and hybrid additive-subtractive techniques</div>
+                    <div class="ti">Precision manufacturing, microfabrication, and ultra-precision processes</div>
+                    <div class="ti">Intelligent manufacturing and adaptive control</div>
+                    <div class="ti">Digital manufacturing, Industry 4.0/5.0 integration</div>
+                    <div class="ti">AI/ML-driven process optimization</div>
+                    <div class="ti">Predictive quality control and predictive maintenance</div>
+                    <div class="ti">Digital twin-based process modeling and simulation</div>
+                    <div class="ti">Welding, laser welding, and friction stir welding</div>
+                    <div class="ti">Incremental sheet forming and incremental manufacturing processes</div>
+                    <div class="ti">Robotics, automation, and collaborative robotics (cobots)</div>
+                    <div class="ti">Advanced metrology and in-situ process monitoring</div>
+                    <div class="ti">IoT-enabled smart factories, sensor networks, and production analytics</div>
+                    <div class="ti">AR/VR-assisted manufacturing and human-machine interfaces</div>
+                    <div class="ti">Cyber-physical systems for manufacturing</div>
+                    <div class="ti">Sustainable, energy-efficient, and green manufacturing techniques</div>
                   </div>
                 </div>
-                <!-- Track 2 -->
                 <div id="tp-t2" class="tpanel">
                   <div class="tpanel-head">
                     <div class="tpanel-num">02</div>
@@ -2154,47 +399,30 @@
                     </div>
                   </div>
                   <div class="topic-grid">
-                    <div class="ti">
-                      Digital Twin-Driven Industrial Operations
-                    </div>
-                    <div class="ti">
-                      AI/ML-Enabled Supply Chain Optimization
-                    </div>
-                    <div class="ti">Cyber-Physical Systems for Operations</div>
-                    <div class="ti">Lean, Agile &amp; Resilient Operations</div>
-                    <div class="ti">
-                      Industrial IoT &amp; Sensor-Enabled Operations
-                    </div>
-                    <div class="ti">
-                      Predictive Maintenance &amp; Reliability
-                    </div>
-                    <div class="ti">
-                      Energy-Efficient &amp; Low-Carbon Systems
-                    </div>
-                    <div class="ti">
-                      Circular Economy &amp; Resource Recovery
-                    </div>
-                    <div class="ti">Data-Driven Decision Support Systems</div>
-                    <div class="ti">
-                      Multi-Objective Optimization in Operations
-                    </div>
-                    <div class="ti">Risk Assessment &amp; Mitigation</div>
-                    <div class="ti">
-                      Smart Factory Modeling &amp; Simulation
-                    </div>
-                    <div class="ti">Production Scheduling &amp; Logistics</div>
-                    <div class="ti">
-                      Big Data Analytics &amp; Process Mining
-                    </div>
-                    <div class="ti">
-                      Operations Intelligence for Industry 4.0/5.0
-                    </div>
-                    <div class="ti">
-                      Decision Analytics for Circular Economy
-                    </div>
+                    <div class="ti">Digital twin-driven industrial operations</div>
+                    <div class="ti">AI/ML-enabled supply chain optimization</div>
+                    <div class="ti">Cyber-physical systems for operational excellence</div>
+                    <div class="ti">Lean, agile, and resilient industrial operations</div>
+                    <div class="ti">Industrial IoT and sensor-enabled operations</div>
+                    <div class="ti">Predictive maintenance and reliability engineering</div>
+                    <div class="ti">Energy-efficient and low-carbon industrial systems</div>
+                    <div class="ti">Circular economy and resource recovery modeling</div>
+                    <div class="ti">Data-driven decision support systems</div>
+                    <div class="ti">Multi-objective and multi-criteria optimization in operations</div>
+                    <div class="ti">Risk assessment and mitigation strategies</div>
+                    <div class="ti">Smart factory modeling and simulation</div>
+                    <div class="ti">Production scheduling, inventory, and logistics optimization</div>
+                    <div class="ti">Sustainability assessment and environmental impact modeling</div>
+                    <div class="ti">Human-in-the-loop cyber-physical systems</div>
+                    <div class="ti">Big data analytics and process mining</div>
+                    <div class="ti">Operations intelligence for Industry 4.0/5.0</div>
+                    <div class="ti">Smart manufacturing and integrated operations</div>
+                    <div class="ti">AI-driven performance monitoring and process improvement</div>
+                    <div class="ti">Digital twin-based supply chain resilience modeling</div>
+                    <div class="ti">Decision analytics for circular economy and sustainable operations</div>
+                    <div class="ti">Emerging research on human-centric, smart, and sustainable industrial systems</div>
                   </div>
                 </div>
-                <!-- Track 3 -->
                 <div id="tp-t3" class="tpanel">
                   <div class="tpanel-head">
                     <div class="tpanel-num">03</div>
@@ -2207,46 +435,32 @@
                     </div>
                   </div>
                   <div class="topic-grid">
-                    <div class="ti">
-                      Smart Materials (Shape-Memory, Piezoelectric)
-                    </div>
-                    <div class="ti">Nanomaterials &amp; Nanocomposites</div>
-                    <div class="ti">2D Materials &amp; Metamaterials</div>
-                    <div class="ti">Hybrid &amp; Multifunctional Materials</div>
-                    <div class="ti">
-                      Biomimetic &amp; Bio-Inspired Materials
-                    </div>
-                    <div class="ti">
-                      Sustainable &amp; Biodegradable Materials
-                    </div>
-                    <div class="ti">AI/ML-Driven Materials Design</div>
-                    <div class="ti">High-Throughput Experimentation</div>
-                    <div class="ti">
-                      Functional Coatings &amp; Surface Engineering
-                    </div>
-                    <div class="ti">Multi-Scale Modeling</div>
-                    <div class="ti">Digital Twin-Based Materials Modeling</div>
-                    <div class="ti">
-                      Additive Manufacturing of Novel Materials
-                    </div>
-                    <div class="ti">
-                      Life-Cycle Assessment &amp; Circular Economy
-                    </div>
-                    <div class="ti">
-                      Advanced Characterization (XRD, SEM, TEM)
-                    </div>
-                    <div class="ti">
-                      Advanced Ceramics &amp; High-Perf. Composites
-                    </div>
-                    <div class="ti">
-                      Materials for Energy &amp; Biomedical Applications
-                    </div>
+                    <div class="ti">Smart materials (shape-memory alloys, piezoelectric/electroactive, self-healing polymers)</div>
+                    <div class="ti">Nanomaterials and nanocomposites</div>
+                    <div class="ti">2D materials and metamaterials</div>
+                    <div class="ti">Hybrid and multifunctional materials</div>
+                    <div class="ti">Biomimetic and bio-inspired materials</div>
+                    <div class="ti">Sustainable and biodegradable materials</div>
+                    <div class="ti">AI/ML-driven materials design and property prediction</div>
+                    <div class="ti">High-throughput experimentation and materials informatics</div>
+                    <div class="ti">Functional coatings, surface engineering, and interfacial properties</div>
+                    <div class="ti">Multi-scale modeling: atomistic, mesoscopic, macroscopic</div>
+                    <div class="ti">Digital twin-based materials modeling and virtual testing</div>
+                    <div class="ti">Additive manufacturing of novel materials</div>
+                    <div class="ti">Materials for energy storage, electronics, and biomedical applications</div>
+                    <div class="ti">Structural, functional, and wearable materials</div>
+                    <div class="ti">Life-cycle assessment, environmental impact, and circular economy integration</div>
+                    <div class="ti">Computational materials science and simulation-based prediction</div>
+                    <div class="ti">Advanced characterization techniques (XRD, SEM, TEM, AFM, etc.)</div>
+                    <div class="ti">Smart composites and polymer-matrix composites</div>
+                    <div class="ti">3D-printed and bio-printed functional materials</div>
+                    <div class="ti">Advanced ceramics, metallic alloys, and high-performance composites</div>
+                    <div class="ti">Material degradation, recycling, and sustainability analytics</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- DATES -->
             <div id="dates" class="ccard rev" style="margin-bottom: 20px">
               <div class="ccard-head teal">
                 <div class="ccard-icon">D</div>
@@ -2263,19 +477,19 @@
                   <tbody>
                     <tr>
                       <td>Full Paper Submission Deadline</td>
-                      <td>April 25, 2026</td>
+                      <td>August 25, 2026</td>
                     </tr>
                     <tr>
                       <td>Notification of Paper Acceptance</td>
-                      <td>June 15, 2026</td>
+                      <td>September 15, 2026</td>
                     </tr>
                     <tr>
                       <td>Early Bird Registration</td>
-                      <td>June 25, 2026</td>
+                      <td>September 25, 2026</td>
                     </tr>
                     <tr>
                       <td>Last Date for Registration</td>
-                      <td>July 15, 2026</td>
+                      <td>October 15, 2026</td>
                     </tr>
                     <tr class="conf-row">
                       <td>Conference</td>
@@ -2286,7 +500,6 @@
               </div>
             </div>
 
-            <!-- FOR AUTHORS -->
             <div id="authors" class="ccard rev" style="margin-bottom: 20px">
               <div class="ccard-head amber">
                 <div class="ccard-icon">P</div>
@@ -2294,10 +507,10 @@
               </div>
               <div class="ccard-body" id="submit">
                 <p>
-                  Full-length papers relating to all three research tracks are
-                  invited. Only <strong>original research articles</strong> will
-                  be accepted for publication. SS-MOM attracts submissions from
-                  researchers worldwide.
+                  Full-length papers relating to smart and sustainable manufacturing, 
+                  operations and materials tracks are invited to this conference. Only 
+                  <strong>original research articles</strong> will be accepted for publication. 
+                  The SS-MOM attracts submissions from different countries worldwide.
                 </p>
                 <div class="steps-row" id="review">
                   <div class="step-item">
@@ -2369,8 +582,8 @@
                         margin-top: 3px;
                       "
                     >
-                      Dr. Ajay &nbsp;|&nbsp; +91 9467717120 &nbsp;|&nbsp;
-                      Deadline: April 25, 2026
+                      Prof. Ajay &nbsp;|&nbsp; +91 9467717120 &nbsp;|&nbsp;
+                      Deadline: August 25, 2026
                     </div>
                   </div>
                   <a href="mailto:ajay@jaipur.manipal.edu" class="btn btn-amber"
@@ -2380,7 +593,6 @@
               </div>
             </div>
 
-            <!-- WHO CAN PARTICIPATE -->
             <div class="ccard rev" style="margin-bottom: 0">
               <div class="ccard-head" style="background: var(--teal2)">
                 <div class="ccard-icon">W</div>
@@ -2389,8 +601,8 @@
               <div class="ccard-body">
                 <p style="margin-bottom: 18px">
                   Professionals, academicians, researchers, engineers, and IT
-                  specialists working in industries, SMEs, government agencies,
-                  universities, and colleges.
+                  specialists working in industries, small &amp; medium-sized 
+                  enterprises (SMEs), government agencies, universities, and colleges.
                 </p>
                 <div class="who-grid">
                   <div class="who-card">
@@ -2417,10 +629,16 @@
                 </div>
               </div>
             </div>
+            <div class="ccard rev" style="margin-bottom: 0;margin-top: 2rem;">
+              <div class="ccard-head" style="background: var(--teal2)">
+                <div class="ccard-icon">W</div>
+                <h3>Manipal University Jaipur</h3>
+              </div>
+              <div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5474.238374266749!2d75.5652343!3d26.8438552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4850e05bee9b%3A0x1b8d67402d4eb863!2sManipal%20University%20Jaipur!5e1!3m2!1sen!2sin!4v1779041167435!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            </div>
           </div>
-          <!-- end main col -->
-
-          <!-- SIDEBAR -->
           <div>
             <div class="widget rev">
               <div class="w-head teal">
@@ -2481,7 +699,7 @@
                   <li><a href="#tracks">Call for Papers</a></li>
                   <li><a href="#dates">Important Dates</a></li>
                   <li><a href="#committee">Organizing Committee</a></li>
-                  <li><a href="#venue">Venue &amp; Travel Info</a></li>
+                  <li><a href="https://maps.app.goo.gl/8AR5DtM85iN7j6Bg8">Venue &amp; Travel Info</a></li>
                   <li><a href="#contact">Contact Organizers</a></li>
                 </ul>
               </div>
@@ -2495,19 +713,19 @@
               <div class="w-body" style="padding: 12px 16px">
                 <div class="date-widget-item">
                   <div class="dwi-ev">Full Paper Submission</div>
-                  <div class="dwi-dt">April 25, 2026</div>
+                  <div class="dwi-dt">August 25, 2026</div>
                 </div>
                 <div class="date-widget-item">
                   <div class="dwi-ev">Acceptance Notification</div>
-                  <div class="dwi-dt">June 15, 2026</div>
+                  <div class="dwi-dt">September 15, 2026</div>
                 </div>
                 <div class="date-widget-item">
                   <div class="dwi-ev">Early Bird Registration</div>
-                  <div class="dwi-dt">June 25, 2026</div>
+                  <div class="dwi-dt">September 25, 2026</div>
                 </div>
                 <div class="date-widget-item">
                   <div class="dwi-ev">Last Registration</div>
-                  <div class="dwi-dt">July 15, 2026</div>
+                  <div class="dwi-dt">October 15, 2026</div>
                 </div>
                 <div
                   class="date-widget-item"
@@ -2538,20 +756,21 @@
               </div>
               <img
                 class="w-img"
-                src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&q=80&fit=crop"
+                src="./images/manipal-uni.jpg"
                 alt="MUJ Campus"
               />
               <div class="w-body">
                 <p>
-                  <strong>Dept. of Mechanical Engineering</strong><br />Manipal
-                  University Jaipur<br />Dehmi Kalan, Off Jaipur–Ajmer
+                  <strong>Dept. of Mechanical Engineering</strong><br /> <a href="https://maps.app.goo.gl/8AR5DtM85iN7j6Bg8" style="text-decoration: underline;">Manipal
+                  University Jaipur</a><br />Dehmi Kalan, Off Jaipur–Ajmer
                   Expressway<br />Jaipur, Rajasthan — 303007
                 </p>
                 <p style="margin-top: 12px; font-size: 12.5px">
                   <strong style="font-size: 12px; color: var(--txt3)"
-                    >Co-Organisers (Proposed):</strong
-                  ><br />BITS-Pilani, Dubai Campus<br />NIT Agartala
-                  &nbsp;·&nbsp; MNIT Jaipur
+                    >In Association With:</strong
+                  ><br />BITS-Pilani Dubai<br />VSB-TU Ostrava
+                  &nbsp;·&nbsp; NIT Agartala
+                  &nbsp;·&nbsp; NIT Raipur
                 </p>
               </div>
             </div>
@@ -2564,7 +783,7 @@
               <div class="w-body">
                 <ul class="wlist">
                   <li>
-                    <strong>Dr. Ajay</strong> — Conference Chair &amp; Convener
+                    <strong>Prof. Ajay</strong> — Conference Chair &amp; Convener
                   </li>
                   <li>+91 9467717120</li>
                   <li>
@@ -2607,12 +826,10 @@
               </div>
             </div>
           </div>
-          <!-- end sidebar -->
-        </div>
+          </div>
       </div>
     </div>
 
-    <!-- BENEFITS STRIP -->
     <div class="section section-navy">
       <div class="wrap">
         <div class="section-hdr center rev">
@@ -2666,598 +883,6 @@
       </div>
     </div>
 
-    <!-- COMMITTEE -->
-    <div id="committee" class="section section-white">
-      <div class="wrap">
-        <div class="section-hdr rev">
-          <div class="sec-eyebrow">Organizing Team</div>
-          <h2 class="sec-title">Organizing <em>Committee</em></h2>
-          <div class="divider"></div>
-          <p class="sec-sub" style="max-width: 600px">
-            Distinguished academicians, researchers, and industry professionals
-            guiding SS-MOM 2027.
-          </p>
-        </div>
-        <div class="comm-tabs rev">
-          <button class="ctab on" onclick="showComm('org', this)">
-            Organizing
-          </button>
-          <button class="ctab" onclick="showComm('intl', this)">
-            International Advisory
-          </button>
-          <button class="ctab" onclick="showComm('natl', this)">
-            National Advisory
-          </button>
-          <button class="ctab" onclick="showComm('intrnl', this)">
-            Internal Advisory
-          </button>
-          <button class="ctab" onclick="showComm('ind', this)">
-            Industry Advisory
-          </button>
-          <button class="ctab" onclick="showComm('peer', this)">
-            Peer Review
-          </button>
-        </div>
-
-        <div id="c-org" class="cpanel on">
-          <div class="cgroup">
-            <div class="cg-label">Chief Patron</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Shri S Vaitheeswaran</div>
-                <div class="cm-inst">
-                  Chairperson, Manipal University Jaipur, India
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Patrons</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. N N Sharma</div>
-                <div class="cm-inst">President, Manipal University Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Souri Banerjee</div>
-                <div class="cm-inst">
-                  Director, BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Co-Patrons</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Karunakar A Kotegar</div>
-                <div class="cm-inst">Pro-President, MUJ</div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Amit Soni</div>
-                <div class="cm-inst">Registrar, MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Nitu Bhatnagar</div>
-                <div class="cm-inst">Pro-Vost, MUJ</div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Honorary &amp; General Chairs</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Ravi Kant Mittal</div>
-                <div class="cm-inst">
-                  Honorary Chair — Retired Professor, BITS Pilani
-                </div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Kuldip Singh Sangwan</div>
-                <div class="cm-inst">
-                  General Chair — Dean, Faculty of S&amp;T, MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. R K Gupta</div>
-                <div class="cm-inst">
-                  General Co-Chair — Associate Dean, Engineering, MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Raviraja Adhikari</div>
-                <div class="cm-inst">
-                  General Co-Chair — Head, ME Dept., MUJ
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Conference Chair &amp; Conveners</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ajay</div>
-                <div class="cm-inst">
-                  Conference Chair &amp; Convener — Professor, ME Dept., MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Gulshan Kumar</div>
-                <div class="cm-inst">
-                  Conference Chair — BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Dhaneshwar Mishra</div>
-                <div class="cm-inst">
-                  Convener — Associate Professor (Sr. Scale), ME Dept., MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vinod Yadav</div>
-                <div class="cm-inst">
-                  Convener — Assistant Professor (SG), ME Dept., MUJ
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Core Organizing Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vimal Pathak</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ramanpreet Singh</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashish Kumar Srivastava</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashish Goyal</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Krishna Kant Pandey</div>
-                <div class="cm-inst">Mechatronics Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Dalip Singh Shekhawat</div>
-                <div class="cm-inst">Mechatronics Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vaibhav Srivastava</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Biswesh Ranjan Acharya</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashu Yadav</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Rakesh Kumar</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Dharmesh Yadav</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vishal Kadian</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Upendra Kulshrestha</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Harpreet Singh Bedi</div>
-                <div class="cm-inst">
-                  ME Dept., BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Sunil Kumar</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-intl" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">International Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Prof. Y. Eugene Pak</div>
-                <div class="cm-inst">
-                  Dean (International Collaboration), SUNY Korea
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Yongho Jeon</div>
-                <div class="cm-inst">
-                  Dept. of ME, Ajou University, South Korea
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Yang Liu</div>
-                <div class="cm-inst">
-                  Senior Associate Professor, Linköping University, Sweden
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Vijayakumar B.</div>
-                <div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Hansraj Bangar</div>
-                <div class="cm-inst">Scientist, Amazon, Ohio, USA</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Santosh Kumar</div>
-                <div class="cm-inst">
-                  Research Professor, Konkuk University, Seoul, South Korea
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Periasamy C.</div>
-                <div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Deepak Dahiya</div>
-                <div class="cm-inst">
-                  Professor, Majmaah University, Saudi Arabia
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Surbhi Bhatia</div>
-                <div class="cm-inst">King Faisal University, Saudi Arabia</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Udayakumar R</div>
-                <div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sumit Chakrabarty</div>
-                <div class="cm-inst">Kennesaw State University, USA</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mehedi Masud</div>
-                <div class="cm-inst">
-                  Professor, Taif University, Saudi Arabia
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sumit Sakhuja</div>
-                <div class="cm-inst">
-                  Higher Colleges of Technology, Abu Dhabi, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Malkeshkumar Patel</div>
-                <div class="cm-inst">
-                  Incheon National University, South Korea
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-natl" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">National Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Prof. Indra Vir Singh</div>
-                <div class="cm-inst">IIT Roorkee</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. R K Mittal</div>
-                <div class="cm-inst">
-                  Senior Professor (Ex.), BITS Pilani, Rajasthan
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Abid Haleem</div>
-                <div class="cm-inst">Jamia Millia Islamia, New Delhi</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Pradeep Kumar</div>
-                <div class="cm-inst">IIT Roorkee</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Shatendra K. Sharma</div>
-                <div class="cm-inst">
-                  Jawaharlal Nehru University, New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Hari Singh</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Puneet Tandon</div>
-                <div class="cm-inst">IIITDM Jabalpur, Madhya Pradesh</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Morapakala Srinivas</div>
-                <div class="cm-inst">BITS Pilani, Hyderabad Campus</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Bijay Kumar Rout</div>
-                <div class="cm-inst">BITS Pilani, Pilani Campus</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Sandeep Grover</div>
-                <div class="cm-inst">J.C. Bose University, YMCA, Faridabad</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Rakesh Jain</div>
-                <div class="cm-inst">Malaviya NIT Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Gunjan Soni</div>
-                <div class="cm-inst">Malaviya NIT Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Anil Kumar</div>
-                <div class="cm-inst">
-                  Delhi Technological University, New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Milind Kumar Sharma</div>
-                <div class="cm-inst">MBM University, Jodhpur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Om Ji Shukla</div>
-                <div class="cm-inst">NIT Patna</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Basab Nath</div>
-                <div class="cm-inst">Bennett University, Greater Noida</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-intrnl" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">Internal Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ravi Kumar Sharma</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashok Kumar Sharma</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Subrata Bandhu Ghosh</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sanchita Bandyopadhyay Ghosh</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Anand Pandey</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Rahul Goyal</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Santosh Patil</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Ramachandran S.</div>
-                <div class="cm-inst">
-                  Associate Dean, BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vincent Shantha Kumar</div>
-                <div class="cm-inst">
-                  ME Dept., BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-ind" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">Industry Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Mr. Khushpal Singh</div>
-                <div class="cm-inst">Director, Geo Solutions, Gurugram</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Meenal Borkar</div>
-                <div class="cm-inst">
-                  Technical Trainer (Data &amp; ML), Google Cloud Platform
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Kulbir</div>
-                <div class="cm-inst">
-                  Principal Member of Technical Staff, Oracle, Gurugram
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Ms. Seema Pannu</div>
-                <div class="cm-inst">
-                  Associate Consultant, Tata Consultancy Services
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sachin Maheshwari</div>
-                <div class="cm-inst">
-                  General Manager HR, Sage Metals Ltd., New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Rakesh Kumar</div>
-                <div class="cm-inst">
-                  Business Head, Sigma Engineering Solution, Jaipur
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Amit Soman</div>
-                <div class="cm-inst">
-                  Managing Partner, AR2 Holding, Michigan, USA
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">John Pitsowaki</div>
-                <div class="cm-inst">
-                  Regional Director, Shaw Development, Indianapolis, USA
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. (Hc) Navnath Ganpat Tarle</div>
-                <div class="cm-inst">
-                  COO &amp; EVP, Global Autotech Ltd., Pune
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ganesh Tanpure</div>
-                <div class="cm-inst">
-                  Tech Lead, Boston Scientific, Gurugram
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Manoj Meshram</div>
-                <div class="cm-inst">
-                  Chairman, Quality Circle Forum of India, Jaipur
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Rajesh Goel</div>
-                <div class="cm-inst">
-                  Vice President, India Operations, Sage Metals Ltd.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-peer" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">Peer Review Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Hadeel Alsolai</div>
-                <div class="cm-inst">
-                  Princess Nourah Bint Abdulrahman University, Saudi Arabia
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mahmoud Othman</div>
-                <div class="cm-inst">Future University in Egypt</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vikas Mittal</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sandeep Rathee</div>
-                <div class="cm-inst">NIT Srinagar, J&amp;K</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vikash Kumar</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mohmad Javaid</div>
-                <div class="cm-inst">Jamia Millia Islamia, New Delhi</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Neeraj Mehla</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Puneet Katyal</div>
-                <div class="cm-inst">Guru Jambheshwar University, Hisar</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Nripendra Narayan Das</div>
-                <div class="cm-inst">Manipal University Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Naveen Sharma</div>
-                <div class="cm-inst">
-                  Netaji Subhash Institute of Technology, New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mukesh Kumar Sahu</div>
-                <div class="cm-inst">
-                  Cambridge Institute of Technology, Ranchi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Harish Kumar Banga</div>
-                <div class="cm-inst">
-                  Guru Nanak Dev Engineering College, Ludhiana
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Yugal Kumar</div>
-                <div class="cm-inst">
-                  Jaypee University of Information Technology
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mamta Mittal</div>
-                <div class="cm-inst">
-                  G.B. Pant Government Engineering College, Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Jyotsna Sharma</div>
-                <div class="cm-inst">Amity University Manesar, Gurgaon</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sachin Gupta</div>
-                <div class="cm-inst">Mohanlal Sukhadia University, Udaipur</div>
-              </div>
-            </div>
-          </div>
-          <div class="comm-cta">
-            <p>
-              Qualified researchers and academics are invited to join the Peer
-              Review Committee. Fill out the Google Form to express your
-              interest in serving as a reviewer.
-            </p>
-            <a
-              href="https://forms.gle/HneEUNqLh74J6a5H9"
-              target="_blank"
-              class="btn btn-blue"
-              >Apply via Google Form</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- VENUE -->
     <div id="venue" class="section section-alt">
       <div class="wrap">
         <div class="section-hdr rev">
@@ -3284,7 +909,7 @@
               </div>
               <div>
                 <img
-                  src="./images/hawa-mehel.webp"
+                  src="./images/nahargarh-fort.jpg"
                   alt="Conference Room"
                 />
               </div>
@@ -3414,7 +1039,6 @@
       </div>
     </div>
 
-    <!-- CTA -->
     <div id="contact" class="cta-section">
       <div class="wrap">
         <div class="cta-inner">
@@ -3443,7 +1067,7 @@
           <div class="cta-cards rev d2">
             <div class="cta-card">
               <div class="cta-card-lbl">Conference Chair</div>
-              <div class="cta-card-val">Dr. Ajay</div>
+              <div class="cta-card-val">Prof. Ajay</div>
               <div class="cta-card-sub">Professor, ME Dept., MUJ</div>
             </div>
             <div class="cta-card">
@@ -3457,12 +1081,12 @@
               </div>
             </div>
             <div class="cta-card">
-              <div class="cta-card-lbl">Co-Organisers (Proposed)</div>
+              <div class="cta-card-lbl">In Association With</div>
               <div
                 class="cta-card-val"
                 style="font-size: 13px; line-height: 1.7"
               >
-                BITS-Pilani Dubai · NIT Agartala · MNIT Jaipur
+                BITS-Pilani Dubai · VSB-TU Ostrava · NIT Agartala · NIT Raipur
               </div>
             </div>
           </div>
@@ -3470,7 +1094,6 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="wrap">
         <div class="footer-grid">
@@ -3499,7 +1122,7 @@
               <li><a href="#dates">Important Dates</a></li>
               <li><a href="#submit">For Authors</a></li>
               <li><a href="#committee">Committee</a></li>
-              <li><a href="#venue">Venue</a></li>
+              <li><a href="https://maps.app.goo.gl/8AR5DtM85iN7j6Bg8">Venue</a></li>
             </ul>
           </div>
           <div>
@@ -3512,8 +1135,8 @@
             </ul>
             <h5 style="margin-top: 20px">Dates</h5>
             <ul>
-              <li><a href="#dates">Submission: Apr 25, 2026</a></li>
-              <li><a href="#dates">Acceptance: Jun 15, 2026</a></li>
+              <li><a href="#dates">Submission: Aug 25, 2026</a></li>
+              <li><a href="#dates">Acceptance: Sep 15, 2026</a></li>
               <li><a href="#dates">Conference: Feb 04–05, 2027</a></li>
             </ul>
           </div>
@@ -3537,7 +1160,7 @@
                 line-height: 1.9;
               "
             >
-              Dr. Ajay (Conference Chair)<br />+91 9467717120<br />ajay@jaipur.manipal.edu
+              Prof. Ajay (Conference Chair)<br />+91 9467717120<br />ajay@jaipur.manipal.edu
             </p>
           </div>
         </div>
@@ -3559,104 +1182,6 @@
       &#8679;
     </button>
 
-    <script>
-      /* Countdown */
-      (function tick() {
-        const t = new Date("2026-04-25T23:59:59"),
-          n = new Date(),
-          d = t - n;
-        const p = (x) => String(Math.max(0, x)).padStart(2, "0");
-        if (d > 0) {
-          document.getElementById("cd-d").textContent = p(
-            Math.floor(d / 86400000),
-          );
-          document.getElementById("cd-h").textContent = p(
-            Math.floor((d % 86400000) / 3600000),
-          );
-          document.getElementById("cd-m").textContent = p(
-            Math.floor((d % 3600000) / 60000),
-          );
-          document.getElementById("cd-s").textContent = p(
-            Math.floor((d % 60000) / 1000),
-          );
-        }
-        setTimeout(tick, 1000);
-      })();
-
-      /* Back to top */
-      window.addEventListener("scroll", () =>
-        document.getElementById("btt").classList.toggle("show", scrollY > 500),
-      );
-
-      /* Mobile drawer */
-      function openDrawer() {
-        document.getElementById("mobileDrawer").classList.add("open");
-        document.getElementById("drawerOverlay").classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-      function closeDrawer() {
-        document.getElementById("mobileDrawer").classList.remove("open");
-        document.getElementById("drawerOverlay").classList.remove("open");
-        document.body.style.overflow = "";
-      }
-
-      /* Track tabs */
-      function showTrack(id, btn) {
-        document
-          .querySelectorAll(".tpanel")
-          .forEach((p) => p.classList.remove("on"));
-        document
-          .querySelectorAll(".ttab")
-          .forEach((b) => b.classList.remove("on"));
-        document.getElementById("tp-" + id).classList.add("on");
-        btn.classList.add("on");
-      }
-
-      /* Committee tabs */
-      function showComm(id, btn) {
-        document
-          .querySelectorAll(".cpanel")
-          .forEach((p) => p.classList.remove("on"));
-        document
-          .querySelectorAll(".ctab")
-          .forEach((b) => b.classList.remove("on"));
-        document.getElementById("c-" + id).classList.add("on");
-        btn.classList.add("on");
-      }
-
-      /* Scroll reveal */
-      const io = new IntersectionObserver(
-        (es) =>
-          es.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("in");
-              io.unobserve(e.target);
-            }
-          }),
-        { threshold: 0.07 },
-      );
-      document.querySelectorAll(".rev").forEach((el) => io.observe(el));
-    </script>
   </body>
-</html>
-<script>
-/* Nav scroll shadow */
-window.addEventListener('scroll',()=>document.getElementById('Nav').classList.toggle('scrolled',scrollY>20));
-
-/* Hamburger */
-function toggleNav(){document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'';}
-
-/* Tabs */
-function tab(name,btn){
-  document.querySelectorAll('.cpanel').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('on'));
-  document.getElementById('p-'+name).classList.add('on');
-  btn.classList.add('on');
-}
-
-/* Scroll reveal */
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('shown');obs.unobserve(e.target);}}),{threshold:0.08});
-document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
-</script>
-</body>
+  <script src="./app.js"></script>
 </html>
