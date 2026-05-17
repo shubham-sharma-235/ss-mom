@@ -551,11 +551,11 @@ ul {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("./images/manipal-image-one.jpeg");
+  background-image: url("./images/manipal-uni.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.32;
-  filter: grayscale(50%);
+  opacity: 0.25;
+  filter: grayscale(40%);
 }
 .hero-grid-pattern {
   position: absolute;
@@ -631,7 +631,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.17);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--r2);
   overflow: hidden;
@@ -645,13 +645,13 @@ ul {
   font-size: 10.5px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgb(255, 255, 255);
   margin-bottom: 4px;
 }
 .hf-val {
   font-size: 14px;
   font-weight: 700;
-  color: white;
+  color: rgb(211, 210, 210);
 }
 .hero-btns {
   display: flex;
@@ -871,7 +871,7 @@ ul {
 }
 .about-img img {
   width: 100%;
-  height: 300px;
+  height: 300px!important;
   object-fit: cover;
   border-radius: var(--r2);
 }
