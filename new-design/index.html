@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SS-MOM 2027 | International Conference</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --primary:#0f2740;
+  --secondary:#8b3c3c;
+  --accent:#174f6a;
+  --light:#f8f7f4;
+  --white:#ffffff;
+  --text:#222831;
+  --muted:#667085;
+  --border:#e7e7e7;
+  --shadow:0 8px 28px rgba(0,0,0,0.06);
+  --radius:16px;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',serif;
+}
+
+.container{
+  width:90%;
+  max-width:1280px;
+  margin:auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+  padding:90px 0;
+}
+
+.topbar{
+  background:var(--primary);
+  color:#fff;
+  padding:10px 0;
+  font-size:13px;
+}
+
+.topbar-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+  transition:.4s;
+}
+
+header.scrolled{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  box-shadow:0 2px 20px rgba(0,0,0,.08);
+}
+
+nav{
+  padding:18px 0;
+}
+
+.nav-wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav-links a{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text);
+}
+
+.btn{
+  padding:13px 24px;
+  border-radius:40px;
+  border:none;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(rgba(248,247,244,.92),rgba(248,247,244,.65)),
+  url('https://ss-mom.netlify.app/images/manipal-uni.jpg') center/cover;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero-content span{
+  color:var(--secondary);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.hero-content h1{
+  font-size:74px;
+  line-height:1;
+  margin:22px 0;
+  color:var(--primary);
+}
+
+.hero-content p{
+  color:var(--muted);
+  max-width:650px;
+  margin-bottom:30px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.glass-card{
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(14px);
+  border-radius:var(--radius);
+  padding:32px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.5);
+}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:24px;
+}
+
+.count-box{
+  background:#fff;
+  padding:16px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.count-box h3{
+  font-size:28px;
+  color:var(--primary);
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-title span{
+  color:var(--secondary);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.section-title h2{
+  font-size:52px;
+  color:var(--primary);
+  margin-top:10px;
+}
+
+.section-title p{
+  max-width:760px;
+  margin:14px auto 0;
+  color:var(--muted);
+}
+
+.about-grid,
+.venue-grid,
+.publication-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.about-image,
+.hero-visual,
+.venue-image{
+  position:relative;
+}
+
+.about-image img,
+.venue-grid img{
+  width:100%;
+  max-width:520px;
+  height:420px;
+  object-fit:cover;
+  border-radius:22px;
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+  position:relative;
+  z-index:2;
+}
+
+.about-image::before,
+.venue-image::before{
+  content:'';
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:linear-gradient(135deg,#dbe9f4,#f5dfdf);
+  border-radius:30px;
+  top:-25px;
+  left:-25px;
+  z-index:1;
+}
+
+.about-image::after,
+.venue-image::after{
+  content:'';
+  position:absolute;
+  width:120px;
+  height:120px;
+  border:2px dashed rgba(15,39,64,.15);
+  border-radius:50%;
+  bottom:-20px;
+  right:30px;
+  z-index:1;
+}
+
+.stats-grid,
+.track-grid,
+.committee-grid,
+.publication-cards,
+.benefits-grid,
+.sponsor-grid,
+.dates-grid{
+  display:grid;
+  gap:20px;
+}
+
+.stats-grid{
+  grid-template-columns:repeat(4,1fr);
+  margin-top:30px;
+}
+
+.stat-card,
+.track-card,
+.committee-card,
+.publication-card,
+.benefit-card,
+.date-card,
+.sponsor-card{
+  background:#fff;
+  padding:24px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
+
+.stat-card:hover,
+.track-card:hover,
+.committee-card:hover,
+.publication-card:hover,
+.benefit-card:hover,
+.date-card:hover{
+  transform:translateY(-5px);
+}
+
+.stat-card h3{
+  font-size:38px;
+  color:var(--primary);
+}
+
+.track-grid,
+.committee-grid,
+.publication-cards,
+.benefits-grid,
+.sponsor-grid,
+.dates-grid{
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+
+.track-card h3,
+.committee-card h3,
+.publication-card h3,
+.benefit-card h3,
+.date-card h3{
+  font-size:28px;
+  margin-bottom:12px;
+  color:var(--primary);
+}
+
+.track-card ul{
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.track-card ul li{
+  margin-bottom:8px;
+}
+
+.faq-item{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:16px;
+  box-shadow:var(--shadow);
+}
+
+.faq-question{
+  padding:22px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:.4s;
+  padding:0 24px;
+  color:var(--muted);
+}
+
+.faq-item.active .faq-answer{
+  max-height:180px;
+  padding:0 24px 22px;
+}
+
+footer{
+  background:var(--primary);
+  color:#fff;
+  padding-top:90px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.5fr;
+  gap:35px;
+}
+
+footer h3{
+  margin-bottom:18px;
+  font-size:28px;
+}
+
+footer ul{
+  list-style:none;
+}
+
+footer ul li{
+  margin-bottom:10px;
+  color:#d7d7d7;
+}
+
+.newsletter{
+  display:flex;
+  margin-top:16px;
+}
+
+.newsletter input{
+  flex:1;
+  border:none;
+  padding:14px;
+  outline:none;
+}
+
+.newsletter button{
+  border:none;
+  background:var(--secondary);
+  color:#fff;
+  padding:14px 18px;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:50px;
+  padding:20px 0;
+  text-align:center;
+  color:#ccc;
+  font-size:14px;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.floating-image img{
+  animation:floatImage 6s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+@media(max-width:992px){
+
+  .hero-grid,
+  .about-grid,
+  .venue-grid,
+  .publication-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero-content h1{
+    font-size:54px;
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  section{
+    padding:70px 0;
+  }
+
+  .hero-content h1{
+    font-size:42px;
+  }
+
+  .section-title h2{
+    font-size:38px;
+  }
+
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- <div class="topbar">
+  <div class="container topbar-content">
+    <div>1st International Conference on Smart & Sustainable Manufacturing, Operations and Materials</div>
+    <div>ssmom2027@gmail.com | +91 94677 17120</div>
+  </div>
+</div> -->
+
+<header id="header">
+  <nav>
+    <div class="container nav-wrap">
+      <a href="#" class="logo">SS-MOM 2027</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#committee">Committee</a>
+        <a href="#publication">Publication</a>
+        <a href="#venue">Venue</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="btn btn-primary" style="color: #fff;">Register</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-content reveal">
+      <span>Manipal University Jaipur | Hybrid Conference 2027</span>
+
+      <h1>
+        Smart & Sustainable Manufacturing, Operations and Materials
+      </h1>
+
+      <p>
+        An international platform bringing together researchers, academicians, scientists, industry leaders, and innovators to discuss advanced developments in Industry 4.0/5.0, AI-driven manufacturing, digital twins, sustainable operations, and smart materials.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Submit Paper</a>
+        <a href="#" class="btn btn-light">Download Brochure</a>
+      </div>
+    </div>
+
+    <div class="glass-card reveal">
+      <h3 style="font-size:44px;color:var(--primary);margin-bottom:12px;">
+        Conference Highlights
+      </h3>
+
+      <p style="color:var(--muted);margin-bottom:24px;">
+        February 04–05, 2027 | Jaipur, Rajasthan | Hybrid Mode
+      </p>
+
+      <div class="countdown">
+
+        <div class="count-box">
+          <h3 id="days">120</h3>
+          <p>Days</p>
+        </div>
+
+        <div class="count-box">
+          <h3 id="hours">10</h3>
+          <p>Hours</p>
+        </div>
+
+        <div class="count-box">
+          <h3 id="minutes">40</h3>
+          <p>Minutes</p>
+        </div>
+
+        <div class="count-box">
+          <h3 id="seconds">22</h3>
+          <p>Seconds</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span>About Conference</span>
+      <h2>Global Research Collaboration Platform</h2>
+      <p>
+        SS-MOM 2027 focuses on emerging smart manufacturing technologies, sustainable industrial systems, advanced materials, AI/ML integration, digital twins, Industry 4.0/5.0, and interdisciplinary engineering innovations.
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-image reveal floating-image">
+        <img src="../images/manipal-image-one.jpeg">
+      </div>
+
+      <div class="reveal">
+
+        <h2 style="font-size:40px;color:var(--primary);margin-bottom:22px;">
+          About Manipal University Jaipur
+        </h2>
+
+        <p style="color:var(--muted);margin-bottom:18px;">
+          Manipal University Jaipur is one of India's leading multidisciplinary universities with world-class infrastructure, research facilities, innovation centers, and academic excellence inspired by the globally recognized Manipal legacy.
+        </p>
+
+        <p style="color:var(--muted);">
+          The Department of Mechanical Engineering actively promotes cutting-edge research in manufacturing, smart systems, sustainability, advanced materials, robotics, automation, and industrial engineering.
+        </p>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <h3>35+</h3>
+            <p>Countries Participating</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>300+</h3>
+            <p>Research Papers</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>50+</h3>
+            <p>International Experts</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>25+</h3>
+            <p>Research Sessions</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="tracks" style="background:#f1f3f5;">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span>Conference Tracks</span>
+      <h2>Research Areas & Technical Sessions</h2>
+    </div>
+
+    <div class="track-grid">
+
+      <div class="track-card reveal">
+        <h3>Smart & Sustainable Manufacturing</h3>
+
+        <ul>
+          <li>Industry 4.0 & Digital Manufacturing</li>
+          <li>AI/ML Driven Process Optimization</li>
+          <li>Additive Manufacturing</li>
+          <li>Digital Twin Systems</li>
+          <li>Robotics & Automation</li>
+          <li>Cyber Physical Manufacturing Systems</li>
+        </ul>
+      </div>
+
+      <div class="track-card reveal">
+        <h3>Operations & Industrial Engineering</h3>
+
+        <ul>
+          <li>Supply Chain Optimization</li>
+          <li>Lean & Agile Operations</li>
+          <li>Industrial IoT Systems</li>
+          <li>Predictive Maintenance</li>
+          <li>Smart Factory Analytics</li>
+          <li>Sustainable Operations</li>
+        </ul>
+      </div>
+
+      <div class="track-card reveal">
+        <h3>Smart & Sustainable Materials</h3>
+
+        <ul>
+          <li>Nanomaterials & Composites</li>
+          <li>Smart Materials</li>
+          <li>Bio-inspired Materials</li>
+          <li>Advanced Ceramics</li>
+          <li>Materials Informatics</li>
+          <li>Functional Coatings</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span>Important Dates</span>
+      <h2>Conference Timeline</h2>
+    </div>
+
+    <div class="dates-grid">
+
+      <div class="date-card reveal">
+        <h3>Paper Submission</h3>
+        <p>August 25, 2026</p>
+      </div>
+
+      <div class="date-card reveal">
+        <h3>Acceptance Notification</h3>
+        <p>September 15, 2026</p>
+      </div>
+
+      <div class="date-card reveal">
+        <h3>Early Bird Registration</h3>
+        <p>September 25, 2026</p>
+      </div>
+
+      <div class="date-card reveal">
+        <h3>Conference Dates</h3>
+        <p>February 04–05, 2027</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="publication" style="background:#f1f3f5;">
+  <div class="container publication-grid">
+
+    <div class="reveal">
+      <h2 style="font-size:58px;color:var(--primary);margin-bottom:24px;">
+        Publication Opportunities
+      </h2>
+
+      <p style="color:var(--muted);margin-bottom:20px;">
+        Accepted and presented papers will be considered for publication in reputed Scopus-indexed proceedings and high-impact international journals subject to review criteria.
+      </p>
+
+      <a href="#" class="btn btn-primary">Submission Guidelines</a>
+    </div>
+
+    <div class="publication-cards">
+
+      <div class="publication-card reveal">
+        <h3>Scopus Indexed</h3>
+        <p>International proceedings with global visibility and indexing opportunities.</p>
+      </div>
+
+      <div class="publication-card reveal">
+        <h3>Peer Review</h3>
+        <p>Rigorous international peer-review process ensuring research quality.</p>
+      </div>
+
+      <div class="publication-card reveal">
+        <h3>Industry Collaboration</h3>
+        <p>Strong academic and industrial networking opportunities for researchers.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span>Why Attend</span>
+      <h2>Conference Benefits</h2>
+    </div>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card reveal">
+        <h3>Global Networking</h3>
+        <p>Connect with researchers, journal editors, professors, and industry experts worldwide.</p>
+      </div>
+
+      <div class="benefit-card reveal">
+        <h3>Advanced Workshops</h3>
+        <p>Participate in AI/ML, Digital Twin, Industry 5.0, and smart manufacturing tutorials.</p>
+      </div>
+
+      <div class="benefit-card reveal">
+        <h3>Research Collaboration</h3>
+        <p>Explore interdisciplinary collaborations and future research partnerships.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="committee" style="background:#f1f3f5;">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span>Organizing Committee</span>
+      <h2>Conference Leadership</h2>
+    </div>
+
+    <div class="committee-grid">
+
+      <div class="committee-card reveal">
+        <h3>Chief Patron</h3>
+        <p>Shri S Vaitheeswaran<br>Chairperson, Manipal University Jaipur</p>
+      </div>
+
+      <div class="committee-card reveal">
+        <h3>General Chairs</h3>
+        <p>Prof. Kuldip Singh Sangwan<br>Prof. Robert Cep<br>Dr. Guru Prasad S.C. Mishra</p>
+      </div>
+
+      <div class="committee-card reveal">
+        <h3>Conveners</h3>
+        <p>Prof. Ajay<br>Dr. Gulshan Kumar<br>Dr. Dhaneshwar Mishra</p>
+      </div>
+
+      <div class="committee-card reveal">
+        <h3>International Advisory</h3>
+        <p>Experts from USA, UK, Portugal, Korea, Greece, Poland, Saudi Arabia and more.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="venue">
+  <div class="container venue-grid">
+
+    <div class="reveal">
+
+      <h2 style="font-size:58px;color:var(--primary);margin-bottom:22px;">
+        Experience Jaipur – The Pink City
+      </h2>
+
+      <p style="color:var(--muted);margin-bottom:18px;">
+        Jaipur offers a unique blend of royal heritage, architecture, culture, and modern infrastructure. The city is globally recognized for landmarks such as Amber Fort, Hawa Mahal, Jal Mahal, City Palace, and vibrant local markets.
+      </p>
+
+      <p style="color:var(--muted);margin-bottom:24px;">
+        February provides ideal weather conditions for sightseeing, networking, and enjoying Rajasthan's cultural richness.
+      </p>
+
+      <a href="#" class="btn btn-primary">Travel Information</a>
+
+    </div>
+
+    <div class="venue-image reveal">
+      <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop">
+    </div>
+
+  </div>
+</section>
+
+<section style="background:#f1f3f5;">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span>Partners</span>
+      <h2>Collaborating Institutions</h2>
+    </div>
+
+    <div class="sponsor-grid">
+
+      <div class="sponsor-card reveal">BITS Pilani Dubai</div>
+      <div class="sponsor-card reveal">VSB-TUO Czechia</div>
+      <div class="sponsor-card reveal">NIT Agartala</div>
+      <div class="sponsor-card reveal">NIT Raipur</div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span>FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span>Will accepted papers be indexed?</span>
+        <span>+</span>
+      </div>
+
+      <div class="faq-answer">
+        Accepted and presented papers will be considered for Scopus indexed proceedings and reputed journals.
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span>Is hybrid participation available?</span>
+        <span>+</span>
+      </div>
+
+      <div class="faq-answer">
+        Yes. Participants may present and attend sessions both physically and virtually.
+      </div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span>Who can participate?</span>
+        <span>+</span>
+      </div>
+
+      <div class="faq-answer">
+        Researchers, academicians, students, industry experts, engineers, and professionals are invited.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>SS-MOM 2027</h3>
+
+        <p style="color:#d5d5d5;">
+          International Conference on Smart & Sustainable Manufacturing, Operations and Materials.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li>About</li>
+          <li>Tracks</li>
+          <li>Publication</li>
+          <li>Committee</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+
+        <ul>
+          <li>Manipal University Jaipur</li>
+          <li>ssmom2027@gmail.com</li>
+          <li>+91 94677 17120</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Newsletter</h3>
+
+        <p style="color:#d5d5d5;">
+          Subscribe for conference announcements and updates.
+        </p>
+
+        <div class="newsletter">
+          <input type="email" placeholder="Your Email">
+          <button>Join</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2027 SS-MOM Conference | All Rights Reserved.
+    </div>
+
+  </div>
+</footer>
+
+<script>
+
+  window.addEventListener('scroll',function(){
+    const header=document.getElementById('header');
+    header.classList.toggle('scrolled',window.scrollY>50);
+  });
+
+  const reveals=document.querySelectorAll('.reveal');
+
+  function revealFunction(){
+
+    for(let i=0;i<reveals.length;i++){
+
+      let windowHeight=window.innerHeight;
+      let revealTop=reveals[i].getBoundingClientRect().top;
+      let revealPoint=120;
+
+      if(revealTop<windowHeight-revealPoint){
+        reveals[i].classList.add('active');
+      }
+
+    }
+
+  }
+
+  window.addEventListener('scroll',revealFunction);
+  revealFunction();
+
+  const faqItems=document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item=>{
+    item.querySelector('.faq-question').addEventListener('click',()=>{
+      item.classList.toggle('active');
+    });
+  });
+
+  const targetDate = new Date('February 04, 2027 09:00:00').getTime();
+
+  setInterval(function(){
+
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+
+  },1000);
+
+</script>
+
+</body>
+</html>
