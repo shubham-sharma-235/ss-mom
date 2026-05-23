@@ -104,3 +104,38 @@ function tab(name,btn){
 /* Scroll reveal */
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('shown');obs.unobserve(e.target);}}),{threshold:0.08});
 document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+  // Modal functions
+function openModal(trackId) {
+    const modal = document.getElementById(`modal-${trackId}`);
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+}
+
+function closeModal(trackId) {
+    const modal = document.getElementById(`modal-${trackId}`);
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore background scroll
+}
+
+// Close modal when clicking outside the content
+window.addEventListener('click', function(event) {
+    if (event.target.classList.contains('modal')) {
+        const modals = document.querySelectorAll('.modal.active');
+        modals.forEach(modal => {
+            const trackId = modal.id.replace('modal-', '');
+            closeModal(trackId);
+        });
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal.active');
+        modals.forEach(modal => {
+            const trackId = modal.id.replace('modal-', '');
+            closeModal(trackId);
+        });
+    }
+});
