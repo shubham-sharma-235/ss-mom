@@ -563,7 +563,7 @@ ul {
 /* ── HERO ── */
 .hero {
   background: linear-gradient(#ffffffab,#0000007c);
-  min-height: 88vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
