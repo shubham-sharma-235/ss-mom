@@ -139,3 +139,15 @@ document.addEventListener('keydown', function(event) {
         });
     }
 });
+
+function toggleManipal(button) {
+    const content = document.getElementById("manipalContent");
+
+    content.classList.toggle("expanded");
+
+    if (content.classList.contains("expanded")) {
+        button.textContent = "Read Less";
+    } else {
+        button.textContent = "Read More";
+    }
+}

@@ -877,6 +877,7 @@ ul {
   font-weight: 800;
   color: white;
   flex-shrink: 0;
+  display: none;
 }
 .ccard-body {
   padding: 22px 22px;
@@ -2034,3 +2035,252 @@ ul {
     padding: 11px 14px;
   }
 }
+
+/* ------------------------------ */
+
+.association{
+    margin-top:12px;
+}
+
+.association-title{
+    display:block;
+    font-size:12px;
+    color:var(--txt3);
+}
+
+.association-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:26px;
+    margin-top:26px;
+}
+
+.association-item img{
+    width: 192px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.association-item b{
+    display:block;
+    font-size:13px;
+}
+
+.association-item span{
+    font-size:12px;
+    color:#888;
+}
+
+.visit-btn{
+    display:inline-block;
+    margin-top:8px;
+    padding:7px 16px;
+    font-size:12px;
+    font-weight:600;
+    color:#fff;
+    background:var(--amber);
+    border-radius:6px;
+    text-decoration:none;
+    transition:.3s ease;
+}
+
+.visit-btn:hover{
+    background: var(--amber);
+    transform:translateY(-2px);
+}
+
+/* ---------- about read more --------- */
+
+.about-preview{
+    max-height:180px;   /* Adjust until ~5-7 lines are visible */
+    overflow:hidden;
+    position:relative;
+    transition:max-height .5s ease;
+}
+
+.about-preview::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:70px;
+    background:linear-gradient(transparent,#fff);
+}
+
+.about-preview.expanded{
+    max-height:2500px;
+}
+
+.about-preview.expanded::after{
+    display:none;
+}
+
+.read-more-btn{
+    margin-top:12px;
+    border:none;
+    background:var(--amber);
+    color:#fff;
+    padding:8px 18px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.read-more-btn:hover{
+    background:#084298;
+}
+
+/* ----------- Track read more --------- */
+
+.track-btn{
+    position:relative;
+    cursor:pointer;
+    transition:.35s ease;
+}
+
+.track-btn:hover{
+    transform:translateY(-6px);
+}
+
+.track-btn-title{
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--amber);
+    margin-bottom:10px;
+}
+
+.track-btn-desc{
+    font-size:20px;
+    font-weight:700;
+    line-height:1.4;
+    margin-bottom:18px;
+}
+
+.track-btn-action{
+    display:inline-flex;
+    gap:8px;
+    padding:8px 18px;
+    background:var(--amber);
+    color:#fff;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.track-btn:hover .track-btn-action{
+    background:#084298;
+    gap:14px;
+}
+
+.track-btn-action span{
+    transition:.3s;
+}
+
+.track-btn:hover .track-btn-action span{
+    transform:translateX(5px);
+}
+
+/* --------- How to reach muj section ---------- */
+
+/* How to Reach Grid Layout */
+.reach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Individual Transport Cards */
+.reach-card {
+  background: white;
+  padding: 30px;
+  border-radius: var(--r, 8px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Icon Wrappers */
+.reach-icon-wrap {
+  width: 50px;
+  height: 50px;
+  background: var(--sky, #e0f2fe);
+  color: var(--blue, #0284c7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Card Text elements */
+.reach-card h3 {
+  font-family: "Lora", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy, #0f172a);
+  margin-bottom: 12px;
+}
+
+.reach-card p {
+  font-size: 14px;
+  color: var(--txt3, #475569);
+  line-height: 1.7;
+  margin-bottom: auto; /* Pushes lists to the bottom so they align */
+}
+
+/* Travel Metric Lists */
+.reach-details {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 15px;
+}
+
+.reach-details li {
+  font-size: 13.5px;
+  color: var(--txt2, #334155);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reach-details li i {
+  color: var(--txt3, #64748b);
+  width: 16px;
+  text-align: center;
+}
+
+/* Requested Highlight Treatment */
+.reach-card .highlight {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+/* Helpful Notice Box */
+.reach-note {
+  margin-top: 12px;
+  font-size: 12px;
+  background: var(--sky, rgba(224, 242, 254, 0.4));
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--blue, #0369a1);
+  line-height: 1.4;
+}
+
