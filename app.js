@@ -1,6 +1,6 @@
 (function tick() {
   // Set target date: 25 August 2026
-  const targetDate = new Date("2026-08-25T23:59:59");
+  const targetDate = new Date("2026-11-25T23:59:59");
   
   // Current date/time
   const now = new Date();
@@ -150,4 +150,30 @@ function toggleManipal(button) {
     } else {
         button.textContent = "Read More";
     }
+}
+
+function toggleMechanical(button) {
+  const content = document.getElementById("mechanicalContent");
+
+  content.classList.toggle("expanded");
+
+  if (content.classList.contains("expanded")) {
+    button.textContent = "Read Less";
+  } else {
+    button.textContent = "Read More";
+  }
+}
+
+function toggleSpecialTrack(button) {
+  const content = document.querySelector(
+    "#specialTrackContent .more-content"
+  );
+
+  content.classList.toggle("show");
+
+  if (content.classList.contains("show")) {
+    button.textContent = "Read Less";
+  } else {
+    button.textContent = "Read More";
+  }
 }

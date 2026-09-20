@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      About Us | SS-MOM 2027 | International Conference on Smart & Sustainable
+      SS MOM 2027 | International Conference on Smart & Sustainable
       Manufacturing, Operations, and Materials
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,69 +13,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
-    <style>
-      /* Layout fixes to guarantee full block visibility on a standalone page */
-      .about-standalone-container {
-        padding: 60px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-      }
-      .about-standalone-container .ccard {
-        display: block !important;
-        opacity: 1 !important;
-        transform: none !important;
-        visibility: visible !important;
-        margin-bottom: 0;
-      }
-      /* Elegant Breadcrumb Header Styles */
-      .breadcrumb-header {
-        background: #0f172a; /* Custom fallback or maps perfectly to var(--navy) */
-        padding: 30px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .breadcrumb-nav {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.6);
-        margin-bottom: 8px;
-      }
-      .breadcrumb-nav a {
-        color: rgba(255, 255, 255, 0.6);
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      .breadcrumb-nav a:hover {
-        color: var(--amber);
-      }
-      .breadcrumb-current {
-        color: var(--amber);
-        font-weight: 500;
-      }
-      .page-title-main {
-        font-family: 'Lora', serif;
-        font-size: 28px;
-        color: white;
-        font-weight: 700;
-        margin: 0;
-      }
-      .ccard-body {
-        max-width: 100%;
-      }
-    </style>
   </head>
   <body>
-
-    <!-- Sticky Brochure Link -->
-    <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">
-      Brochure
+    <!-- WhatsApp Button -->
+    <a 
+      href="https://api.whatsapp.com/send?phone=919467717120"
+      class="whatsapp-btn"
+      target="_blank"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+
+  <!-- Sticky Brochure Link -->
+  <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">
+    Brochure
+  </a>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    
     <header class="site-header">
       <div class="">
         <div class="header-inner">
@@ -90,10 +46,23 @@
             </div> -->
             <img src="./images/logo.png" alt="">
           </div>
-          <nav class="hnav">
+           <nav class="hnav">
               <a href="./index.html">Home</a>
               <a href="./about.html">About</a>
-              <a href="./committee.html">Committee</a>
+ 
+              <div class="hnav-item">
+                  <a href="./committee.html">Committee</a>
+                  <div class="hnav-drop">
+                      <a href="./committee.html#org">Organizing Committee</a>
+                      <a href="./committee.html#sci">Scientific &amp; Organizing</a>
+                      <a href="./committee.html#tech">Technical Support</a>
+                      <a href="./committee.html#intl">International Advisory</a>
+                      <a href="./committee.html#natl">National Advisory</a>
+                      <a href="./committee.html#ind">Industry Advisory</a>
+                      <a href="./committee.html#peer">Peer Review</a>
+                  </div>
+              </div>
+ 
               <a href="./call-for-papers.html">Call for Papers</a>
               <a href="./publications.html">Publications</a>
               <a href="./speakers.html">Speakers</a>
@@ -105,17 +74,17 @@
                   </div>
               </div>
           
-              <a href="./index.html#venue">Venue</a>
+              <a href="#venue">Venue</a>
               <a href="./sponsorship.html">Sponsorship</a>
               
               <a href="https://www.tourism.rajasthan.gov.in/jaipur.html">Jaipur Tourism</a>
-
+ 
               <a href="./view-source.html">View Source</a>
           
               <a href="#submit" class="hnav-cta">
                   Submit Paper
               </a>
-
+ 
           </nav>
           <button
             class="hamburger"
@@ -157,83 +126,84 @@
       </a>
     </nav>
 
-    <!-- Clean Breadcrumb Header Component instead of Big Hero -->
-    <div class="breadcrumb-header">
-      <div class="wrap">
-        <div class="breadcrumb-nav">
-          <a href="./index.html">Home</a>
-          <i class="fa-solid fa-chevron-right" style="font-size: 10px; opacity: 0.5;"></i>
-          <span class="breadcrumb-current">About Us</span>
-        </div>
-        <h1 class="page-title-main">Sponsorship</h1>
-      </div>
+    <div style="display: flex;align-items: center;justify-content: center;height: 70vh;">
+        <h1>Coming Soon</h1>
     </div>
 
 
-    <div style="height: 60vh;"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Persistent Global Footer -->
     <footer class="footer">
       <div class="wrap">
         <div class="footer-grid">
           <div>
-            <div class="footer-brand">SS-MOM 2027</div>
+            <div class="footer-brand">SS MOM 2027</div>
             <div class="footer-tagline">
-              1st International Conference on Smart and Sustainable Manufacturing, Operations, and Materials.
+              1st International Conference on Smart and Sustainable
+              Manufacturing, Operations, and Materials. Organised by the
+              Department of Mechanical Engineering, Manipal University Jaipur,
+              India.
             </div>
             <div class="footer-ctas">
-              <a href="./index.html#submit" class="btn btn-amber btn-sm">Submit Paper</a>
-              <a href="https://forms.gle/ycx6gctUqkicHgXv6" target="_blank" class="btn btn-ghost-white btn-sm">Join Review</a>
+              <a href="#submit" class="btn btn-amber btn-sm">Submit Paper</a>
+              <a
+                href="https://forms.gle/ycx6gctUqkicHgXv6"
+                class="btn btn-ghost-white btn-sm"
+                >Join Review</a
+              >
             </div>
           </div>
           <div>
             <h5>Quick Links</h5>
             <ul>
-              <li><a href="./about.html#about-conf">About Conference</a></li>
-              <li><a href="./cfp.html">Call for Papers</a></li>
-              <li><a href="./cfp.html#dates-anchor">Important Dates</a></li>
-              <li><a href="./index.html#submit">For Authors</a></li>
-              <li><a href="./committee.html">Committee</a></li>
-              <li><a href="./index.html#venue">Venue</a></li>
+              <li><a href="#about">About Conference</a></li>
+              <li><a href="#tracks">Call for Papers</a></li>
+              <li><a href="#dates">Important Dates</a></li>
+              <li><a href="#submit">For Authors</a></li>
+              <li><a href="#committee">Committee</a></li>
+              <li><a href="https://maps.app.goo.gl/8AR5DtM85iN7j6Bg8">Venue</a></li>
             </ul>
           </div>
           <div>
             <h5>Research Tracks</h5>
             <ul>
-              <li><a href="./cfp.html">Track 1: Manufacturing</a></li>
-              <li><a href="./cfp.html">Track 2: Operations &amp; IE</a></li>
-              <li><a href="./cfp.html">Track 3: Materials</a></li>
-              <li><a href="./cfp.html#special-chairs">Special Track Chairs</a></li>
+              <li><a href="#tracks">Track 1: Manufacturing</a></li>
+              <li><a href="#tracks">Track 2: Operations &amp; IE</a></li>
+              <li><a href="#tracks">Track 3: Materials</a></li>
+              <li><a href="#tracks">Session Chairs</a></li>
+            </ul>
+            <h5 style="margin-top: 20px">Dates</h5>
+            <ul>
+              <li><a href="#dates">Submission: Aug 25, 2026</a></li>
+              <li><a href="#dates">Acceptance: Sep 15, 2026</a></li>
+              <li><a href="#dates">Conference: Feb 04–05, 2027</a></li>
             </ul>
           </div>
           <div>
-            <h5>Venue Location</h5>
-            <p style="font-size: 12.5px; color: rgba(255, 255, 255, 0.38); line-height: 1.9;">
-              Manipal University Jaipur<br />Dehmi Kalan, Off Jaipur–Ajmer Expressway<br />Jaipur, Rajasthan 303007, India
+            <h5>Venue</h5>
+            <p
+              style="
+                font-size: 12.5px;
+                color: rgba(255, 255, 255, 0.38);
+                line-height: 1.9;
+              "
+            >
+              Manipal University Jaipur<br />Dehmi Kalan, Off Jaipur–Ajmer
+              Expressway<br />Jaipur, Rajasthan 303007, India
             </p>
             <h5 style="margin-top: 18px">Contact</h5>
-            <p style="font-size: 12.5px; color: rgba(255, 255, 255, 0.38); line-height: 1.9;">
-              Prof. Ajay (Conference Chair)<br />+91 9467717120<br />+91 9887870601<br />ssmom2027@gmail.com
+            <p
+              style="
+                font-size: 12.5px;
+                color: rgba(255, 255, 255, 0.38);
+                line-height: 1.9;
+              "
+            >
+              Prof. Ajay (Conference Chair)<br />+91 9467717120<br />+91 9887870601 · +91 9916809016<br />ssmom2027@gmail.com
             </p>
           </div>
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2027 SS-MOM Conference. All rights reserved. Department of
+            &copy; 2027 SS MOM Conference. All rights reserved. Department of
             Mechanical Engineering, Manipal University Jaipur, India.
           </p>
           <p>Designed for SS-MOM 2027</p>

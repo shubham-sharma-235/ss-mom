@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      SS-MOM 2027 | International Conference on Smart & Sustainable
-      Manufacturing, Operations, and Materials
+      Keynote Speakers | SS-MOM 2027
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -13,33 +12,31 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+
+    <!-- page-only tweaks so the photos crop uniformly -->
+    <style>
+      .sp-grid .cm-card img {
+        width: 100%;
+        width: 200px;
+        height: 200px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 14px;
+        background: #f1f4f9;
+      }
+      .sp-role {
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        color: var(--amber);
+        margin-bottom: 6px;
+      }
+    </style>
   </head>
   <body>
-    <!-- TOP BAR -->
-    <!-- <div class="topbar">
-      <div class="wrap">
-        <div class="topbar-inner">
-          <div class="topbar-label">Announcement</div>
-          <div class="topbar-ticker">
-            <span>
-              &nbsp;&nbsp; Paper Submission Deadline:
-              <strong>April 25, 2026</strong> &nbsp;|&nbsp; Acceptance
-              Notification: <strong>June 15, 2026</strong> &nbsp;|&nbsp; Early
-              Bird Registration: <strong>June 25, 2026</strong> &nbsp;|&nbsp;
-              Conference:
-              <strong>February 04–05, 2027 — Jaipur, India</strong>
-              &nbsp;|&nbsp; Accepted Papers:
-              <strong
-                >SCOPUS-Indexed Proceedings &amp; International Journals</strong
-              >
-              &nbsp;|&nbsp; Organised by:
-              <strong>Dept. of ME, Manipal University Jaipur</strong>
-              &nbsp;&nbsp;
-            </span>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <!-- WhatsApp Button -->
     <a 
       href="https://api.whatsapp.com/send?phone=919467717120"
@@ -54,41 +51,50 @@
 
     <!-- HEADER -->
     <header class="site-header">
-      <div class="wrap">
+      <div class="">
         <div class="header-inner">
           <div class="hlogo">
-            <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
-            <div>
-              <div class="hconf-name">SS-MOM 2027</div>
-              <div class="hconf-sub">
-                1st International Conference on Smart &amp; Sustainable Manufacturing, Operations
-                &amp; Materials
-              </div>
-            </div>
+            <img src="./images/logo.png" alt="">
           </div>
           <nav class="hnav">
               <a href="./index.html">Home</a>
-              <a href="./speakers.html">Speakers</a>
               <a href="./about.html">About</a>
-              <a href="./index.html#tracks">Call for Papers</a>
-              <a href="./publications.html">Publications</a>
-          
+
               <div class="hnav-item">
-                  <a href="./index.html">For Authors</a>
+                  <a href="./committee.html">Committee</a>
                   <div class="hnav-drop">
-                      <a href="./index.html#submit">Paper Submission</a>
-                      <a href="./index.html#review">Peer Review</a>
-                      <a href="./index.html#publication">Publication</a>
+                      <a href="./committee.html#org">Organizing Committee</a>
+                      <a href="./committee.html#sci">Scientific &amp; Organizing</a>
+                      <a href="./committee.html#tech">Technical Support</a>
+                      <a href="./committee.html#intl">International Advisory</a>
+                      <a href="./committee.html#natl">National Advisory</a>
+                      <a href="./committee.html#ind">Industry Advisory</a>
+                      <a href="./committee.html#peer">Peer Review</a>
+                  </div>
+              </div>
+
+              <a href="./call-for-papers.html">Call for Papers</a>
+              <a href="./publications.html">Publications</a>
+              <a href="./speakers.html">Speakers</a>
+              
+              <div class="hnav-item">
+                  <a href="#authors">For Authors</a>
+                  <div class="hnav-drop">
+                      <a href="paper-submission-guidelines.html">Paper Submission Guidelines</a>
                   </div>
               </div>
           
-              <a href="./committee.html">Committee</a>
-              <a href="./index.html#venue">Venue</a>
+              <a href="#venue">Venue</a>
               <a href="./sponsorship.html">Sponsorship</a>
+              
+              <a href="https://www.tourism.rajasthan.gov.in/jaipur.html">Jaipur Tourism</a>
+
+              <a href="./view-source.html">View Source</a>
           
-              <a href="./index.html#submit" class="hnav-cta">
+              <a href="#submit" class="hnav-cta">
                   Submit Paper
               </a>
+
           </nav>
           <button
             class="hamburger"
@@ -123,605 +129,158 @@
       <a href="./index.html#publication" onclick="closeDrawer()">Publication</a>
     
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
-      <!-- <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a> -->
       <a href="./index.html#venue" onclick="closeDrawer()">Venue</a>
     
       <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">
         Submit Paper
       </a>
     </nav>
-    
-    <!-- COMMITTEE -->
-    <div id="committee" class="section section-white">
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-header">
       <div class="wrap">
-        <!-- <div class="section-hdr rev"">
-          <div class="sec-eyebrow">Organizing Team</div>
-          <h2 class="sec-title">Organizing <em>Committee</em></h2>
-          <div class="divider"></div>
-          <p class="sec-sub" style="max-width: 600px">
-            Distinguished academicians, researchers, and industry professionals
-            guiding SS-MOM 2027.
-          </p>
-        </div> -->
-        <div class="comm-tabs rev">
-          <button class="ctab on" onclick="showComm('org', this)">
-            Organizing
-          </button>
-          <button class="ctab" onclick="showComm('intl', this)">
-            International Advisory
-          </button>
-          <button class="ctab" onclick="showComm('natl', this)">
-            National Advisory
-          </button>
-          <button class="ctab" onclick="showComm('intrnl', this)">
-            Internal Advisory
-          </button>
-          <button class="ctab" onclick="showComm('ind', this)">
-            Industry Advisory
-          </button>
-          <button class="ctab" onclick="showComm('peer', this)">
-            Peer Review
-          </button>
+        <div class="breadcrumb-nav">
+          <a href="./index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 10px; opacity: 0.5;"></i>
+          <span class="breadcrumb-current">Speakers</span>
+        </div>
+        <h1 class="page-title-main">Keynote Speakers</h1>
+      </div>
+    </div>
+
+    <!-- SPEAKERS -->
+    <div id="speakers" class="section section-white">
+      <div class="wrap">
+        <div class="cgroup">
+          <div class="cg-label">Keynote Speakers</div>
+          <div class="cm-grid sp-grid">
+
+            <div class="cm-card">
+              <img src="./images/speakers/duc-truong-pham.png" alt="Prof. Duc Truong Pham">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Duc Truong Pham</div>
+              <div class="cm-inst">
+                Department of Mechanical Engineering, School of Engineering,
+                College of Engineering and Physical Sciences, The University of
+                Birmingham, Birmingham B15 2TT, United Kingdom
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/kyoung-yun-joseph-kim.jpg" alt="Prof. Kyoung-Yun Joseph Kim">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Kyoung-Yun Joseph Kim</div>
+              <div class="cm-inst">
+                Professor, Department of Industrial and Systems Engineering,
+                Wayne State University, USA
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/ghida-alzohbi.jpg" alt="Dr. Ghida AlZohbi">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Dr. Ghida AlZohbi</div>
+              <div class="cm-inst">
+                Assistant Professor, Prince Mohammad University, Al Khobar
+                31952, Kingdom of Saudi Arabia
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/tamer-ali-sebaey.jpg" alt="Prof. Tamer Ali Abdella Sebaey Abdella">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Tamer Ali Abdella Sebaey Abdella</div>
+              <div class="cm-inst">
+                Professor, College of Engineering, Prince Sultan University,
+                Riyadh, Saudi Arabia
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/amit-rai-dixit.jpg" alt="Prof. Amit Rai Dixit">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Amit Rai Dixit</div>
+              <div class="cm-inst">
+                Professor, Department of Mechanical Engineering, IIT Dhanbad,
+                India
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/pulak-m-pandey.png" alt="Prof. Pulak M Pandey">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Pulak M Pandey</div>
+              <div class="cm-inst">
+                Professor, Department of Mechanical Engineering, IIT Delhi,
+                India
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/shrikrishna-n-joshi.jpg" alt="Prof. Shrikrishna N. Joshi">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Shrikrishna N. Joshi</div>
+              <div class="cm-inst">
+                Professor, Department of Mechanical Engineering, Indian
+                Institute of Technology Guwahati, Assam, India
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/hari-singh.png" alt="Prof. Hari Singh">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Hari Singh</div>
+              <div class="cm-inst">
+                Department of Mechanical Engineering, National Institute of
+                Technology, Kurukshetra, Haryana, India
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/puneet-tandon.png" alt="Prof. Puneet Tandon">
+              <div class="sp-role">Keynote</div>
+              <div class="cm-name">Prof. Puneet Tandon</div>
+              <div class="cm-inst">
+                Department of Mechanical Engineering and Design, PDPM Indian
+                Institute of Information Technology, Design and Manufacturing,
+                Jabalpur (IIITDM Jabalpur), India
+              </div>
+            </div>
+
+            <div class="cm-card">
+              <img src="./images/speakers/mario-schmidt.jpg" alt="Dr. (hc.) Mario Schmidt">
+              <div class="sp-role">Industry Keynote</div>
+              <div class="cm-name">Dr. (hc.) Mario Schmidt</div>
+              <div class="cm-inst">
+                Managing Director, Lingel Windows and Doors Technologies Private
+                Limited, India
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <div id="c-org" class="cpanel on">
-          <div class="cgroup">
-            <div class="cg-label">Chief Patron</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Shri S Vaitheeswaran</div>
-                <div class="cm-inst">
-                  Chairperson, Manipal University Jaipur, India
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Patrons</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. N N Sharma</div>
-                <div class="cm-inst">President, Manipal University Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Souri Banerjee</div>
-                <div class="cm-inst">
-                  Director, BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Co-Patrons</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Karunakar A Kotegar</div>
-                <div class="cm-inst">Pro-President, MUJ</div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Amit Soni</div>
-                <div class="cm-inst">Registrar, MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Nitu Bhatnagar</div>
-                <div class="cm-inst">Pro-Vost, MUJ</div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Honorary &amp; General Chairs</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Ravi Kant Mittal</div>
-                <div class="cm-inst">
-                  Honorary Chair — Retired Professor, BITS Pilani
-                </div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Kuldip Singh Sangwan</div>
-                <div class="cm-inst">
-                  General Chair — Dean, Faculty of S&amp;T, MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. R K Gupta</div>
-                <div class="cm-inst">
-                  General Co-Chair — Associate Dean, Engineering, MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <img src="./images/836.jpg" alt="">
-                <div class="cm-name">Prof. Raviraja Adhikari</div>
-                <div class="cm-inst">
-                  General Co-Chair — Head, ME Dept., MUJ
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Conference Chair &amp; Conveners</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ajay</div>
-                <div class="cm-inst">
-                  Conference Chair &amp; Convener — Professor, ME Dept., MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Gulshan Kumar</div>
-                <div class="cm-inst">
-                  Conference Chair — BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Dhaneshwar Mishra</div>
-                <div class="cm-inst">
-                  Convener — Associate Professor (Sr. Scale), ME Dept., MUJ
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vinod Yadav</div>
-                <div class="cm-inst">
-                  Convener — Assistant Professor (SG), ME Dept., MUJ
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cgroup">
-            <div class="cg-label">Core Organizing Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vimal Pathak</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ramanpreet Singh</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashish Kumar Srivastava</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashish Goyal</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Krishna Kant Pandey</div>
-                <div class="cm-inst">Mechatronics Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Dalip Singh Shekhawat</div>
-                <div class="cm-inst">Mechatronics Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vaibhav Srivastava</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Biswesh Ranjan Acharya</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashu Yadav</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Rakesh Kumar</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Dharmesh Yadav</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vishal Kadian</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Upendra Kulshrestha</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Harpreet Singh Bedi</div>
-                <div class="cm-inst">
-                  ME Dept., BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Sunil Kumar</div>
-                <div class="cm-inst">ME Dept., MUJ</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-intl" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">International Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Prof. Y. Eugene Pak</div>
-                <div class="cm-inst">
-                  Dean (International Collaboration), SUNY Korea
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Yongho Jeon</div>
-                <div class="cm-inst">
-                  Dept. of ME, Ajou University, South Korea
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Yang Liu</div>
-                <div class="cm-inst">
-                  Senior Associate Professor, Linköping University, Sweden
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Vijayakumar B.</div>
-                <div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Hansraj Bangar</div>
-                <div class="cm-inst">Scientist, Amazon, Ohio, USA</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Santosh Kumar</div>
-                <div class="cm-inst">
-                  Research Professor, Konkuk University, Seoul, South Korea
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Periasamy C.</div>
-                <div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Deepak Dahiya</div>
-                <div class="cm-inst">
-                  Professor, Majmaah University, Saudi Arabia
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Surbhi Bhatia</div>
-                <div class="cm-inst">King Faisal University, Saudi Arabia</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Udayakumar R</div>
-                <div class="cm-inst">BITS Pilani, Dubai Campus, UAE</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sumit Chakrabarty</div>
-                <div class="cm-inst">Kennesaw State University, USA</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mehedi Masud</div>
-                <div class="cm-inst">
-                  Professor, Taif University, Saudi Arabia
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sumit Sakhuja</div>
-                <div class="cm-inst">
-                  Higher Colleges of Technology, Abu Dhabi, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Malkeshkumar Patel</div>
-                <div class="cm-inst">
-                  Incheon National University, South Korea
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-natl" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">National Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Prof. Indra Vir Singh</div>
-                <div class="cm-inst">IIT Roorkee</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. R K Mittal</div>
-                <div class="cm-inst">
-                  Senior Professor (Ex.), BITS Pilani, Rajasthan
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Abid Haleem</div>
-                <div class="cm-inst">Jamia Millia Islamia, New Delhi</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Pradeep Kumar</div>
-                <div class="cm-inst">IIT Roorkee</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Shatendra K. Sharma</div>
-                <div class="cm-inst">
-                  Jawaharlal Nehru University, New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Hari Singh</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Puneet Tandon</div>
-                <div class="cm-inst">IIITDM Jabalpur, Madhya Pradesh</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Morapakala Srinivas</div>
-                <div class="cm-inst">BITS Pilani, Hyderabad Campus</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Bijay Kumar Rout</div>
-                <div class="cm-inst">BITS Pilani, Pilani Campus</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Sandeep Grover</div>
-                <div class="cm-inst">J.C. Bose University, YMCA, Faridabad</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Rakesh Jain</div>
-                <div class="cm-inst">Malaviya NIT Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Gunjan Soni</div>
-                <div class="cm-inst">Malaviya NIT Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Anil Kumar</div>
-                <div class="cm-inst">
-                  Delhi Technological University, New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Milind Kumar Sharma</div>
-                <div class="cm-inst">MBM University, Jodhpur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Om Ji Shukla</div>
-                <div class="cm-inst">NIT Patna</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Basab Nath</div>
-                <div class="cm-inst">Bennett University, Greater Noida</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-intrnl" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">Internal Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ravi Kumar Sharma</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ashok Kumar Sharma</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Subrata Bandhu Ghosh</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sanchita Bandyopadhyay Ghosh</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Anand Pandey</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Rahul Goyal</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Santosh Patil</div>
-                <div class="cm-inst">Professor, ME Dept., MUJ</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Prof. Ramachandran S.</div>
-                <div class="cm-inst">
-                  Associate Dean, BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vincent Shantha Kumar</div>
-                <div class="cm-inst">
-                  ME Dept., BITS Pilani Dubai Campus, UAE
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-ind" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">Industry Advisory Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Mr. Khushpal Singh</div>
-                <div class="cm-inst">Director, Geo Solutions, Gurugram</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Meenal Borkar</div>
-                <div class="cm-inst">
-                  Technical Trainer (Data &amp; ML), Google Cloud Platform
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Kulbir</div>
-                <div class="cm-inst">
-                  Principal Member of Technical Staff, Oracle, Gurugram
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Ms. Seema Pannu</div>
-                <div class="cm-inst">
-                  Associate Consultant, Tata Consultancy Services
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sachin Maheshwari</div>
-                <div class="cm-inst">
-                  General Manager HR, Sage Metals Ltd., New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Rakesh Kumar</div>
-                <div class="cm-inst">
-                  Business Head, Sigma Engineering Solution, Jaipur
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Amit Soman</div>
-                <div class="cm-inst">
-                  Managing Partner, AR2 Holding, Michigan, USA
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">John Pitsowaki</div>
-                <div class="cm-inst">
-                  Regional Director, Shaw Development, Indianapolis, USA
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. (Hc) Navnath Ganpat Tarle</div>
-                <div class="cm-inst">
-                  COO &amp; EVP, Global Autotech Ltd., Pune
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Ganesh Tanpure</div>
-                <div class="cm-inst">
-                  Tech Lead, Boston Scientific, Gurugram
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Mr. Manoj Meshram</div>
-                <div class="cm-inst">
-                  Chairman, Quality Circle Forum of India, Jaipur
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Rajesh Goel</div>
-                <div class="cm-inst">
-                  Vice President, India Operations, Sage Metals Ltd.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="c-peer" class="cpanel">
-          <div class="cgroup">
-            <div class="cg-label">Peer Review Committee</div>
-            <div class="cm-grid">
-              <div class="cm-card">
-                <div class="cm-name">Dr. Hadeel Alsolai</div>
-                <div class="cm-inst">
-                  Princess Nourah Bint Abdulrahman University, Saudi Arabia
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mahmoud Othman</div>
-                <div class="cm-inst">Future University in Egypt</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vikas Mittal</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sandeep Rathee</div>
-                <div class="cm-inst">NIT Srinagar, J&amp;K</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Vikash Kumar</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mohmad Javaid</div>
-                <div class="cm-inst">Jamia Millia Islamia, New Delhi</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Neeraj Mehla</div>
-                <div class="cm-inst">NIT Kurukshetra, Haryana</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Puneet Katyal</div>
-                <div class="cm-inst">Guru Jambheshwar University, Hisar</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Nripendra Narayan Das</div>
-                <div class="cm-inst">Manipal University Jaipur</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Naveen Sharma</div>
-                <div class="cm-inst">
-                  Netaji Subhash Institute of Technology, New Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mukesh Kumar Sahu</div>
-                <div class="cm-inst">
-                  Cambridge Institute of Technology, Ranchi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Harish Kumar Banga</div>
-                <div class="cm-inst">
-                  Guru Nanak Dev Engineering College, Ludhiana
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Yugal Kumar</div>
-                <div class="cm-inst">
-                  Jaypee University of Information Technology
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Mamta Mittal</div>
-                <div class="cm-inst">
-                  G.B. Pant Government Engineering College, Delhi
-                </div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Jyotsna Sharma</div>
-                <div class="cm-inst">Amity University Manesar, Gurgaon</div>
-              </div>
-              <div class="cm-card">
-                <div class="cm-name">Dr. Sachin Gupta</div>
-                <div class="cm-inst">Mohanlal Sukhadia University, Udaipur</div>
-              </div>
-            </div>
-          </div>
-          <div class="comm-cta">
-            <p>
-              Qualified researchers and academics are invited to join the Peer
-              Review Committee. Fill out the Google Form to express your
-              interest in serving as a reviewer.
-            </p>
-            <a
-              href="https://forms.gle/HneEUNqLh74J6a5H9"
-              target="_blank"
-              class="btn btn-blue"
-              >Apply via Google Form</a
-            >
-          </div>
+        <div class="comm-cta">
+          <p>
+            On behalf of the organizing team, it is our great pleasure to invite
+            you to SS-MOM 2027 as a <strong>Review Committee Member</strong>. If
+            you are willing to work with us, please fill out the Google form. For
+            more details visit
+            <a href="https://www.ss-mom.com" target="_blank">www.ss-mom.com</a>
+            or write to
+            <a href="mailto:ssmom2027@gmail.com">ssmom2027@gmail.com</a> —
+            +91-9467717120, +91-9887870601, +91-8233343423, +91-9934780757.
+          </p>
+          <a
+            href="https://forms.gle/ycx6gctUqkicHgXv6"
+            target="_blank"
+            class="btn btn-blue"
+            >Apply via Google Form</a
+          >
         </div>
       </div>
     </div>
-    
+
     <!-- CTA -->
     <div id="contact" class="cta-section">
       <div class="wrap">
@@ -737,11 +296,11 @@
               scientists, and industry professionals.
             </p>
             <div style="display: flex; gap: 12px; flex-wrap: wrap">
-              <a href="mailto:ajay@jaipur.manipal.edu" class="btn btn-amber"
+              <a href="mailto:ssmom2027@gmail.com" class="btn btn-amber"
                 >Submit a Paper</a
               >
               <a
-                href="https://forms.gle/HneEUNqLh74J6a5H9"
+                href="https://forms.gle/ycx6gctUqkicHgXv6"
                 target="_blank"
                 class="btn btn-ghost-white"
                 >Join Review Committee</a
@@ -750,8 +309,8 @@
           </div>
           <div class="cta-cards rev d2">
             <div class="cta-card">
-              <div class="cta-card-lbl">Conference Chair</div>
-              <div class="cta-card-val">Dr. Ajay</div>
+              <div class="cta-card-lbl">Convener</div>
+              <div class="cta-card-val">Prof. Ajay</div>
               <div class="cta-card-sub">Professor, ME Dept., MUJ</div>
             </div>
             <div class="cta-card">
@@ -765,12 +324,9 @@
               </div>
             </div>
             <div class="cta-card">
-              <div class="cta-card-lbl">Co-Organisers (Proposed)</div>
-              <div
-                class="cta-card-val"
-                style="font-size: 13px; line-height: 1.7"
-              >
-                BITS-Pilani Dubai · NIT Agartala · MNIT Jaipur
+              <div class="cta-card-lbl">Conference</div>
+              <div class="cta-card-val" style="font-size: 13px">
+                February 04–05, 2027 · Hybrid Mode
               </div>
             </div>
           </div>
@@ -791,9 +347,9 @@
               India.
             </div>
             <div class="footer-ctas">
-              <a href="#submit" class="btn btn-amber btn-sm">Submit Paper</a>
+              <a href="./index.html#submit" class="btn btn-amber btn-sm">Submit Paper</a>
               <a
-                href="https://forms.gle/HneEUNqLh74J6a5H9"
+                href="https://forms.gle/ycx6gctUqkicHgXv6"
                 class="btn btn-ghost-white btn-sm"
                 >Join Review</a
               >
@@ -802,27 +358,27 @@
           <div>
             <h5>Quick Links</h5>
             <ul>
-              <li><a href="#about">About Conference</a></li>
-              <li><a href="#tracks">Call for Papers</a></li>
-              <li><a href="#dates">Important Dates</a></li>
-              <li><a href="#submit">For Authors</a></li>
-              <li><a href="#committee">Committee</a></li>
+              <li><a href="./about.html">About Conference</a></li>
+              <li><a href="./index.html#tracks">Call for Papers</a></li>
+              <li><a href="./index.html#dates">Important Dates</a></li>
+              <li><a href="./index.html#submit">For Authors</a></li>
+              <li><a href="./committee.html">Committee</a></li>
               <li><a href="https://maps.app.goo.gl/8AR5DtM85iN7j6Bg8">Venue</a></li>
             </ul>
           </div>
           <div>
             <h5>Research Tracks</h5>
             <ul>
-              <li><a href="#tracks">Track 1: Manufacturing</a></li>
-              <li><a href="#tracks">Track 2: Operations &amp; IE</a></li>
-              <li><a href="#tracks">Track 3: Materials</a></li>
-              <li><a href="#tracks">Session Chairs</a></li>
+              <li><a href="./index.html#tracks">Track 1: Manufacturing</a></li>
+              <li><a href="./index.html#tracks">Track 2: Operations &amp; IE</a></li>
+              <li><a href="./index.html#tracks">Track 3: Materials</a></li>
+              <li><a href="./special-track.html">Session Chairs</a></li>
             </ul>
             <h5 style="margin-top: 20px">Dates</h5>
             <ul>
-              <li><a href="#dates">Submission: Apr 25, 2026</a></li>
-              <li><a href="#dates">Acceptance: Jun 15, 2026</a></li>
-              <li><a href="#dates">Conference: Feb 04–05, 2027</a></li>
+              <li><a href="./index.html#dates">Submission: Nov 25, 2026</a></li>
+              <li><a href="./index.html#dates">Acceptance: Dec 15, 2026</a></li>
+              <li><a href="./index.html#dates">Conference: Feb 04–05, 2027</a></li>
             </ul>
           </div>
           <div>
@@ -845,7 +401,7 @@
                 line-height: 1.9;
               "
             >
-              Dr. Ajay (Conference Chair)<br />+91 9467717120<br />ajay@jaipur.manipal.edu
+              Prof. Ajay (Convener)<br />+91 9467717120<br />+91 9887870601<br />ssmom2027@gmail.com
             </p>
           </div>
         </div>
