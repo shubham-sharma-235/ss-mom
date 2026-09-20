@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
     <!-- HEADER -->
+    
     <header class="site-header">
       <div class="">
         <div class="header-inner">
@@ -35,45 +36,45 @@
             <img src="./images/logo.png" alt="">
           </div>
           <nav class="hnav">
-              <a href="./index.html">Home</a>
-              <a href="./about.html">About</a>
-
-              <!-- COMMITTEE DROPDOWN -->
-              <div class="hnav-item">
-                  <a href="./committee.html">Committee</a>
-                  <div class="hnav-drop">
-                      <a href="./committee.html#org">Organizing Committee</a>
-                      <a href="./committee.html#sci">Scientific &amp; Organizing</a>
-                      <a href="./committee.html#tech">Technical Support</a>
-                      <a href="./committee.html#intl">International Advisory</a>
-                      <a href="./committee.html#natl">National Advisory</a>
-                      <a href="./committee.html#ind">Industry Advisory</a>
-                      <a href="./committee.html#peer">Peer Review</a>
-                  </div>
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+     
+            <div class="hnav-item">
+              <a href="./committee.html">Committee</a>
+              <div class="hnav-drop">
+                <a href="./committee.html#org">Organizing Committee</a>
+                <a href="./committee.html#sci">Scientific &amp; Organizing</a>
+                <a href="./committee.html#tech">Technical Support</a>
+                <a href="./committee.html#intl">International Advisory</a>
+                <a href="./committee.html#natl">National Advisory</a>
+                <a href="./committee.html#ind">Industry Advisory</a>
+                <a href="./committee.html#peer">Peer Review</a>
               </div>
-
-              <a href="./call-for-papers.html">Call for Papers</a>
-              <a href="./publications.html">Publications</a>
-              <a href="./speakers.html">Speakers</a>
-              
-              <div class="hnav-item">
-                  <a href="#authors">For Authors</a>
-                  <div class="hnav-drop">
-                      <a href="paper-submission-guidelines.html">Paper Submission Guidelines</a>
-                  </div>
+            </div>
+     
+            <a href="./call-for-papers.html">Call for Papers</a>
+            <a href="./publications.html">Publications</a>
+            <a href="./speakers.html">Speakers</a>
+     
+            <div class="hnav-item">
+              <a href="./paper-submission-guidelines.html">For Authors</a>
+              <div class="hnav-drop">
+                <a href="./paper-submission-guidelines.html">Paper Submission Guidelines</a>
+                <a href="./registration.html">Registration</a>
+                <a href="./special-track.html">Special Track Proposal</a>
               </div>
-          
-              <a href="./index.html#venue">Venue</a>
-              <a href="./sponsorship.html">Sponsorship</a>
-              
-              <a href="https://www.tourism.rajasthan.gov.in/jaipur.html">Jaipur Tourism</a>
-
-              <a href="./view-source.html">View Source</a>
-          
-              <a href="./index.html#submit" class="hnav-cta">
-                  Submit Paper
-              </a>
-
+            </div>
+     
+            <a href="./index.html#venue">Venue</a>
+            <a href="./sponsorship.html">Sponsorship</a>
+     
+            <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank">Jaipur Tourism</a>
+     
+            <a href="./view-source.html">View Source</a>
+     
+            <a href="./index.html#submit" class="hnav-cta">
+              Submit Paper
+            </a>
           </nav>
           <button
             class="hamburger"
@@ -86,8 +87,7 @@
         </div>
       </div>
     </header>
-
-    <!-- MOBILE DRAWER -->
+     
     <div
       class="drawer-overlay"
       id="drawerOverlay"
@@ -95,35 +95,37 @@
     ></div>
     <nav class="mobile-drawer" id="mobileDrawer">
       <button class="drawer-close" onclick="closeDrawer()">&#x2715;</button>
-    
+     
       <a href="./index.html" onclick="closeDrawer()">Home</a>
-      <a href="./speakers.html" onclick="closeDrawer()">Speakers</a>
       <a href="./about.html" onclick="closeDrawer()">About</a>
-      <a href="./index.html#tracks" onclick="closeDrawer()">Call for Papers</a>
-      <a href="./publications.html" onclick="closeDrawer()">Publications</a>
-    
-      <a href="./index.html" onclick="closeDrawer()">For Authors</a>
-      <a href="./index.html#submit" onclick="closeDrawer()">Paper Submission</a>
-      <a href="./index.html#review" onclick="closeDrawer()">Peer Review</a>
-      <a href="./index.html#publication" onclick="closeDrawer()">Publication</a>
-    
+     
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
-      <a href="./committee.html#org" onclick="closeDrawer()">— Organizing Committee</a>
+      <a href="./committee.html#org" onclick="closeDrawer()">— Organizing</a>
       <a href="./committee.html#sci" onclick="closeDrawer()">— Scientific &amp; Organizing</a>
       <a href="./committee.html#tech" onclick="closeDrawer()">— Technical Support</a>
       <a href="./committee.html#intl" onclick="closeDrawer()">— International Advisory</a>
       <a href="./committee.html#natl" onclick="closeDrawer()">— National Advisory</a>
       <a href="./committee.html#ind" onclick="closeDrawer()">— Industry Advisory</a>
       <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review</a>
-      <!-- <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a> -->
+     
+      <a href="./call-for-papers.html" onclick="closeDrawer()">Call for Papers</a>
+      <a href="./publications.html" onclick="closeDrawer()">Publications</a>
+      <a href="./speakers.html" onclick="closeDrawer()">Speakers</a>
+     
+      <a href="./paper-submission-guidelines.html" onclick="closeDrawer()">Paper Submission Guidelines</a>
+      <a href="./registration.html" onclick="closeDrawer()">Registration</a>
+      <a href="./special-track.html" onclick="closeDrawer()">Special Track Proposal</a>
+     
       <a href="./index.html#venue" onclick="closeDrawer()">Venue</a>
-    
+      <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a>
+      <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank" onclick="closeDrawer()">Jaipur Tourism</a>
+     
       <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">
         Submit Paper
       </a>
     </nav>
+     
 
-    
     <!-- Clean Breadcrumb Header Component instead of Big Hero -->
     <div class="breadcrumb-header">
       <div class="wrap">
