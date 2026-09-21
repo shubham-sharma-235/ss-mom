@@ -14,6 +14,79 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+    <style>
+      .hs-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 18px;
+        margin-top: 34px;
+      }
+      .hs-card {
+        background: #fff;
+        border: 1px solid #e6eaf1;
+        border-radius: 14px;
+        padding: 22px 14px 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      }
+      .hs-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(15, 35, 70, .10);
+        border-color: var(--amber, #e0a030);
+      }
+      .hs-card img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 14px;
+        background: #f1f4f9;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px var(--amber, #e0a030);
+      }
+      .hs-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.35;
+        margin-bottom: 6px;
+      }
+      .hs-inst {
+        font-size: 12.5px;
+        color: var(--txt3, #667085);
+        line-height: 1.55;
+        flex-grow: 1;
+      }
+      .hs-country {
+        margin-top: 12px;
+        padding: 3px 12px;
+        border-radius: 20px;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: .4px;
+        text-transform: uppercase;
+        background: var(--amber-pale, #fdf3e1);
+        color: var(--navy);
+        border: 1px solid var(--amber, #e0a030);
+      }
+      .hs-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 34px;
+      }
+     
+      @media (max-width: 1200px) {
+        .hs-grid { grid-template-columns: repeat(3, 1fr); }
+      }
+      @media (max-width: 640px) {
+        .hs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .hs-card img { width: 86px; height: 86px; }
+        .hs-name { font-size: 14px; }
+      }
+    </style>
   </head>
   <body>
     <!-- WhatsApp Button -->
@@ -243,7 +316,36 @@
         </div>
       </div>
     </div>
-
+        
+    <!-- Ribbon 1 -->
+    <div class="rb-name">
+      <div class="wrap">
+        <div class="rb-name-inner">
+          <span class="rb-name-tag">SS-MOM 2027</span>
+          <span class="rb-name-text">
+            1st International Conference on Smart &amp; Sustainable
+            <em>Manufacturing, Operations, and Materials</em>
+          </span>
+        </div>
+      </div>
+    </div>
+     
+    <!-- Ribbon 2 -->
+    <div class="rb-chairs">
+      <div class="wrap">
+        <div class="rb-chairs-inner">
+          <div class="rb-chairs-left">
+            <span class="rb-chairs-tag">Session Chairs</span>
+            <span class="rb-chairs-text">
+              We invite <b>senior researchers, professors, and industry experts</b>
+              to serve as <b>Session Chairs</b> for the conference tracks.
+            </span>
+          </div>
+          <a href="./special-track.html" class="btn btn-amber btn-sm">Submit Proposal &rarr;</a>
+        </div>
+      </div>
+    </div>
+     
     <div class="section section-alt" id="about">
       <div class="wrap">
         <div class="two-col">
@@ -552,7 +654,7 @@
             </div>
             
             
-            <!-- Special Track Full Width -->
+            <!-- special tracks Full Width -->
             <button
               class="special-track-btn"
               onclick="openModal('special')"
@@ -560,11 +662,11 @@
             >
               <div class="special-track-content">
                 <div class="special-track-title">
-                  Special Track
+                  special tracks
                 </div>
             
                 <div class="special-track-desc">
-                  Call for Special Track Chairs for SS-MOM 2027
+                  Call for special tracks Chairs for SS-MOM 2027
                 </div>
             
                 <a href="./special-track.html">
@@ -697,7 +799,7 @@
             
               <div class="ccard-head teal">
                 <div class="ccard-icon">D</div>
-                <h3>Call for Special Track Chairs for SS-Mom 2027</h3>
+                <h3>Call for special tracks Chairs for SS-Mom 2027</h3>
               </div>
             
               <div class="ccard-body">
@@ -1194,6 +1296,69 @@
               maintenance, and circular economy applications.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ============ SECTION (put in <body>) ============ -->
+    <div id="speakers-preview" class="section section-white">
+      <div class="wrap">
+        <div class="section-hdr center">
+          <div class="sec-eyebrow">Keynote Speakers</div>
+          <h2 class="sec-title">Meet Our <em>Speakers</em></h2>
+          <div class="divider" style="margin: 14px auto 0;"></div>
+        </div>
+     
+        <div class="hs-grid">
+     
+          <div class="hs-card">
+            <img src="./images/speakers/duc-truong-pham.png" alt="Prof. Duc Truong Pham">
+            <div class="hs-name">Prof. Duc Truong Pham</div>
+            <div class="hs-inst">The University of Birmingham</div>
+            <div class="hs-country">United Kingdom</div>
+          </div>
+     
+          <div class="hs-card">
+            <img src="./images/speakers/kyoung-yun-joseph-kim.jpg" alt="Prof. Kyoung-Yun Joseph Kim">
+            <div class="hs-name">Prof. Kyoung-Yun Joseph Kim</div>
+            <div class="hs-inst">Wayne State University</div>
+            <div class="hs-country">USA</div>
+          </div>
+     
+          <div class="hs-card">
+            <img src="./images/speakers/tamer-ali-sebaey.jpg" alt="Prof. Tamer Ali Abdella Sebaey Abdella">
+            <div class="hs-name">Prof. Tamer Ali Sebaey</div>
+            <div class="hs-inst">Prince Sultan University, Riyadh</div>
+            <div class="hs-country">Saudi Arabia</div>
+          </div>
+     
+          <div class="hs-card">
+            <img src="./images/speakers/ghida-alzohbi.jpg" alt="Dr. Ghida AlZohbi">
+            <div class="hs-name">Dr. Ghida AlZohbi</div>
+            <div class="hs-inst">Prince Mohammad University, Al Khobar</div>
+            <div class="hs-country">Saudi Arabia</div>
+          </div>
+     
+          <div class="hs-card">
+            <img src="./images/speakers/pulak-m-pandey.png" alt="Prof. Pulak M Pandey">
+            <div class="hs-name">Prof. Pulak M Pandey</div>
+            <div class="hs-inst">Indian Institute of Technology Delhi</div>
+            <div class="hs-country">India</div>
+          </div>
+     
+          <div class="hs-card">
+            <img src="./images/speakers/amit-rai-dixit.jpg" alt="Prof. Amit Rai Dixit">
+            <div class="hs-name">Prof. Amit Rai Dixit</div>
+            <div class="hs-inst">Indian Institute of Technology (ISM) Dhanbad</div>
+            <div class="hs-country">India</div>
+          </div>
+     
+        </div>
+     
+        <div class="hs-more">
+          <a href="./speakers.html" class="btn btn-amber">
+            View All Speakers &rarr;
+          </a>
         </div>
       </div>
     </div>

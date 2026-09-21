@@ -2439,3 +2439,98 @@ ul {
   cursor: pointer;
   font-weight: 600;
 }
+
+/* ---------- Ribbon 1 : conference name ---------- */
+  .rb-name {
+    position: relative;
+    background: var(--navy2);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 3px solid var(--amber);
+    overflow: hidden;
+  }
+  .rb-name::before {                     /* same subtle grid feel as the hero */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+  .rb-name-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 8px 0;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .rb-name-tag {
+    flex-shrink: 0;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--amber);
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+  .rb-name-text {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .rb-name-text em {
+    font-style: italic;
+    color: var(--amber2);
+  }
+ 
+  /* ---------- Ribbon 2 : session chairs ---------- */
+  .rb-chairs {
+    background: var(--amber-pale);
+    border-bottom: 1px solid #f0d8a8;
+  }
+  .rb-chairs-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 14px 0;
+    flex-wrap: wrap;
+  }
+  .rb-chairs-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 260px;
+  }
+  .rb-chairs-tag {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--navy);
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+  .rb-chairs-text {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--txt2);
+  }
+  .rb-chairs-text b { color: var(--navy); }
+ 
+  @media (max-width: 720px) {
+    .rb-name-text { font-size: 16px; }
+    .rb-chairs-left { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .rb-chairs-inner .btn { width: 100%; justify-content: center; }
+  }
