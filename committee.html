@@ -8,11 +8,26 @@
       Manufacturing, Operations, and Materials
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+
+    <!-- page-only: bold country line on advisory cards -->
+    <style>
+      .cm-country {
+        margin-top: 6px;
+        font-size: 12.5px;
+        font-weight: 800;
+        letter-spacing: .3px;
+        color: var(--navy);
+      }
+      .cm-inst{
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <!-- WhatsApp Button -->
@@ -28,7 +43,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
     <!-- HEADER -->
-    
     <header class="site-header">
       <div class="">
         <div class="header-inner">
@@ -43,12 +57,8 @@
               <a href="./committee.html">Committee</a>
               <div class="hnav-drop">
                 <a href="./committee.html#org">Organizing Committee</a>
-                <a href="./committee.html#sci">Scientific &amp; Organizing</a>
-                <a href="./committee.html#tech">Technical Support</a>
-                <a href="./committee.html#intl">International Advisory</a>
-                <a href="./committee.html#natl">National Advisory</a>
-                <a href="./committee.html#ind">Industry Advisory</a>
-                <a href="./committee.html#peer">Peer Review</a>
+                <a href="./committee.html#adv">Advisory Committee</a>
+                <a href="./committee.html#peer">Peer Review Committee</a>
               </div>
             </div>
      
@@ -61,7 +71,6 @@
               <div class="hnav-drop">
                 <a href="./paper-submission-guidelines.html">Paper Submission Guidelines</a>
                 <a href="./registration.html">Registration</a>
-                <a href="./special-track.html">Special Track Proposal</a>
               </div>
             </div>
      
@@ -100,13 +109,9 @@
       <a href="./about.html" onclick="closeDrawer()">About</a>
      
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
-      <a href="./committee.html#org" onclick="closeDrawer()">— Organizing</a>
-      <a href="./committee.html#sci" onclick="closeDrawer()">— Scientific &amp; Organizing</a>
-      <a href="./committee.html#tech" onclick="closeDrawer()">— Technical Support</a>
-      <a href="./committee.html#intl" onclick="closeDrawer()">— International Advisory</a>
-      <a href="./committee.html#natl" onclick="closeDrawer()">— National Advisory</a>
-      <a href="./committee.html#ind" onclick="closeDrawer()">— Industry Advisory</a>
-      <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review</a>
+      <a href="./committee.html#org" onclick="closeDrawer()">— Organizing Committee</a>
+      <a href="./committee.html#adv" onclick="closeDrawer()">— Advisory Committee</a>
+      <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review Committee</a>
      
       <a href="./call-for-papers.html" onclick="closeDrawer()">Call for Papers</a>
       <a href="./publications.html" onclick="closeDrawer()">Publications</a>
@@ -114,7 +119,6 @@
      
       <a href="./paper-submission-guidelines.html" onclick="closeDrawer()">Paper Submission Guidelines</a>
       <a href="./registration.html" onclick="closeDrawer()">Registration</a>
-      <a href="./special-track.html" onclick="closeDrawer()">Special Track Proposal</a>
      
       <a href="./index.html#venue" onclick="closeDrawer()">Venue</a>
       <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a>
@@ -141,31 +145,19 @@
     <!-- COMMITTEE -->
     <div id="committee" class="section section-white">
       <div class="wrap">
-        <div class="comm-tabs rev">
+        <div class="comm-tabs">
           <button class="ctab on" data-key="org" onclick="showComm('org', this)">
-            Organizing
+            Organizing Committee
           </button>
-          <button class="ctab" data-key="sci" onclick="showComm('sci', this)">
-            Scientific &amp; Organizing
-          </button>
-          <button class="ctab" data-key="tech" onclick="showComm('tech', this)">
-            Technical Support
-          </button>
-          <button class="ctab" data-key="intl" onclick="showComm('intl', this)">
-            International Advisory
-          </button>
-          <button class="ctab" data-key="natl" onclick="showComm('natl', this)">
-            National Advisory
-          </button>
-          <button class="ctab" data-key="ind" onclick="showComm('ind', this)">
-            Industry Advisory
+          <button class="ctab" data-key="adv" onclick="showComm('adv', this)">
+            Advisory Committee
           </button>
           <button class="ctab" data-key="peer" onclick="showComm('peer', this)">
-            Peer Review
+            Peer Review Committee
           </button>
         </div>
 
-        <!-- ================= ORGANIZING ================= -->
+        <!-- ================= ORGANIZING COMMITTEE ================= -->
         <div id="c-org" class="cpanel on">
           <div class="cgroup">
             <div class="cg-label">Chief Patron</div>
@@ -186,7 +178,7 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. N. V. Ramana Rao</div>
-                <div class="cm-inst">Director, NIT Raipur, India</div>
+                <div class="cm-inst">Director, NIT Raipur, Chhattisgarh, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Anupam Shukla</div>
@@ -199,7 +191,7 @@
             <div class="cg-label">Co-Patrons</div>
             <div class="cm-grid">
               <div class="cm-card">
-                <div class="cm-name">Prof. Anil Rana</div>
+                <div class="cm-name">Cmd. (Dr.) Anil Rana</div>
                 <div class="cm-inst">Pro-President, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
@@ -216,7 +208,7 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Chandrakala C. B.</div>
-                <div class="cm-inst">Incharge Director, MIT, MAHE, Karnataka, India</div>
+                <div class="cm-inst">Incharge Director, MIT, MAHE, Manipal, Karnataka, India</div>
               </div>
             </div>
           </div>
@@ -236,15 +228,15 @@
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Prof. Kuldip Singh Sangwan</div>
-                <div class="cm-inst">Dean, Faculty of Science, Technology and Architecture, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Dean, Faculty of Science, Technology and Architecture, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Robert Cep</div>
-                <div class="cm-inst">Dean, Faculty of Mechanical Engineering, VSB-Technical University of Ostrava, Czechia</div>
+                <div class="cm-inst">Dean, Faculty of Mechanical Engineering, VSB-Technical University of Ostrava, Ostrava, Czechia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Guru Prasad Subas Chandra Mishra</div>
-                <div class="cm-inst">Dean (Research &amp; Consultancy), NIT Raipur, India</div>
+                <div class="cm-inst">Dean (Research &amp; Consultancy), NIT Raipur, Chhattisgarh, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Meghal Desai</div>
@@ -258,23 +250,23 @@
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Prof. R. K. Gupta</div>
-                <div class="cm-inst">Associate Dean, Faculty of Engineering, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Associate Dean, Faculty of Engineering, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Ramachandran S.</div>
-                <div class="cm-inst">Associate Dean, Academic Graduate Studies and Research, BITS Pilani Dubai Campus, UAE</div>
+                <div class="cm-inst">Associate Dean, Academic Graduate Studies and Research, BITS Pilani Dubai Campus, Dubai, UAE</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Dattaguru V. Kamath</div>
-                <div class="cm-inst">Dean, School of Mechanical Engineering, MIT, MAHE, Karnataka, India</div>
+                <div class="cm-inst">Dean, School of Mechanical Engineering, MIT, MAHE, Manipal, Karnataka, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Raviraja Adhikari</div>
-                <div class="cm-inst">HOD, Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">HOD, Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Jana Petru</div>
-                <div class="cm-inst">HOD, Machining, Assembly and Engineering Metrology, VSB-TU Ostrava, Czechia</div>
+                <div class="cm-inst">HOD, Machining, Assembly and Engineering Metrology, VSB-TU Ostrava, Ostrava, Czechia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Rabindra Narayan Mahapatra</div>
@@ -282,21 +274,21 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Vincent Shantha Kumar</div>
-                <div class="cm-inst">HOD, Department of Mechanical Engineering, BITS Pilani Dubai Campus, UAE</div>
+                <div class="cm-inst">HOD, Department of Mechanical Engineering, BITS Pilani Dubai Campus, Dubai, UAE</div>
               </div>
             </div>
           </div>
 
           <div class="cgroup">
-            <div class="cg-label">Convener</div>
+            <div class="cg-label">Conveners</div>
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Prof. Ajay</div>
-                <div class="cm-inst">Professor, Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Professor, Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Gulshan Kumar</div>
-                <div class="cm-inst">Department of Mechanical Engineering, BITS Pilani Dubai Campus, UAE</div>
+                <div class="cm-inst">Department of Mechanical Engineering, BITS Pilani Dubai Campus, Dubai, UAE</div>
               </div>
             </div>
           </div>
@@ -306,11 +298,11 @@
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Dr. Dhaneshwar Mishra</div>
-                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Vinod Yadav</div>
-                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Neeraj Sharma</div>
@@ -318,7 +310,7 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Kanak Kalita</div>
-                <div class="cm-inst">Associate Professor, School of Mechanical Engineering, MIT, MAHE, Karnataka, India</div>
+                <div class="cm-inst">School of Mechanical Engineering, MIT, MAHE, Manipal, Karnataka, India</div>
               </div>
             </div>
           </div>
@@ -328,15 +320,15 @@
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Dr. Rakesh Kumar</div>
-                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Raj Kumar Sahu</div>
-                <div class="cm-inst">Mechanical Engineering Department, NIT Raipur, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, NIT Raipur, Chhattisgarh, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Amrut Mulay</div>
-                <div class="cm-inst">Assistant Professor, Mechanical Engineering Department, SVNIT Surat, Gujarat, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, SVNIT Surat, Gujarat, India</div>
               </div>
             </div>
           </div>
@@ -346,26 +338,23 @@
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Dr. Sanjeev Jakhar</div>
-                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Srinivasu Gangi Setti</div>
-                <div class="cm-inst">Mechanical Engineering Department, NIT Raipur, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, NIT Raipur, Chhattisgarh, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Dharmesh Yadav</div>
-                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Subraya Krishna Bhat</div>
-                <div class="cm-inst">Mechanical Engineering Department, MIT, MAHE, Karnataka, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, MIT, MAHE, Manipal, Karnataka, India</div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- ================= SCIENTIFIC & ORGANIZING ================= -->
-        <div id="c-sci" class="cpanel">
           <div class="cgroup">
             <div class="cg-label">Scientific &amp; Organizing Committee</div>
             <div class="cm-grid">
@@ -423,11 +412,11 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Lenka Cepova</div>
-                <div class="cm-inst">VSB-Technical University of Ostrava, Czechia</div>
+                <div class="cm-inst">VSB-Technical University of Ostrava, Ostrava, Czechia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. K. Anand Kumar</div>
-                <div class="cm-inst">National Institute of Technology Raipur, India</div>
+                <div class="cm-inst">National Institute of Technology Raipur, Chhattisgarh, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Biranchi Narayan Sahoo</div>
@@ -439,24 +428,21 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Ranjan Kumar Ghadai</div>
-                <div class="cm-inst">Associate Professor, School of Mechanical Engineering, MIT, MAHE, Karnataka, India</div>
+                <div class="cm-inst">School of Mechanical Engineering, MIT, MAHE, Manipal, Karnataka, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Ashish Agrawal</div>
-                <div class="cm-inst">Assistant Professor, School of Mechanical Engineering, MIT, MAHE, Karnataka, India</div>
+                <div class="cm-inst">School of Mechanical Engineering, MIT, MAHE, Manipal, Karnataka, India</div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- ================= TECHNICAL SUPPORT ================= -->
-        <div id="c-tech" class="cpanel">
           <div class="cgroup">
             <div class="cg-label">Technical Support Committee</div>
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Prof. Subrata Bandhu Ghosh</div>
-                <div class="cm-inst">Professor, Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Professor, Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Sanchita Bandyopadhyay Ghosh</div>
@@ -464,314 +450,379 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Ashok Kumar Sharma</div>
-                <div class="cm-inst">Professor, Mechanical Engineering Department, Manipal University Jaipur, India</div>
+                <div class="cm-inst">Professor, Mechanical Engineering Department, Manipal University Jaipur, Rajasthan, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Miroslav Mahdal</div>
-                <div class="cm-inst">Machining, Assembly and Engineering Metrology, VSB-TU Ostrava, Czechia</div>
+                <div class="cm-inst">Machining, Assembly and Engineering Metrology, VSB-TU Ostrava, Ostrava, Czechia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Zdenek Poruba</div>
-                <div class="cm-inst">VSB-Technical University of Ostrava, Czechia</div>
+                <div class="cm-inst">VSB-Technical University of Ostrava, Ostrava, Czechia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Suraj Kumar Mukti</div>
-                <div class="cm-inst">Department of Mechanical Engineering, NIT Raipur, India</div>
+                <div class="cm-inst">Department of Mechanical Engineering, NIT Raipur, Chhattisgarh, India</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- ================= INTERNATIONAL ADVISORY ================= -->
-        <div id="c-intl" class="cpanel">
+        <!-- ================= ADVISORY COMMITTEE ================= -->
+        <div id="c-adv" class="cpanel">
+
+          <!-- International -->
           <div class="cgroup">
             <div class="cg-label">International Advisory Committee</div>
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Prof. Y. Eugene Pak</div>
-                <div class="cm-inst">Professor &amp; Dean (International Collaboration), SUNY, Korea</div>
+                <div class="cm-inst">Professor &amp; Dean (International Collaboration), SUNY Korea (State University of New York Korea), Incheon</div>
+                <div class="cm-country">South Korea</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Andrzej Kocanda</div>
-                <div class="cm-inst">Professor Emeritus, Warsaw University of Technology, Poland</div>
+                <div class="cm-inst">Professor Emeritus, Warsaw University of Technology, Warsaw</div>
+                <div class="cm-country">Poland</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Panagiotis Kyratsis</div>
-                <div class="cm-inst">Professor, University of Western Macedonia, Greece</div>
+                <div class="cm-inst">Professor, University of Western Macedonia, Kozani</div>
+                <div class="cm-country">Greece</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Duc Truong Pham</div>
-                <div class="cm-inst">Department of Mechanical Engineering, The University of Birmingham, United Kingdom</div>
+                <div class="cm-inst">Department of Mechanical Engineering, The University of Birmingham, Birmingham, England</div>
+                <div class="cm-country">United Kingdom</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. J. Paulo Davim</div>
-                <div class="cm-inst">Department of Mechanical Engineering, University of Aveiro, Portugal</div>
+                <div class="cm-inst">Department of Mechanical Engineering, University of Aveiro, Aveiro</div>
+                <div class="cm-country">Portugal</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Mohammad Affan Badar</div>
-                <div class="cm-inst">Applied Engineering &amp; Technology Management, Indiana State University, USA</div>
+                <div class="cm-inst">Applied Engineering &amp; Technology Management, Indiana State University, Terre Haute, Indiana</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Nikhil Gupta</div>
-                <div class="cm-inst">Mechanical and Aerospace Engineering, New York University, Tandon School of Engineering, USA</div>
+                <div class="cm-inst">Mechanical and Aerospace Engineering, New York University, Tandon School of Engineering, Brooklyn, New York</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Yigit Kazancoglu</div>
-                <div class="cm-inst">Department of Logistics Management, Yasar University, Turkey</div>
+                <div class="cm-inst">Department of Logistics Management, Yasar University, Izmir</div>
+                <div class="cm-country">Türkiye</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Jose Arturo Garza-Reyes</div>
-                <div class="cm-inst">Centre for Supply Chain Improvement, University of Derby, United Kingdom</div>
+                <div class="cm-inst">Centre for Supply Chain Improvement, University of Derby, Derby, England</div>
+                <div class="cm-country">United Kingdom</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Angappa Gunasekaran</div>
-                <div class="cm-inst">School of Business Administration, Penn State Harrisburg, USA</div>
+                <div class="cm-inst">School of Business Administration, Penn State Harrisburg, Pennsylvania</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Om Prakash Yadav</div>
-                <div class="cm-inst">Industrial and Systems Engineering, North Carolina A&amp;T State University, USA</div>
+                <div class="cm-inst">Industrial and Systems Engineering, North Carolina A&amp;T State University, Greensboro, North Carolina</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. M. N. Qureshi</div>
-                <div class="cm-inst">Industrial Engineering Department, King Khalid University, Abha, Saudi Arabia</div>
+                <div class="cm-inst">Industrial Engineering Department, King Khalid University, Abha</div>
+                <div class="cm-country">Saudi Arabia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Omer Secgin</div>
-                <div class="cm-inst">Sakarya University of Applied Sciences, Türkiye</div>
+                <div class="cm-inst">Sakarya University of Applied Sciences, Sakarya</div>
+                <div class="cm-country">Türkiye</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Raul Duarte Salgueiral Gomes Campilho</div>
-                <div class="cm-inst">Department of Mechanical Engineering, ISEP – School of Engineering, Portugal</div>
+                <div class="cm-inst">Department of Mechanical Engineering, ISEP – School of Engineering, Porto</div>
+                <div class="cm-country">Portugal</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Mohd Salman Abu Mansor</div>
-                <div class="cm-inst">School of Mechanical Engineering, Universiti Sains Malaysia, Malaysia</div>
+                <div class="cm-inst">School of Mechanical Engineering, Universiti Sains Malaysia, Penang</div>
+                <div class="cm-country">Malaysia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. M. Beatriz Silva</div>
-                <div class="cm-inst">Instituto Superior Técnico, University of Lisbon, Portugal</div>
+                <div class="cm-inst">Instituto Superior Técnico, University of Lisbon, Lisbon</div>
+                <div class="cm-country">Portugal</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Ghida AlZohbi</div>
-                <div class="cm-inst">Renewable Energy Institute, Prince Mohammad University, Al Khobar, Saudi Arabia</div>
+                <div class="cm-inst">Renewable Energy Institute, Prince Mohammad University, Al Khobar</div>
+                <div class="cm-country">Saudi Arabia</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Sumeet Hazra</div>
-                <div class="cm-inst">Associate Professor, University of Warwick, United Kingdom</div>
+                <div class="cm-inst">University of Warwick, Coventry, England</div>
+                <div class="cm-country">United Kingdom</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Esther Akinlabi</div>
-                <div class="cm-inst">Walter Scott Jr. College of Engineering, Colorado State University, USA</div>
+                <div class="cm-inst">Walter Scott Jr. College of Engineering, Colorado State University, Fort Collins, Colorado</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Jose Jaime Taha Tijerina</div>
-                <div class="cm-inst">Engineering Department, Universidad de Monterrey, Mexico</div>
+                <div class="cm-inst">Engineering Department, Universidad de Monterrey, Nuevo León</div>
+                <div class="cm-country">Mexico</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Dr. Nuri Şen</div>
-                <div class="cm-inst">Associate Professor, Duzce University, Türkiye</div>
+                <div class="cm-inst">Duzce University, Düzce</div>
+                <div class="cm-country">Türkiye</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Jerzy Rojek</div>
-                <div class="cm-inst">Institute of Fundamental Technological Research, Polish Academy of Sciences, Poland</div>
+                <div class="cm-inst">Institute of Fundamental Technological Research, Polish Academy of Sciences, Warsaw</div>
+                <div class="cm-country">Poland</div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- ================= NATIONAL ADVISORY ================= -->
-        <div id="c-natl" class="cpanel">
+          <!-- National -->
           <div class="cgroup">
             <div class="cg-label">National Advisory Committee</div>
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Prof. Pradeep Kumar</div>
                 <div class="cm-inst">Mechanical &amp; Industrial Engineering, IIT Roorkee, Uttarakhand</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Hari Singh</div>
                 <div class="cm-inst">Department of Mechanical Engineering, NIT Kurukshetra, Haryana</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Puneet Tandon</div>
                 <div class="cm-inst">Department of Mechanical Engineering, IIITDM Jabalpur, Madhya Pradesh</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Srinivasa Prakash Regalla</div>
-                <div class="cm-inst">Department of Mechanical Engineering, BITS Pilani, Hyderabad Campus</div>
+                <div class="cm-inst">Department of Mechanical Engineering, BITS Pilani, Hyderabad Campus, Telangana</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Anupam Agrawal</div>
                 <div class="cm-inst">Indian Institute of Technology Ropar, Punjab</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Pulak M. Pandey</div>
-                <div class="cm-inst">Department of Mechanical Engineering, IIT Delhi</div>
+                <div class="cm-inst">Department of Mechanical Engineering, IIT Delhi, New Delhi</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Neelesh Kumar Jain</div>
-                <div class="cm-inst">Department of Mechanical Engineering, IIT Indore</div>
+                <div class="cm-inst">Department of Mechanical Engineering, IIT Indore, Madhya Pradesh</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Amit Rai Dixit</div>
                 <div class="cm-inst">Head, Mechanical Engineering, IIT (ISM) Dhanbad, Jharkhand</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. R. K. Mittal</div>
                 <div class="cm-inst">Senior Professor [Ex.], Mechanical Engineering, BITS Pilani, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Anish Sachdeva</div>
                 <div class="cm-inst">Industrial and Production Engineering, NIT Jalandhar, Punjab</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Sanjay</div>
                 <div class="cm-inst">Mechanical Engineering Department, NIT Jamshedpur, Jharkhand</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Shrikrishna N. Joshi</div>
                 <div class="cm-inst">Department of Mechanical Engineering, IIT Guwahati, Assam</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Rakesh G. Mote</div>
-                <div class="cm-inst">Department of Mechanical Engineering, IIT Bombay, Maharashtra</div>
+                <div class="cm-inst">Department of Mechanical Engineering, IIT Bombay, Mumbai, Maharashtra</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Hari Haran</div>
-                <div class="cm-inst">Department of Mechanical Engineering, IIT Madras, Tamil Nadu</div>
+                <div class="cm-inst">Department of Mechanical Engineering, IIT Madras, Chennai, Tamil Nadu</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Vishal Gulati</div>
                 <div class="cm-inst">Guru Jambheshwar University of Science and Technology, Hisar, Haryana</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Ramesh K. Garg</div>
                 <div class="cm-inst">Department of Mechanical Engineering, DCRUST, Sonipat, Haryana</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Sunil Pandey</div>
                 <div class="cm-inst">Distinguished Professor, LNMIIT, Jaipur, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Abid Haleem</div>
                 <div class="cm-inst">Department of Mechanical Engineering, Jamia Millia Islamia, New Delhi</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Amit Kumar</div>
                 <div class="cm-inst">Department of Mechanical Engineering, NIT Patna, Bihar</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Lokesh Vijayvargy</div>
-                <div class="cm-inst">Operations Management &amp; Decision Sciences, Jaipuria Institute of Management, Jaipur</div>
+                <div class="cm-inst">Operations Management &amp; Decision Sciences, Jaipuria Institute of Management, Jaipur, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Indrajit Mukherjee</div>
-                <div class="cm-inst">Shailesh J. Mehta School of Management, IIT Bombay, Maharashtra</div>
+                <div class="cm-inst">Shailesh J. Mehta School of Management, IIT Bombay, Mumbai, Maharashtra</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Prof. Dixit Garg</div>
                 <div class="cm-inst">Department of Mechanical Engineering, NIT Kurukshetra, Haryana</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Vishal Gupta</div>
-                <div class="cm-inst">Mechanical Engineering, Thapar Institute of Engineering &amp; Technology, Patiala</div>
+                <div class="cm-inst">Mechanical Engineering, Thapar Institute of Engineering &amp; Technology, Patiala, Punjab</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Gunjan Soni</div>
                 <div class="cm-inst">Department of Mechanical Engineering, MNIT Jaipur, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Uttam K. Mandal</div>
                 <div class="cm-inst">Department of Production Engineering, NIT Agartala, Tripura</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Vidyut Dey</div>
                 <div class="cm-inst">Department of Production Engineering, NIT Agartala, Tripura</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Swarup Paul</div>
                 <div class="cm-inst">Department of Production Engineering, NIT Agartala, Tripura</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Pradeep Dixit</div>
-                <div class="cm-inst">Department of Mechanical Engineering, IIT Bombay, Maharashtra</div>
+                <div class="cm-inst">Department of Mechanical Engineering, IIT Bombay, Mumbai, Maharashtra</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Chandan Pandey</div>
                 <div class="cm-inst">Department of Mechanical Engineering, IIT Jodhpur, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Jaswinder Singh Saini</div>
-                <div class="cm-inst">Mechanical Engineering, Thapar Institute of Engineering and Technology, Patiala</div>
+                <div class="cm-inst">Mechanical Engineering, Thapar Institute of Engineering and Technology, Patiala, Punjab</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Girish Kant</div>
                 <div class="cm-inst">Department of Mechanical Engineering, BITS Pilani, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Sameer Mittal</div>
-                <div class="cm-inst">Operations and Decision Science, Jaipuria Institute of Management, Jaipur</div>
+                <div class="cm-inst">Operations and Decision Science, Jaipuria Institute of Management, Jaipur, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- ================= INDUSTRY ADVISORY ================= -->
-        <div id="c-ind" class="cpanel">
+          <!-- Industry -->
           <div class="cgroup">
             <div class="cg-label">Industry Advisory Committee</div>
             <div class="cm-grid">
               <div class="cm-card">
                 <div class="cm-name">Dr. Rajesh Goel</div>
-                <div class="cm-inst">Chief Operating Officer, Technico Industries Ltd, Gurugram, India</div>
+                <div class="cm-inst">Chief Operating Officer, Technico Industries Ltd, Gurugram, Haryana</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Rakesh Kumar</div>
-                <div class="cm-inst">VP Operations, Cortland International, USA</div>
+                <div class="cm-inst">VP Operations, Cortland International</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Narendra Kajale</div>
-                <div class="cm-inst">VP R&amp;D, Cortland International, USA</div>
+                <div class="cm-inst">VP R&amp;D, Cortland International</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Sachin Maheshwari</div>
-                <div class="cm-inst">Head HR, Voith Hydro, Heidenheim, Germany</div>
+                <div class="cm-inst">Head HR, Voith Hydro, Heidenheim, Baden-Württemberg</div>
+                <div class="cm-country">Germany</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Amit Soman</div>
-                <div class="cm-inst">Managing Partner, AR2 Holding, Michigan, USA</div>
+                <div class="cm-inst">Managing Partner, AR2 Holding, Michigan</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Sandeep Chotia</div>
-                <div class="cm-inst">Group CFO, Sage Metals Ltd., New Delhi, India</div>
+                <div class="cm-inst">Group CFO, Sage Metals Ltd., New Delhi</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. John Pitsowaki</div>
-                <div class="cm-inst">Regional Director, Shaw Development, Indianapolis, USA</div>
+                <div class="cm-inst">Regional Director, Shaw Development, Indianapolis, Indiana</div>
+                <div class="cm-country">USA</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. (Hc) Navnath Ganpat Tarle</div>
-                <div class="cm-inst">Global COO and Executive Director, Tuffropes India</div>
+                <div class="cm-inst">Global COO and Executive Director, Tuffropes</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Ganesh Tanpure</div>
-                <div class="cm-inst">Tech Lead, Boston Scientific, Gurugram, India</div>
+                <div class="cm-inst">Tech Lead, Boston Scientific, Gurugram, Haryana</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Manoj Meshram</div>
-                <div class="cm-inst">Chairman, Quality Circle Forum of India, Jaipur Chapter, India</div>
+                <div class="cm-inst">Chairman, Quality Circle Forum of India, Jaipur Chapter, Rajasthan</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Manoj Gupta</div>
-                <div class="cm-inst">Manager, AMNS India Ltd., Surat, Gujarat, India</div>
+                <div class="cm-inst">Manager, AMNS India Ltd., Surat, Gujarat</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Viswanathan</div>
-                <div class="cm-inst">General Manager (R&amp;D), AMNS India Ltd., Surat, Gujarat, India</div>
+                <div class="cm-inst">General Manager (R&amp;D), AMNS India Ltd., Surat, Gujarat</div>
+                <div class="cm-country">India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Sachin Mulay</div>
-                <div class="cm-inst">Deputy General Manager (Sales), Rotomag Enertec Ltd., Anand, Gujarat, India</div>
+                <div class="cm-inst">Deputy General Manager (Sales), Rotomag Enertec Ltd., Anand, Gujarat</div>
+                <div class="cm-country">India</div>
               </div>
             </div>
           </div>
@@ -788,7 +839,7 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Sangyal Baik</div>
-                <div class="cm-inst">School of Mechanical Engineering, SungKyunKwan University, Republic of Korea</div>
+                <div class="cm-inst">School of Mechanical Engineering, SungKyunKwan University, Suwon, Republic of Korea</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Vikash Kumar</div>
@@ -800,19 +851,19 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Harinadh Vemanaboina</div>
-                <div class="cm-inst">Mechanical Engineering, VEMU Institute of Technology, Chittoor, India</div>
+                <div class="cm-inst">Mechanical Engineering, VEMU Institute of Technology, Chittoor, Andhra Pradesh, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Mani Kanwar Singh</div>
-                <div class="cm-inst">Skill Faculty of Engineering &amp; Technology, Shri Vishwakarma Skill University, Haryana</div>
+                <div class="cm-inst">Skill Faculty of Engineering &amp; Technology, Shri Vishwakarma Skill University, Haryana, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Vikas Goyat</div>
-                <div class="cm-inst">Mechanical Engineering, SRM Institute of Science and Technology, Modi Nagar, UP</div>
+                <div class="cm-inst">Mechanical Engineering, SRM Institute of Science and Technology, Modi Nagar, Uttar Pradesh, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Naveen Sharma</div>
-                <div class="cm-inst">Mechanical Engineering, Netaji Subhash Institute of Technology, New Delhi</div>
+                <div class="cm-inst">Mechanical Engineering, Netaji Subhash Institute of Technology, New Delhi, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Jithin Sundaresan</div>
@@ -820,31 +871,31 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Prasenjit Dutta</div>
-                <div class="cm-inst">National Institute of Technology Agartala, Tripura</div>
+                <div class="cm-inst">National Institute of Technology Agartala, Tripura, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Kishan Chaudhuri</div>
-                <div class="cm-inst">National Institute of Technology Agartala, Tripura</div>
+                <div class="cm-inst">National Institute of Technology Agartala, Tripura, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Prakash K. Sahu</div>
-                <div class="cm-inst">National Institute of Technology Agartala, Tripura</div>
+                <div class="cm-inst">National Institute of Technology Agartala, Tripura, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Nabarun Biswas</div>
-                <div class="cm-inst">National Institute of Technology Agartala, Tripura</div>
+                <div class="cm-inst">National Institute of Technology Agartala, Tripura, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Sujoy Chakraborty</div>
-                <div class="cm-inst">National Institute of Technology Agartala, Tripura</div>
+                <div class="cm-inst">National Institute of Technology Agartala, Tripura, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Uttam Kumar Mohanty</div>
-                <div class="cm-inst">National Institute of Technology Agartala, Tripura</div>
+                <div class="cm-inst">National Institute of Technology Agartala, Tripura, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Nitish Kumar Mahto</div>
-                <div class="cm-inst">National Institute of Technology Agartala, Tripura</div>
+                <div class="cm-inst">National Institute of Technology Agartala, Tripura, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Raju Prasad Mahto</div>
@@ -860,19 +911,19 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Biranchi Narayan Sahoo</div>
-                <div class="cm-inst">Mechanical Engineering Department, SVNIT Surat, India</div>
+                <div class="cm-inst">Mechanical Engineering Department, SVNIT Surat, Gujarat, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Pradyumn Kumar Arya</div>
-                <div class="cm-inst">National Postdoctoral Fellow, Mechanical Engineering, IIT Delhi</div>
+                <div class="cm-inst">National Postdoctoral Fellow, Mechanical Engineering, IIT Delhi, New Delhi, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Neetesh Kumar Sah</div>
-                <div class="cm-inst">Postdoctoral Fellow, IIT Delhi, India</div>
+                <div class="cm-inst">Postdoctoral Fellow, IIT Delhi, New Delhi, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Mr. Sudarshan Gajre</div>
-                <div class="cm-inst">Department of Mechanical Engineering, VJTI Mumbai, India</div>
+                <div class="cm-inst">Department of Mechanical Engineering, VJTI Mumbai, Maharashtra, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Kailash Choudhary</div>
@@ -880,7 +931,7 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Rahul Gurpude</div>
-                <div class="cm-inst">Swaminarayan Siddhanta Institute of Technology, Nagpur, India</div>
+                <div class="cm-inst">Swaminarayan Siddhanta Institute of Technology, Nagpur, Maharashtra, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Sudarshan Kumar</div>
@@ -888,7 +939,7 @@
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Parnika Srivastava</div>
-                <div class="cm-inst">Dr. B. R. Ambedkar National Institute of Technology, Jalandhar, Punjab</div>
+                <div class="cm-inst">Dr. B. R. Ambedkar National Institute of Technology, Jalandhar, Punjab, India</div>
               </div>
               <div class="cm-card">
                 <div class="cm-name">Dr. Y. Gunda</div>
@@ -962,12 +1013,16 @@
   </body>
   <script src="./app.js"></script>
 
-  <!-- Open the right tab when arriving from the navbar dropdown (#org, #intl, ...) -->
+  <!-- Open the right tab when arriving from the navbar dropdown (#org, #adv, #peer) -->
   <script>
     (function () {
+      // old links (#sci, #tech, #intl, #natl, #ind) still land on the right tab
+      var alias = { sci: "org", tech: "org", intl: "adv", natl: "adv", ind: "adv" };
+
       function openFromHash() {
         var key = (window.location.hash || "").replace("#", "");
         if (!key) return;
+        key = alias[key] || key;
         var btn = document.querySelector('.ctab[data-key="' + key + '"]');
         if (!btn) return;
         btn.click();

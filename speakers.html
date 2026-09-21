@@ -7,32 +7,61 @@
       Keynote Speakers | SS-MOM 2027
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
 
-    <!-- page-only tweaks so the photos crop uniformly -->
+    <!-- page-only styles for speaker cards -->
     <style>
+      .sp-grid .cm-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
       .sp-grid .cm-card img {
-        width: 100%;
         width: 200px;
         height: 200px;
-        aspect-ratio: 1 / 1;
+        max-width: 100%;
         object-fit: cover;
         border-radius: 50%;
         display: block;
         margin: 0 auto 14px;
         background: #f1f4f9;
       }
-      .sp-role {
-        font-size: 11.5px;
+      .sp-grid .cm-name {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+      .sp-grid .cm-inst {
+        text-align: center;
+        font-size: 14.5px;
+        line-height: 1.65;
+        flex-grow: 1;
+      }
+      .sp-grid .cm-inst b {
+        font-weight: 800;
+        color: var(--navy);
+      }
+      .sp-country {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 14px;
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-size: 12px;
         font-weight: 700;
-        letter-spacing: .5px;
+        letter-spacing: .4px;
         text-transform: uppercase;
-        color: var(--amber);
-        margin-bottom: 6px;
+        background: var(--amber-pale, #fdf3e1);
+        color: var(--navy);
+        border: 1px solid var(--amber, #e0a030);
       }
     </style>
   </head>
@@ -51,7 +80,7 @@
 
     <!-- HEADER -->
         
-    <header class="site-header">
+        <header class="site-header">
       <div class="">
         <div class="header-inner">
           <div class="hlogo">
@@ -65,12 +94,8 @@
               <a href="./committee.html">Committee</a>
               <div class="hnav-drop">
                 <a href="./committee.html#org">Organizing Committee</a>
-                <a href="./committee.html#sci">Scientific &amp; Organizing</a>
-                <a href="./committee.html#tech">Technical Support</a>
-                <a href="./committee.html#intl">International Advisory</a>
-                <a href="./committee.html#natl">National Advisory</a>
-                <a href="./committee.html#ind">Industry Advisory</a>
-                <a href="./committee.html#peer">Peer Review</a>
+                <a href="./committee.html#adv">Advisory Committee</a>
+                <a href="./committee.html#peer">Peer Review Committee</a>
               </div>
             </div>
      
@@ -83,7 +108,6 @@
               <div class="hnav-drop">
                 <a href="./paper-submission-guidelines.html">Paper Submission Guidelines</a>
                 <a href="./registration.html">Registration</a>
-                <a href="./special-track.html">Special Track Proposal</a>
               </div>
             </div>
      
@@ -122,13 +146,9 @@
       <a href="./about.html" onclick="closeDrawer()">About</a>
      
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
-      <a href="./committee.html#org" onclick="closeDrawer()">— Organizing</a>
-      <a href="./committee.html#sci" onclick="closeDrawer()">— Scientific &amp; Organizing</a>
-      <a href="./committee.html#tech" onclick="closeDrawer()">— Technical Support</a>
-      <a href="./committee.html#intl" onclick="closeDrawer()">— International Advisory</a>
-      <a href="./committee.html#natl" onclick="closeDrawer()">— National Advisory</a>
-      <a href="./committee.html#ind" onclick="closeDrawer()">— Industry Advisory</a>
-      <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review</a>
+      <a href="./committee.html#org" onclick="closeDrawer()">— Organizing Committee</a>
+      <a href="./committee.html#adv" onclick="closeDrawer()">— Advisory Committee</a>
+      <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review Committee</a>
      
       <a href="./call-for-papers.html" onclick="closeDrawer()">Call for Papers</a>
       <a href="./publications.html" onclick="closeDrawer()">Publications</a>
@@ -136,7 +156,6 @@
      
       <a href="./paper-submission-guidelines.html" onclick="closeDrawer()">Paper Submission Guidelines</a>
       <a href="./registration.html" onclick="closeDrawer()">Registration</a>
-      <a href="./special-track.html" onclick="closeDrawer()">Special Track Proposal</a>
      
       <a href="./index.html#venue" onclick="closeDrawer()">Venue</a>
       <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a>
@@ -145,7 +164,8 @@
       <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">
         Submit Paper
       </a>
-    </nav>
+    </nav> 
+
 
     <!-- BREADCRUMB -->
     <div class="breadcrumb-header">
@@ -168,104 +188,103 @@
 
             <div class="cm-card">
               <img src="./images/speakers/duc-truong-pham.png" alt="Prof. Duc Truong Pham">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Duc Truong Pham</div>
               <div class="cm-inst">
                 Department of Mechanical Engineering, School of Engineering,
                 College of Engineering and Physical Sciences, The University of
-                Birmingham, Birmingham B15 2TT, United Kingdom
+                Birmingham, Birmingham B15 2TT
               </div>
+              <div class="sp-country">United Kingdom</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/kyoung-yun-joseph-kim.jpg" alt="Prof. Kyoung-Yun Joseph Kim">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Kyoung-Yun Joseph Kim</div>
               <div class="cm-inst">
                 Professor, Department of Industrial and Systems Engineering,
-                Wayne State University, USA
+                Wayne State University
               </div>
+              <div class="sp-country">USA</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/ghida-alzohbi.jpg" alt="Dr. Ghida AlZohbi">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Dr. Ghida AlZohbi</div>
               <div class="cm-inst">
-                Assistant Professor, Prince Mohammad University, Al Khobar
-                31952, Kingdom of Saudi Arabia
+                Assistant Professor, Prince Mohammad University, Al Khobar 31952
               </div>
+              <div class="sp-country">Saudi Arabia</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/tamer-ali-sebaey.jpg" alt="Prof. Tamer Ali Abdella Sebaey Abdella">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Tamer Ali Abdella Sebaey Abdella</div>
               <div class="cm-inst">
                 Professor, College of Engineering, Prince Sultan University,
-                Riyadh, Saudi Arabia
+                Riyadh
               </div>
+              <div class="sp-country">Saudi Arabia</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/amit-rai-dixit.jpg" alt="Prof. Amit Rai Dixit">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Amit Rai Dixit</div>
               <div class="cm-inst">
-                Professor, Department of Mechanical Engineering, IIT Dhanbad,
-                India
+                Professor, Department of Mechanical Engineering,
+                <b>Indian Institute of Technology (ISM) Dhanbad</b>
               </div>
+              <div class="sp-country">India</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/pulak-m-pandey.png" alt="Prof. Pulak M Pandey">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Pulak M Pandey</div>
               <div class="cm-inst">
-                Professor, Department of Mechanical Engineering, IIT Delhi,
-                India
+                Professor, Department of Mechanical Engineering,
+                <b>Indian Institute of Technology Delhi</b>
               </div>
+              <div class="sp-country">India</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/shrikrishna-n-joshi.jpg" alt="Prof. Shrikrishna N. Joshi">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Shrikrishna N. Joshi</div>
               <div class="cm-inst">
-                Professor, Department of Mechanical Engineering, Indian
-                Institute of Technology Guwahati, Assam, India
+                Professor, Department of Mechanical Engineering,
+                <b>Indian Institute of Technology Guwahati</b>, Assam
               </div>
+              <div class="sp-country">India</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/hari-singh.png" alt="Prof. Hari Singh">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Hari Singh</div>
               <div class="cm-inst">
                 Department of Mechanical Engineering, National Institute of
-                Technology, Kurukshetra, Haryana, India
+                Technology, Kurukshetra, Haryana
               </div>
+              <div class="sp-country">India</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/puneet-tandon.png" alt="Prof. Puneet Tandon">
-              <div class="sp-role">Keynote</div>
               <div class="cm-name">Prof. Puneet Tandon</div>
               <div class="cm-inst">
                 Department of Mechanical Engineering and Design, PDPM Indian
                 Institute of Information Technology, Design and Manufacturing,
-                Jabalpur (IIITDM Jabalpur), India
+                Jabalpur (IIITDM Jabalpur)
               </div>
+              <div class="sp-country">India</div>
             </div>
 
             <div class="cm-card">
               <img src="./images/speakers/mario-schmidt.jpg" alt="Dr. (hc.) Mario Schmidt">
-              <div class="sp-role">Industry Keynote</div>
               <div class="cm-name">Dr. (hc.) Mario Schmidt</div>
               <div class="cm-inst">
                 Managing Director, Lingel Windows and Doors Technologies Private
-                Limited, India
+                Limited
               </div>
+              <div class="sp-country">India</div>
             </div>
 
           </div>

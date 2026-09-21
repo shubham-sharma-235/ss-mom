@@ -636,11 +636,21 @@ ul {
 }
 .hero-title {
   font-family: "Lora", serif;
-  font-size: clamp(28px, 4vw, 50px);
+  font-size: clamp(28px, 3.8vw, 40px);
   font-weight: 700;
+  margin-top: 12px;
   color: #000;
   line-height: 1.15;
   margin-bottom: 48px;
+}
+.hero-logo{
+  height: 8.4rem;
+}
+@media(max-width:600px){
+  .hero-logo{
+    height: 4.4rem;
+    margin-top: 20px;
+  }
 }
 .hero-title em {
   font-style: italic;
