@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      About Us | SS-MOM 2027 | International Conference on Smart & Sustainable
+      Sponsorship | SS-MOM 2027 | International Conference on Smart &amp; Sustainable
       Manufacturing, Operations, and Materials
     </title>
+    <meta name="description" content="Partner with SS-MOM 2027 at Manipal University Jaipur (04–05 February 2027). Explore Platinum, Gold, Silver and Bronze sponsorship packages." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link
@@ -14,24 +15,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <style>
-      /* Layout fixes to guarantee full block visibility on a standalone page */
-      .about-standalone-container {
-        padding: 60px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-      }
-      .about-standalone-container .ccard {
-        display: block !important;
-        opacity: 1 !important;
-        transform: none !important;
-        visibility: visible !important;
-        margin-bottom: 0;
-      }
-      /* Elegant Breadcrumb Header Styles */
+      /* ---------- Breadcrumb header ---------- */
       .breadcrumb-header {
-        background: #0f172a; /* Custom fallback or maps perfectly to var(--navy) */
+        background: var(--navy, #0f172a);
         padding: 30px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
@@ -48,13 +37,8 @@
         text-decoration: none;
         transition: color 0.2s;
       }
-      .breadcrumb-nav a:hover {
-        color: var(--amber);
-      }
-      .breadcrumb-current {
-        color: var(--amber);
-        font-weight: 500;
-      }
+      .breadcrumb-nav a:hover { color: var(--amber, #f59e0b); }
+      .breadcrumb-current { color: var(--amber, #f59e0b); font-weight: 500; }
       .page-title-main {
         font-family: 'Lora', serif;
         font-size: 28px;
@@ -62,40 +46,350 @@
         font-weight: 700;
         margin: 0;
       }
-      .ccard-body {
-        max-width: 100%;
+
+      /* ---------- Sponsorship page (sp- prefix to avoid clashes) ---------- */
+      .sp-page {
+        --sp-navy: var(--navy, #0f172a);
+        --sp-amber: var(--amber, #f59e0b);
+        --sp-text: #334155;
+        --sp-muted: #64748b;
+        --sp-line: #e2e8f0;
+        --sp-soft: #f8fafc;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--sp-text);
+      }
+      .sp-section { padding: 70px 0; }
+      .sp-section.alt { background: var(--sp-soft); }
+      .sp-eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--sp-amber);
+        margin-bottom: 10px;
+      }
+      .sp-h2 {
+        font-family: 'Lora', serif;
+        font-size: clamp(24px, 3.2vw, 34px);
+        font-weight: 700;
+        color: var(--sp-navy);
+        line-height: 1.25;
+        margin: 0 0 16px;
+      }
+      .sp-lead {
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--sp-muted);
+        max-width: 760px;
+        margin: 0 0 32px;
+      }
+      .sp-page p { line-height: 1.8; }
+
+      /* Intro */
+      .sp-intro {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .sp-tagline {
+        font-family: 'Lora', serif;
+        font-style: italic;
+        font-size: clamp(18px, 2.2vw, 22px);
+        color: var(--sp-navy);
+        border-left: 4px solid var(--sp-amber);
+        padding-left: 18px;
+        margin: 0 0 24px;
+        line-height: 1.5;
+      }
+      .sp-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .sp-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 1px solid var(--sp-line);
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--sp-navy);
+      }
+      .sp-meta i { color: var(--sp-amber); }
+      .sp-benefits {
+        background: var(--sp-navy);
+        color: #fff;
+        border-radius: 16px;
+        padding: 32px;
+      }
+      .sp-benefits h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 18px;
+        color: #fff;
+      }
+      .sp-benefits ul { list-style: none; margin: 0; padding: 0; }
+      .sp-benefits li {
+        display: flex;
+        gap: 12px;
+        padding: 10px 0;
+        font-size: 15px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.88);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .sp-benefits li:last-child { border-bottom: 0; }
+      .sp-benefits li i { color: var(--sp-amber); margin-top: 4px; flex-shrink: 0; }
+
+      /* Why partner */
+      .sp-why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+      .sp-why-card {
+        background: #fff;
+        border: 1px solid var(--sp-line);
+        border-radius: 14px;
+        padding: 28px;
+        transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      }
+      .sp-why-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+        border-color: var(--sp-amber);
+      }
+      .sp-why-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(245, 158, 11, 0.12);
+        color: var(--sp-amber);
+        font-size: 20px;
+        margin-bottom: 18px;
+      }
+      .sp-why-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--sp-navy);
+        margin: 0 0 10px;
+      }
+      .sp-why-card p { font-size: 15px; color: var(--sp-muted); margin: 0; }
+
+      /* Tier cards */
+      .sp-tiers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 44px;
+      }
+      .sp-tier {
+        position: relative;
+        background: #fff;
+        border: 1px solid var(--sp-line);
+        border-top: 5px solid var(--tier);
+        border-radius: 14px;
+        padding: 26px 22px;
+        text-align: center;
+      }
+      .sp-tier.featured { box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12); }
+      .sp-tier-badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--sp-navy);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 12px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .sp-tier-icon { font-size: 26px; color: var(--tier); margin-bottom: 10px; }
+      .sp-tier h3 {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--sp-navy);
+        margin: 0 0 8px;
+      }
+      .sp-tier-price {
+        font-family: 'Lora', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--sp-navy);
+      }
+      .sp-tier-sub { font-size: 13px; color: var(--sp-muted); margin-top: 6px; }
+      .t-platinum { --tier: #64748b; }
+      .t-gold { --tier: #d4a017; }
+      .t-silver { --tier: #94a3b8; }
+      .t-bronze { --tier: #b87333; }
+
+      /* Comparison table */
+      .sp-table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--sp-line);
+        border-radius: 14px;
+        background: #fff;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sp-table {
+        width: 100%;
+        min-width: 720px;
+        border-collapse: collapse;
+        font-size: 15px;
+      }
+      .sp-table th,
+      .sp-table td {
+        padding: 14px 18px;
+        text-align: center;
+        border-bottom: 1px solid var(--sp-line);
+      }
+      .sp-table th:first-child,
+      .sp-table td:first-child {
+        text-align: left;
+        font-weight: 600;
+        color: var(--sp-navy);
+        position: sticky;
+        left: 0;
+        background: inherit;
+        z-index: 1;
+      }
+      .sp-table thead th {
+        background: var(--sp-navy);
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        border-bottom: 4px solid var(--tier, var(--sp-amber));
+      }
+      .sp-table thead th:first-child { color: #fff; background: var(--sp-navy); }
+      .sp-table tbody tr { background: #fff; }
+      .sp-table tbody tr:nth-child(even) { background: var(--sp-soft); }
+      .sp-table tbody tr:last-child td { border-bottom: 0; }
+      .sp-table tr.sp-price-row td {
+        font-family: 'Lora', serif;
+        font-weight: 700;
+        font-size: 17px;
+        color: var(--sp-navy);
+      }
+      .sp-yes { color: #16a34a; font-size: 16px; }
+      .sp-no { color: #cbd5e1; }
+      .sp-level {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(245, 158, 11, 0.12);
+        color: #92400e;
+      }
+      .sp-note {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+        padding: 16px 20px;
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: 12px;
+        font-size: 14px;
+        color: #78350f;
+        line-height: 1.6;
+      }
+      .sp-note i { margin-top: 3px; }
+
+      /* Contact */
+      .sp-contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        background: #fff;
+        border: 1px solid var(--sp-line);
+        border-radius: 18px;
+        padding: 40px;
+      }
+      .sp-contact address {
+        font-style: normal;
+        line-height: 1.8;
+        color: var(--sp-text);
+      }
+      .sp-contact address strong { color: var(--sp-navy); font-size: 17px; }
+      .sp-contact-links { display: flex; flex-direction: column; gap: 14px; }
+      .sp-contact-link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 20px;
+        border: 1px solid var(--sp-line);
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--sp-navy);
+        font-weight: 600;
+        transition: border-color 0.2s, background 0.2s;
+        word-break: break-word;
+      }
+      .sp-contact-link:hover { border-color: var(--sp-amber); background: #fffbeb; }
+      .sp-contact-link i {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: var(--sp-navy);
+        color: var(--sp-amber);
+      }
+      .sp-contact-link small {
+        display: block;
+        font-weight: 500;
+        font-size: 12px;
+        color: var(--sp-muted);
+      }
+
+      /* Responsive */
+      @media (max-width: 1000px) {
+        .sp-tiers { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+      }
+      @media (max-width: 860px) {
+        .sp-intro, .sp-contact { grid-template-columns: 1fr; gap: 32px; }
+      }
+      @media (max-width: 560px) {
+        .sp-section { padding: 48px 0; }
+        .sp-tiers { grid-template-columns: 1fr; }
+        .sp-benefits, .sp-contact { padding: 24px; }
+        .sp-table th, .sp-table td { padding: 12px 14px; }
       }
     </style>
   </head>
   <body>
-
     <!-- Sticky Brochure Link -->
-    <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">
-      Brochure
-    </a>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    
-        <header class="site-header">
+    <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">Brochure</a>
+
+    <header class="site-header">
       <div class="">
         <div class="header-inner">
-          <!-- <div class="hlogo">
-            <img src="./images/logo.png" alt="">
-          </div> -->
           <div class="hlogo">
-              <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
-                <div>
-                  <div class="hconf-name">SS-MOM 2027</div>
-                  <div class="hconf-sub">
-                    International Conference on Smart &amp; Sustainable manufacturing, Operations
-                  </div>
+            <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
+            <div>
+              <div class="hconf-name">SS-MOM 2027</div>
+              <div class="hconf-sub">
+                International Conference on Smart &amp; Sustainable manufacturing, Operations
               </div>
+            </div>
           </div>
           <nav class="hnav">
             <a href="./index.html">Home</a>
             <a href="./about.html">About</a>
-     
             <div class="hnav-item">
               <a href="./committee.html">Committee</a>
               <div class="hnav-drop">
@@ -104,11 +398,9 @@
                 <a href="./committee.html#peer">Peer Review Committee</a>
               </div>
             </div>
-     
             <a href="./call-for-papers.html">Call for Papers</a>
             <a href="./publications.html">Publications</a>
             <a href="./speakers.html">Speakers</a>
-     
             <div class="hnav-item">
               <a href="./paper-submission-guidelines.html">For Authors</a>
               <div class="hnav-drop">
@@ -116,78 +408,307 @@
                 <a href="./registration.html">Registration</a>
               </div>
             </div>
-     
-            <a href="./index.html#venue">Venue</a>
+            <a href="./special-track.html">Special Track</a>
             <a href="./sponsorship.html">Sponsorship</a>
-     
             <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank">Jaipur Tourism</a>
-     
             <a href="./view-source.html">View Source</a>
-     
-            <a href="./index.html#submit" class="hnav-cta">
-              Submit Paper
-            </a>
+            <a href="./index.html#submit" class="hnav-cta">Submit Paper</a>
           </nav>
-          <button
-            class="hamburger"
-            id="HB"
-            onclick="openDrawer()"
-            aria-label="Menu"
-          >
+          <button class="hamburger" id="HB" onclick="openDrawer()" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
     </header>
-     
-    <div
-      class="drawer-overlay"
-      id="drawerOverlay"
-      onclick="closeDrawer()"
-    ></div>
+
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
     <nav class="mobile-drawer" id="mobileDrawer">
       <button class="drawer-close" onclick="closeDrawer()">&#x2715;</button>
-     
       <a href="./index.html" onclick="closeDrawer()">Home</a>
       <a href="./about.html" onclick="closeDrawer()">About</a>
-     
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
       <a href="./committee.html#org" onclick="closeDrawer()">— Organizing Committee</a>
       <a href="./committee.html#adv" onclick="closeDrawer()">— Advisory Committee</a>
       <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review Committee</a>
-     
       <a href="./call-for-papers.html" onclick="closeDrawer()">Call for Papers</a>
       <a href="./publications.html" onclick="closeDrawer()">Publications</a>
       <a href="./speakers.html" onclick="closeDrawer()">Speakers</a>
-     
       <a href="./paper-submission-guidelines.html" onclick="closeDrawer()">Paper Submission Guidelines</a>
       <a href="./registration.html" onclick="closeDrawer()">Registration</a>
-     
-      <a href="./index.html#venue" onclick="closeDrawer()">Venue</a>
+      <a href="./special-track.html" onclick="closeDrawer()">Special Track</a>
       <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a>
       <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank" onclick="closeDrawer()">Jaipur Tourism</a>
-     
-      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">
-        Submit Paper
-      </a>
-    </nav> 
+      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">Submit Paper</a>
+    </nav>
 
-    <!-- Clean Breadcrumb Header Component instead of Big Hero -->
+    <!-- Breadcrumb Header -->
     <div class="breadcrumb-header">
       <div class="wrap">
         <div class="breadcrumb-nav">
           <a href="./index.html">Home</a>
           <i class="fa-solid fa-chevron-right" style="font-size: 10px; opacity: 0.5;"></i>
-          <span class="breadcrumb-current">About Us</span>
+          <span class="breadcrumb-current">Sponsorship</span>
         </div>
-        <h1 class="page-title-main">Sponsorship</h1>
+        <h1 class="page-title-main">Sponsorship Opportunities</h1>
       </div>
     </div>
 
+    <main class="sp-page">
 
-    <div style="height: 60vh;"></div>
+      <!-- ===== Intro ===== -->
+      <section class="sp-section">
+        <div class="wrap">
+          <div class="sp-intro">
+            <div>
+              <span class="sp-eyebrow">Partner with SS-MOM 2027</span>
+              <p class="sp-tagline">
+                Showcase Your Innovation. Connect with Experts. Shape the Future of Sustainable Industry.
+              </p>
+              <p>
+                The 1st International Conference on Smart and Sustainable Manufacturing,
+                Operations, and Materials (SS-MOM 2027) invites industries, technology
+                companies, research organisations, startups, professional bodies, and
+                corporate partners to join us as Sponsors and Industry Partners.
+              </p>
+              <p>
+                Scheduled for 04–05 February 2027 at Manipal University Jaipur, SS-MOM 2027
+                will bring together researchers, academicians, industry professionals,
+                engineers, technology experts, PhD scholars, and students to explore emerging
+                developments in smart manufacturing, sustainable operations, industrial
+                engineering, advanced materials, Industry 4.0/5.0, AI, digital transformation,
+                and circular economy.
+              </p>
+              <div class="sp-meta">
+                <span><i class="fa-regular fa-calendar"></i> 04–05 February 2027</span>
+                <span><i class="fa-solid fa-location-dot"></i> Manipal University Jaipur</span>
+              </div>
+            </div>
 
-    
+            <div class="sp-benefits">
+              <h3>Sponsoring SS-MOM 2027 lets your organisation:</h3>
+              <ul>
+                <li><i class="fa-solid fa-circle-check"></i>Increase brand visibility among an international academic and professional audience</li>
+                <li><i class="fa-solid fa-circle-check"></i>Showcase products, technologies, solutions, and innovations</li>
+                <li><i class="fa-solid fa-circle-check"></i>Engage directly with researchers, engineers, faculty members, and industry leaders</li>
+                <li><i class="fa-solid fa-circle-check"></i>Explore opportunities for industry–academia collaboration</li>
+                <li><i class="fa-solid fa-circle-check"></i>Connect with emerging talent and prospective employees</li>
+                <li><i class="fa-solid fa-circle-check"></i>Position your organisation as a supporter of sustainable and smart industrial transformation</li>
+                <li><i class="fa-solid fa-circle-check"></i>Promote your organisation through conference communication and promotional platforms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Why Partner ===== -->
+      <section class="sp-section alt">
+        <div class="wrap">
+          <span class="sp-eyebrow">Why Partner</span>
+          <h2 class="sp-h2">Why Partner with SS-MOM 2027?</h2>
+          <div class="sp-why-grid">
+            <div class="sp-why-card">
+              <div class="sp-why-icon"><i class="fa-solid fa-earth-asia"></i></div>
+              <h3>Global Academic &amp; Industry Exposure</h3>
+              <p>Connect with researchers, faculty members, industry professionals, scientists, engineers, and students participating from India and internationally.</p>
+            </div>
+            <div class="sp-why-card">
+              <div class="sp-why-icon"><i class="fa-solid fa-microchip"></i></div>
+              <h3>Showcase Your Technology</h3>
+              <p>Demonstrate your products, services, technologies, and industrial solutions through exhibition spaces, presentations, demonstrations, and conference interactions.</p>
+            </div>
+            <div class="sp-why-card">
+              <div class="sp-why-icon"><i class="fa-solid fa-handshake"></i></div>
+              <h3>Build Industry–Academia Partnerships</h3>
+              <p>Engage with researchers and academic institutions working on emerging technologies and identify opportunities for collaborative research, consultancy, innovation, and technology development.</p>
+            </div>
+            <div class="sp-why-card">
+              <div class="sp-why-icon"><i class="fa-solid fa-leaf"></i></div>
+              <h3>Promote Sustainable Innovation</h3>
+              <p>Associate your organisation with a conference focused on smart manufacturing, sustainability, circular economy, resource efficiency, advanced materials, and Industry 4.0/5.0.</p>
+            </div>
+            <div class="sp-why-card">
+              <div class="sp-why-icon"><i class="fa-solid fa-user-graduate"></i></div>
+              <h3>Engage with Emerging Talent</h3>
+              <p>Interact with undergraduate, postgraduate, and doctoral scholars who are developing expertise in advanced manufacturing, industrial engineering, materials, AI, automation, and sustainability.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Packages ===== -->
+      <section class="sp-section" id="packages">
+        <div class="wrap">
+          <span class="sp-eyebrow">Packages</span>
+          <h2 class="sp-h2">Sponsorship Packages</h2>
+          <p class="sp-lead">
+            We offer a range of sponsorship opportunities to accommodate different
+            organisational objectives and levels of engagement.
+          </p>
+
+          <div class="sp-tiers">
+            <div class="sp-tier t-platinum featured">
+              <span class="sp-tier-badge">Highest Visibility</span>
+              <div class="sp-tier-icon"><i class="fa-solid fa-gem"></i></div>
+              <h3>Platinum Partner</h3>
+              <div class="sp-tier-price">₹5,00,000</div>
+              <div class="sp-tier-sub">5 complimentary registrations</div>
+            </div>
+            <div class="sp-tier t-gold">
+              <div class="sp-tier-icon"><i class="fa-solid fa-crown"></i></div>
+              <h3>Gold Partner</h3>
+              <div class="sp-tier-price">₹3,00,000</div>
+              <div class="sp-tier-sub">3 complimentary registrations</div>
+            </div>
+            <div class="sp-tier t-silver">
+              <div class="sp-tier-icon"><i class="fa-solid fa-medal"></i></div>
+              <h3>Silver Partner</h3>
+              <div class="sp-tier-price">₹2,00,000</div>
+              <div class="sp-tier-sub">2 complimentary registrations</div>
+            </div>
+            <div class="sp-tier t-bronze">
+              <div class="sp-tier-icon"><i class="fa-solid fa-award"></i></div>
+              <h3>Bronze Partner</h3>
+              <div class="sp-tier-price">₹1,00,000</div>
+              <div class="sp-tier-sub">1 complimentary registration</div>
+            </div>
+          </div>
+
+          <div class="sp-table-wrap">
+            <table class="sp-table">
+              <thead>
+                <tr>
+                  <th scope="col">Benefits</th>
+                  <th scope="col" class="t-platinum">Platinum Partner</th>
+                  <th scope="col" class="t-gold">Gold Partner</th>
+                  <th scope="col" class="t-silver">Silver Partner</th>
+                  <th scope="col" class="t-bronze">Bronze Partner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="sp-price-row">
+                  <td>Sponsorship contribution</td>
+                  <td>₹5,00,000</td><td>₹3,00,000</td><td>₹2,00,000</td><td>₹1,00,000</td>
+                </tr>
+                <tr>
+                  <td>Logo on conference website</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                </tr>
+                <tr>
+                  <td>Logo on conference banners &amp; backdrop</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                </tr>
+                <tr>
+                  <td>Logo in conference brochure/proceedings</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                </tr>
+                <tr>
+                  <td>Acknowledgement during inaugural session</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                </tr>
+                <tr>
+                  <td>Exhibition/technology display space</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                </tr>
+                <tr>
+                  <td>Corporate/technology presentation</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                </tr>
+                <tr>
+                  <td>Full-page advertisement in souvenir</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                </tr>
+                <tr>
+                  <td>Half-page advertisement</td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                </tr>
+                <tr>
+                  <td>Complimentary registrations</td>
+                  <td><strong>5</strong></td><td><strong>3</strong></td><td><strong>2</strong></td><td><strong>1</strong></td>
+                </tr>
+                <tr>
+                  <td>Conference kit inserts</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><span class="sp-no" aria-label="Not included">—</span></td>
+                </tr>
+                <tr>
+                  <td>Social media recognition</td>
+                  <td><span class="sp-level">Premium</span></td>
+                  <td><span class="sp-level">Featured</span></td>
+                  <td><span class="sp-level">Standard</span></td>
+                  <td><span class="sp-level">Basic</span></td>
+                </tr>
+                <tr>
+                  <td>Sponsor recognition certificate</td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                  <td><i class="fa-solid fa-check sp-yes" aria-label="Included"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sp-note">
+            <i class="fa-solid fa-circle-info"></i>
+            <span><strong>Note:</strong> Sponsorship amounts are indicative and may be revised by the conference organising committee. Applicable taxes will be additional.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Enquiries ===== -->
+      <section class="sp-section alt" id="sponsor-contact">
+        <div class="wrap">
+          <span class="sp-eyebrow">Get in Touch</span>
+          <h2 class="sp-h2">For Sponsorship &amp; Industry Partnership Enquiries</h2>
+          <div class="sp-contact">
+            <address>
+              <strong>Conference Secretariat</strong><br />
+              SS-MOM 2027<br />
+              Department of Mechanical Engineering<br />
+              Manipal University Jaipur<br />
+              Jaipur, Rajasthan, India
+            </address>
+            <div class="sp-contact-links">
+              <a class="sp-contact-link" href="mailto:ssmom2027@gmail.com?subject=Sponsorship%20Enquiry%20-%20SS-MOM%202027">
+                <i class="fa-solid fa-envelope"></i>
+                <span><small>Email</small>ssmom2027@gmail.com</span>
+              </a>
+              <a class="sp-contact-link" href="tel:+919467717120">
+                <i class="fa-solid fa-phone"></i>
+                <span><small>Phone</small>+91 94677 17120</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- CTA -->
     <div id="contact" class="cta-section">
       <div class="wrap">
@@ -212,15 +733,9 @@
         </div>
       </div>
     </div>
-     
-    <button
-      id="btt"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      title="Back to Top"
-    >
-      &#8679;
-    </button>
 
+    <button id="btt" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="Back to Top">&#8679;</button>
+
+    <script src="./app.js"></script>
   </body>
-  <script src="./app.js"></script>
 </html>

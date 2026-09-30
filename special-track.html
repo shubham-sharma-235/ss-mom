@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      SS MOM 2027 | International Conference on Smart & Sustainable
+      Special Track Proposals | SS-MOM 2027 | International Conference on Smart &amp; Sustainable
       Manufacturing, Operations, and Materials
     </title>
+    <meta name="description" content="Guidelines for proposing Special Tracks at SS-MOM 2027: theme and scope, Track Chair eligibility and responsibilities, recognition, proposal requirements, evaluation and approval." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link
@@ -14,45 +15,325 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+      /* ---------- Breadcrumb header ---------- */
+      .breadcrumb-header {
+        background: var(--navy, #0f172a);
+        padding: 30px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .breadcrumb-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 8px;
+      }
+      .breadcrumb-nav a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .breadcrumb-nav a:hover { color: var(--amber, #f59e0b); }
+      .breadcrumb-current { color: var(--amber, #f59e0b); font-weight: 500; }
+      .page-title-main {
+        font-family: 'Lora', serif;
+        font-size: 28px;
+        color: white;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      /* ---------- Special track page (st- prefix to avoid clashes) ---------- */
+      .st-page {
+        --st-navy: var(--navy, #0f172a);
+        --st-amber: var(--amber, #f59e0b);
+        --st-text: #334155;
+        --st-muted: #64748b;
+        --st-line: #e2e8f0;
+        --st-soft: #f8fafc;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--st-text);
+        font-size: 16px;
+      }
+      .st-page p { line-height: 1.8; margin: 0 0 14px; }
+      .st-page p:last-child { margin-bottom: 0; }
+
+      /* Intro */
+      .st-intro { padding: 56px 0 40px; }
+      .st-eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--st-amber);
+        margin-bottom: 10px;
+      }
+      .st-h2 {
+        font-family: 'Lora', serif;
+        font-size: clamp(24px, 3.2vw, 32px);
+        font-weight: 700;
+        color: var(--st-navy);
+        line-height: 1.25;
+        margin: 0 0 14px;
+      }
+      .st-lead { font-size: 17px; color: var(--st-muted); max-width: 780px; }
+
+      .st-tracks-label {
+        margin: 26px 0 10px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--st-navy);
+      }
+      .st-tracks { display: flex; flex-wrap: wrap; gap: 10px; }
+      .st-tracks span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: var(--st-soft);
+        border: 1px solid var(--st-line);
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--st-navy);
+      }
+      .st-tracks i { color: var(--st-amber); }
+
+      /* At a glance */
+      .st-glance {
+        margin-top: 36px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--st-line);
+        border-bottom: 1px solid var(--st-line);
+      }
+      .st-glance div { padding: 22px 20px; }
+      .st-glance div + div { border-left: 1px solid var(--st-line); }
+      .st-glance strong {
+        display: block;
+        font-family: 'Lora', serif;
+        font-size: 24px;
+        color: var(--st-navy);
+        line-height: 1.2;
+      }
+      .st-glance span { font-size: 14px; color: var(--st-muted); }
+
+      /* Layout: sidebar + content */
+      .st-body { padding: 20px 0 70px; }
+      .st-layout {
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .st-toc {
+        position: sticky;
+        top: 100px;
+      }
+      .st-toc-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--st-muted);
+        margin-bottom: 12px;
+      }
+      .st-toc a {
+        display: block;
+        padding: 8px 0 8px 14px;
+        border-left: 2px solid var(--st-line);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--st-muted);
+        text-decoration: none;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .st-toc a:hover,
+      .st-toc a.active {
+        color: var(--st-navy);
+        border-left-color: var(--st-amber);
+        font-weight: 600;
+      }
+
+      /* Sections */
+      .st-sec {
+        padding: 36px 0;
+        border-bottom: 1px solid var(--st-line);
+        scroll-margin-top: 100px;
+      }
+      .st-sec:first-child { padding-top: 16px; }
+      .st-sec:last-child { border-bottom: 0; }
+      .st-sec h3 {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        font-family: 'Lora', serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--st-navy);
+        margin: 0 0 14px;
+      }
+      .st-sec h3 .n {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--st-amber);
+      }
+      .st-summary {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--st-navy);
+        margin-bottom: 14px !important;
+      }
+
+      .st-list { margin: 6px 0 16px; padding: 0; list-style: none; }
+      .st-list:last-child { margin-bottom: 0; }
+      .st-list li {
+        position: relative;
+        padding: 5px 0 5px 22px;
+        line-height: 1.65;
+      }
+      .st-list li::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 15px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--st-amber);
+      }
+
+      .st-note {
+        margin-top: 16px;
+        padding: 4px 0 4px 16px;
+        border-left: 3px solid var(--st-amber);
+        font-size: 15px;
+        color: var(--st-muted);
+        line-height: 1.7;
+      }
+      .st-note strong { color: var(--st-navy); }
+
+      .st-two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-top: 18px;
+      }
+      .st-two h4 {
+        margin: 0 0 6px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--st-navy);
+      }
+      .st-two p { font-size: 15px; color: var(--st-muted); }
+
+      .st-steps { margin: 6px 0 0; padding: 0; list-style: none; counter-reset: req; }
+      .st-steps li {
+        counter-increment: req;
+        position: relative;
+        padding: 10px 0 10px 40px;
+        border-bottom: 1px dashed var(--st-line);
+        line-height: 1.55;
+      }
+      .st-steps li:last-child { border-bottom: 0; }
+      .st-steps li::before {
+        content: counter(req);
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        border: 1.5px solid var(--st-amber);
+        color: var(--st-navy);
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .st-steps strong { color: var(--st-navy); }
+      .st-steps small { display: block; color: var(--st-muted); font-size: 14px; }
+
+      /* Closing */
+      .st-close {
+        margin-top: 40px;
+        padding: 32px;
+        border-radius: 16px;
+        background: var(--st-navy);
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .st-close h3 {
+        font-family: 'Lora', serif;
+        font-size: 24px;
+        color: #fff;
+        margin: 0 0 10px;
+      }
+      .st-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+      .st-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.2s, background 0.2s;
+      }
+      .st-btn:hover { transform: translateY(-2px); }
+      .st-btn-amber { background: var(--st-amber); color: var(--st-navy); }
+      .st-btn-ghost { border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; }
+      .st-btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+      /* Responsive */
+      @media (max-width: 960px) {
+        .st-layout { grid-template-columns: 1fr; gap: 0; }
+        .st-toc { display: none; }
+      }
+      @media (max-width: 760px) {
+        .st-glance { grid-template-columns: 1fr 1fr; }
+        .st-glance div:nth-child(3) { border-left: 0; }
+        .st-glance div:nth-child(n+3) { border-top: 1px solid var(--st-line); }
+        .st-two { grid-template-columns: 1fr; gap: 16px; }
+      }
+      @media (max-width: 480px) {
+        .st-intro { padding-top: 40px; }
+        .st-glance div { padding: 16px 12px; }
+        .st-glance strong { font-size: 20px; }
+        .st-close { padding: 24px; }
+        .st-btn { width: 100%; justify-content: center; }
+      }
+    </style>
   </head>
   <body>
     <!-- WhatsApp Button -->
-    <a 
-      href="https://api.whatsapp.com/send?phone=919467717120"
-      class="whatsapp-btn"
-      target="_blank"
-    >
+    <a href="https://api.whatsapp.com/send?phone=919467717120" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Sticky Brochure Link -->
+    <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">Brochure</a>
 
-  <!-- Sticky Brochure Link -->
-  <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">
-    Brochure
-  </a>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-        
-        <header class="site-header">
+    <header class="site-header">
       <div class="">
         <div class="header-inner">
-         <!-- <div class="hlogo">
-            <img src="./images/logo.png" alt="">
-          </div> -->
           <div class="hlogo">
-              <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
-                <div>
-                  <div class="hconf-name">SS-MOM 2027</div>
-                  <div class="hconf-sub">
-                    International Conference on Smart &amp; Sustainable manufacturing, Operations
-                  </div>
+            <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
+            <div>
+              <div class="hconf-name">SS-MOM 2027</div>
+              <div class="hconf-sub">
+                International Conference on Smart &amp; Sustainable manufacturing, Operations
               </div>
+            </div>
           </div>
           <nav class="hnav">
             <a href="./index.html">Home</a>
             <a href="./about.html">About</a>
-     
             <div class="hnav-item">
               <a href="./committee.html">Committee</a>
               <div class="hnav-drop">
@@ -61,11 +342,9 @@
                 <a href="./committee.html#peer">Peer Review Committee</a>
               </div>
             </div>
-     
             <a href="./call-for-papers.html">Call for Papers</a>
             <a href="./publications.html">Publications</a>
             <a href="./speakers.html">Speakers</a>
-     
             <div class="hnav-item">
               <a href="./paper-submission-guidelines.html">For Authors</a>
               <div class="hnav-drop">
@@ -73,66 +352,277 @@
                 <a href="./registration.html">Registration</a>
               </div>
             </div>
-     
             <a href="./index.html#venue">Venue</a>
             <a href="./sponsorship.html">Sponsorship</a>
-     
             <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank">Jaipur Tourism</a>
-     
             <a href="./view-source.html">View Source</a>
-     
-            <a href="./index.html#submit" class="hnav-cta">
-              Submit Paper
-            </a>
+            <a href="./index.html#submit" class="hnav-cta">Submit Paper</a>
           </nav>
-          <button
-            class="hamburger"
-            id="HB"
-            onclick="openDrawer()"
-            aria-label="Menu"
-          >
+          <button class="hamburger" id="HB" onclick="openDrawer()" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
     </header>
-     
-    <div
-      class="drawer-overlay"
-      id="drawerOverlay"
-      onclick="closeDrawer()"
-    ></div>
+
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
     <nav class="mobile-drawer" id="mobileDrawer">
       <button class="drawer-close" onclick="closeDrawer()">&#x2715;</button>
-     
       <a href="./index.html" onclick="closeDrawer()">Home</a>
       <a href="./about.html" onclick="closeDrawer()">About</a>
-     
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
       <a href="./committee.html#org" onclick="closeDrawer()">— Organizing Committee</a>
       <a href="./committee.html#adv" onclick="closeDrawer()">— Advisory Committee</a>
       <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review Committee</a>
-     
       <a href="./call-for-papers.html" onclick="closeDrawer()">Call for Papers</a>
       <a href="./publications.html" onclick="closeDrawer()">Publications</a>
       <a href="./speakers.html" onclick="closeDrawer()">Speakers</a>
-     
       <a href="./paper-submission-guidelines.html" onclick="closeDrawer()">Paper Submission Guidelines</a>
       <a href="./registration.html" onclick="closeDrawer()">Registration</a>
-     
       <a href="./index.html#venue" onclick="closeDrawer()">Venue</a>
       <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a>
       <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank" onclick="closeDrawer()">Jaipur Tourism</a>
-     
-      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">
-        Submit Paper
-      </a>
-    </nav> 
+      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">Submit Paper</a>
+    </nav>
 
-    <div style="display: flex;align-items: center;justify-content: center;height: 70vh;">
-        <h1>Coming Soon</h1>
+    <!-- Breadcrumb Header -->
+    <div class="breadcrumb-header">
+      <div class="wrap">
+        <div class="breadcrumb-nav">
+          <a href="./index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 10px; opacity: 0.5;"></i>
+          <span class="breadcrumb-current">Special Track Proposals</span>
+        </div>
+        <h1 class="page-title-main">Guidelines for Proposal of Special Tracks</h1>
+      </div>
     </div>
-    
+
+    <main class="st-page">
+
+      <!-- ===== Intro ===== -->
+      <section class="st-intro">
+        <div class="wrap">
+          <span class="st-eyebrow">Call for Special Track Proposals</span>
+          <h2 class="st-h2">Propose a Focused Research Track at SS-MOM 2027</h2>
+          <p class="st-lead">
+            The International Conference on Smart &amp; Sustainable Manufacturing, Operations
+            &amp; Materials (SS-MOM 2027) invites proposals for focused, emerging,
+            interdisciplinary, and high-impact Special Tracks that complement the three
+            General Tracks.
+          </p>
+
+          <div class="st-tracks-label">The three General Tracks</div>
+          <div class="st-tracks">
+            <span><i class="fa-solid fa-industry"></i> Smart &amp; Sustainable Manufacturing</span>
+            <span><i class="fa-solid fa-gears"></i> Smart &amp; Sustainable Operations &amp; Industrial Engineering</span>
+            <span><i class="fa-solid fa-atom"></i> Smart &amp; Sustainable Materials</span>
+          </div>
+
+          <!-- At a glance -->
+          <div class="st-glance">
+            <div><strong>1 + 1</strong><span>Track Chair + optional Co-Chair</span></div>
+            <div><strong>8–10</strong><span>Sub-topics in the track scope</span></div>
+            <div><strong>8+</strong><span>Registered papers expected</span></div>
+            <div><strong>6</strong><span>Items to include in your proposal</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Guidelines ===== -->
+      <section class="st-body">
+        <div class="wrap">
+          <div class="st-layout">
+
+            <aside class="st-toc" aria-label="On this page">
+              <div class="st-toc-title">On this page</div>
+              <a href="#scope">Theme and Scope</a>
+              <a href="#eligibility">Track Chair Eligibility</a>
+              <a href="#responsibilities">Responsibilities</a>
+              <a href="#recognition">Recognition &amp; Benefits</a>
+              <a href="#participation">Expected Participation</a>
+              <a href="#requirements">Proposal Requirements</a>
+              <a href="#evaluation">Evaluation &amp; Ethics</a>
+              <a href="#approval">Final Approval</a>
+            </aside>
+
+            <div>
+              <!-- 1 -->
+              <div class="st-sec" id="scope">
+                <h3><span class="n">01</span> Theme and Scope</h3>
+                <p>
+                  A Special Track should address a clearly defined, emerging, relevant, and
+                  significant research theme within the scope of SS-MOM 2027. It should be
+                  sufficiently focused to be distinct, while broad enough to attract quality
+                  contributions.
+                </p>
+                <p>
+                  Proposals may address technological, methodological, application-oriented,
+                  industrial, environmental, societal, or interdisciplinary challenges. The
+                  conference does not prescribe specific Special Track topics.
+                </p>
+                <p class="st-summary">Each proposal should explain:</p>
+                <ul class="st-list">
+                  <li>The research focus and emerging need</li>
+                  <li>Relevant General Track(s)</li>
+                  <li>Novelty and significance</li>
+                  <li>Distinction from the General Tracks</li>
+                  <li>The justification for a dedicated Track</li>
+                </ul>
+                <p>
+                  The scope should normally include <strong>8–10 related topics</strong> covering
+                  theoretical, computational, experimental, industrial, or application-oriented
+                  research.
+                </p>
+              </div>
+
+              <!-- 2 -->
+              <div class="st-sec" id="eligibility">
+                <h3><span class="n">02</span> Track Chair Eligibility</h3>
+                <p>
+                  Proposals may be submitted by active and enthusiastic academicians, researchers
+                  and scientists or other experts with relevant expertise. Normally, one Track
+                  Chair and one Co-Chair (optional) may be proposed. International and
+                  multi-institutional representation is encouraged.
+                </p>
+                <p>
+                  Track Chairs should have demonstrated expertise through relevant publications,
+                  projects, professional activities, or industrial experience.
+                </p>
+              </div>
+
+              <!-- 3 -->
+              <div class="st-sec" id="responsibilities">
+                <h3><span class="n">03</span> Responsibilities of Track Chairs</h3>
+                <p class="st-summary">Approved Track Chairs are expected to:</p>
+                <ul class="st-list">
+                  <li>Aim to secure at least 8–10 registered papers for the Track</li>
+                  <li>Promote the official Call for Papers through academic, institutional, professional, and appropriate social-media networks</li>
+                  <li>Encourage quality submissions and identify suitable reviewers</li>
+                  <li>Support and coordinate the peer-review process, including reviewer follow-up where required</li>
+                  <li>Coordinate with the Conference Committee on submissions, reviews, revisions, registrations, and programme planning</li>
+                  <li>Support technical sessions, moderation, discussions, and participant engagement</li>
+                  <li>Maintain confidentiality, declare conflicts of interest, and comply with conference ethics and review policies</li>
+                </ul>
+                <p class="st-note">
+                  <strong>Please note:</strong> Track Chairs cannot guarantee acceptance/publication
+                  and will not independently decide acceptance unless formally authorized by the
+                  Conference Committee.
+                </p>
+              </div>
+
+              <!-- 4 -->
+              <div class="st-sec" id="recognition">
+                <h3><span class="n">04</span> Recognition and Mutual Benefits</h3>
+                <p class="st-summary">Track Chairs may receive:</p>
+                <ul class="st-list">
+                  <li>Official recognition as Special Track Chair on the website, programme, certificate, and relevant promotional materials, as applicable</li>
+                  <li>Opportunity to serve as Session Chair/Moderator, subject to mutual understanding, availability, and programme requirements</li>
+                  <li>Academic networking, collaboration, and professional visibility</li>
+                  <li>Consideration for future advisory, organizing, technical, invited-session, or related roles</li>
+                  <li>Opportunities for relevant special issues or publication initiatives, subject to publisher/journal policies</li>
+                </ul>
+                <div class="st-two">
+                  <div>
+                    <h4>What the Conference Committee provides</h4>
+                    <p>The conference platform, submission/review infrastructure, administrative and technical coordination, official recognition, and conference-level promotional support.</p>
+                  </div>
+                  <div>
+                    <h4>What Track Chairs contribute</h4>
+                    <p>Academic outreach, paper promotion, reviewer coordination, and technical/session support.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5 -->
+              <div class="st-sec" id="participation">
+                <h3><span class="n">05</span> Expected Participation</h3>
+                <p>
+                  Each Special Track should aim for a <strong>minimum of 8 registered quality
+                  papers</strong>. This is an expected participation objective.
+                </p>
+                <p>
+                  If a Track receives insufficient submissions, the Conference Committee may merge
+                  it with a related Track or place suitable papers under an appropriate General
+                  Track, depending on the overall programme.
+                </p>
+              </div>
+
+              <!-- 6 -->
+              <div class="st-sec" id="requirements">
+                <h3><span class="n">06</span> Proposal Requirements</h3>
+                <p class="st-summary">Each proposal should contain:</p>
+                <ol class="st-steps">
+                  <li><strong>Proposed Title</strong></li>
+                  <li><strong>Motivation &amp; Overview</strong> <small>Keep it brief</small></li>
+                  <li><strong>Scope &amp; 8–10 Key Sub-Topics</strong></li>
+                  <li><strong>Relationship with General Track(s)</strong></li>
+                  <li><strong>Expected Participation</strong></li>
+                  <li><strong>Track Chair Details</strong> <small>Name, designation, affiliation with city and pin code, country, email, expertise, and h-index</small></li>
+                </ol>
+              </div>
+
+              <!-- 7 -->
+              <div class="st-sec" id="evaluation">
+                <h3><span class="n">07</span> Evaluation, Review and Ethics</h3>
+                <p>
+                  Proposals will be evaluated on relevance, distinctiveness, novelty, scientific
+                  significance, interdisciplinarity, community interest, Chair expertise,
+                  international reach, and feasibility.
+                </p>
+                <p>
+                  Approved papers will follow the conference’s established submission,
+                  peer-review, quality-assurance, and publication procedures. Special Track
+                  submission does not guarantee acceptance or publication.
+                </p>
+                <p>
+                  All participants must comply with standards concerning originality, plagiarism,
+                  duplicate publication, authorship, research integrity, conflicts of interest,
+                  confidentiality, intellectual property, and publication ethics.
+                </p>
+              </div>
+
+              <!-- 8 -->
+              <div class="st-sec" id="approval">
+                <h3><span class="n">08</span> Final Approval</h3>
+                <p>
+                  The Conference Organizing/Scientific Committee reserves the right to approve,
+                  request revision, modify, merge, redirect to a General Track, or decline any
+                  proposal.
+                </p>
+                <p>
+                  Final decisions will consider the proposal’s quality, relevance,
+                  distinctiveness, feasibility, expected participation, and contribution to
+                  SS-MOM 2027. The Committee may also modify the final programme based on the
+                  number and quality of submissions received.
+                </p>
+              </div>
+
+              <!-- Closing -->
+              <div class="st-close">
+                <span class="st-eyebrow">Special Track Proposals Welcome</span>
+                <h3>Build a Research Community Around Your Theme</h3>
+                <p>
+                  SS-MOM 2027 welcomes qualified researchers, academicians, scientists, and
+                  industry experts to propose focused themes that can foster meaningful research
+                  interaction, collaboration, and development of focused research communities in
+                  smart and sustainable manufacturing, operations, and materials.
+                </p>
+                <div class="st-actions">
+                  <a class="st-btn st-btn-amber" href="mailto:ssmom2027@gmail.com?subject=Special%20Track%20Proposal%20-%20SS-MOM%202027">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Your Proposal
+                  </a>
+                  <a class="st-btn st-btn-ghost" href="#requirements">
+                    <i class="fa-solid fa-list-check"></i> What to Include
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- CTA -->
     <div id="contact" class="cta-section">
       <div class="wrap">
@@ -157,15 +647,28 @@
         </div>
       </div>
     </div>
-     
-    <button
-      id="btt"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      title="Back to Top"
-    >
-      &#8679;
-    </button>
 
+    <button id="btt" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="Back to Top">&#8679;</button>
+
+    <script src="./app.js"></script>
+    <script>
+      // Highlight the current section in the "On this page" sidebar
+      (function () {
+        var links = document.querySelectorAll('.st-toc a');
+        if (!links.length || !('IntersectionObserver' in window)) return;
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              links.forEach(function (a) { a.classList.remove('active'); });
+              var a = map[e.target.id];
+              if (a) a.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        document.querySelectorAll('.st-sec').forEach(function (s) { obs.observe(s); });
+      })();
+    </script>
   </body>
-  <script src="./app.js"></script>
 </html>
