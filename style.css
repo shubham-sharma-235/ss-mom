@@ -429,7 +429,7 @@ ul {
   white-space: nowrap;
 }
 .hnav a:hover {
-  color: var(--blue);
+  color: #919191;
   background: var(--sky);
 }
 .hlogo img{
