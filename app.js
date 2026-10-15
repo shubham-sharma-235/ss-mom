@@ -177,3 +177,27 @@ function toggleSpecialTrack(button) {
     button.textContent = "Read More";
   }
 }
+
+/* ==========================================================
+   Mobile drawer scroll lock — paste at the END of app.js
+   Adds/removes `drawer-open` on <body> whenever the existing
+   openDrawer() / closeDrawer() functions run, so the page behind
+   stops scrolling and the drawer itself scrolls instead.
+   ========================================================== */
+(function () {
+  function wrap(name, isOpen) {
+    var original = window[name];
+    if (typeof original !== "function") return;
+    window[name] = function () {
+      var result = original.apply(this, arguments);
+      document.body.classList.toggle("drawer-open", isOpen);
+      if (isOpen) {
+        var d = document.getElementById("mobileDrawer");
+        if (d) d.scrollTop = 0; // always open at the top of the list
+      }
+      return result;
+    };
+  }
+  wrap("openDrawer", true);
+  wrap("closeDrawer", false);
+})();
