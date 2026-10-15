@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      SS MOM 2027 | International Conference on Smart & Sustainable
+      Call for Papers | SS-MOM 2027 | International Conference on Smart &amp; Sustainable
       Manufacturing, Operations, and Materials
     </title>
+    <meta name="description" content="SS-MOM 2027 Call for Papers: conference tracks, important dates, peer-review process, proposed publication, paper submission and author guidelines." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link
@@ -14,45 +15,622 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+      /* ---------- Breadcrumb header ---------- */
+      .breadcrumb-header {
+        background: var(--navy, #1d3655);
+        padding: 30px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .breadcrumb-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 8px;
+      }
+      .breadcrumb-nav a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .breadcrumb-nav a:hover { color: #fff; }
+      .breadcrumb-current { color: var(--amber2, #bdcfdd); font-weight: 500; }
+      .page-title-main {
+        font-family: 'Lora', serif;
+        font-size: 28px;
+        color: white;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      /* ---------- Call for papers page (cfp- prefix to avoid clashes) ---------- */
+      .cfp-page {
+        /* Uses the site's own palette from style.css (navy + light blue) */
+        --cfp-navy: var(--navy, #1d3655);
+        --cfp-navy3: var(--navy3, #1e4475);
+        --cfp-amber: var(--navy, #1d3655); /* accent = site navy */
+        --cfp-tint: var(--sky, #e8f0fb);
+        --cfp-tint2: var(--sky2, #d6e5f8);
+        --cfp-text: var(--txt, #000);
+        --cfp-muted: #4a5568;
+        --cfp-line: var(--border, #c9d5eb);
+        --cfp-soft: var(--off, #f8f9fc);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--cfp-text);
+        font-size: 16px;
+      }
+      .cfp-page p { line-height: 1.8; margin: 0 0 14px; }
+      .cfp-page p:last-child { margin-bottom: 0; }
+      .cfp-page a { color: inherit; }
+
+      .cfp-eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--cfp-amber);
+        margin-bottom: 10px;
+      }
+      .cfp-h2 {
+        font-family: 'Lora', serif;
+        font-size: clamp(24px, 3.2vw, 34px);
+        font-weight: 700;
+        color: var(--cfp-navy);
+        line-height: 1.25;
+        margin: 0 0 14px;
+      }
+      .cfp-lead { font-size: 17px; color: var(--cfp-muted); max-width: 780px; }
+
+      /* Buttons */
+      .cfp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-sizing: border-box;
+        padding: 13px 22px;
+        border-radius: var(--r, 6px);
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        transition: transform 0.2s, background 0.2s, border-color 0.2s;
+      }
+      .cfp-btn:hover { transform: translateY(-2px); }
+      .cfp-page a.cfp-btn-amber { background: var(--cfp-navy); color: #fff; }
+      .cfp-page a.cfp-btn-amber:hover { background: var(--cfp-navy3); box-shadow: var(--shadow-sm, 0 2px 8px rgba(15, 42, 74, 0.1)); }
+      .cfp-page a.cfp-btn-line { border: 1px solid var(--cfp-line); color: var(--cfp-navy); background: #fff; }
+      .cfp-page a.cfp-btn-line:hover { border-color: var(--cfp-navy); background: var(--cfp-tint); }
+      .cfp-page a.cfp-btn-ghost { border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; }
+      .cfp-page a.cfp-btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+      /* ===== Intro ===== */
+      .cfp-intro { padding: 56px 0 0; }
+      .cfp-intro-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 48px;
+        align-items: end;
+      }
+      .cfp-intro-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+      .cfp-intro-meta { display: flex; flex-direction: column; gap: 14px; }
+      .cfp-meta-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--cfp-line);
+      }
+      .cfp-meta-row:last-child { border-bottom: 0; padding-bottom: 0; }
+      .cfp-meta-row i { width: 20px; text-align: center; color: var(--cfp-amber); }
+      .cfp-meta-row small {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--cfp-muted);
+      }
+      .cfp-meta-row strong { color: var(--cfp-navy); font-weight: 700; }
+
+      /* ===== Important dates timeline ===== */
+      .cfp-dates { padding: 48px 0 8px; }
+      .cfp-dates-title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+      .cfp-dates-title h3 {
+        font-family: 'Lora', serif;
+        font-size: 22px;
+        color: var(--cfp-navy);
+        margin: 0;
+      }
+      .cfp-dates-title span { font-size: 14px; color: var(--cfp-muted); }
+      .cfp-timeline {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .cfp-timeline::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--cfp-line);
+      }
+      .cfp-timeline li { position: relative; padding: 30px 16px 0 0; }
+      .cfp-timeline li::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid var(--cfp-amber);
+      }
+      .cfp-timeline li.is-final::before { background: var(--cfp-amber); }
+      .cfp-timeline .d {
+        display: block;
+        font-family: 'Lora', serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--cfp-navy);
+        line-height: 1.25;
+      }
+      .cfp-timeline .l { display: block; margin-top: 6px; font-size: 14px; color: var(--cfp-muted); line-height: 1.5; }
+      .cfp-timeline .tag {
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--cfp-navy);
+        background: var(--cfp-tint2);
+        padding: 3px 8px;
+        border-radius: 999px;
+      }
+
+      /* ===== Body layout ===== */
+      .cfp-body { padding: 40px 0 70px; }
+      .cfp-layout {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .cfp-layout > * { min-width: 0; }
+      .cfp-toc { position: sticky; top: 100px; }
+      .cfp-toc-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--cfp-muted);
+        margin-bottom: 12px;
+      }
+      .cfp-toc a {
+        display: block;
+        padding: 8px 0 8px 14px;
+        border-left: 2px solid var(--cfp-line);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--cfp-muted);
+        text-decoration: none;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .cfp-toc a:hover,
+      .cfp-toc a.active {
+        color: var(--cfp-navy);
+        border-left-color: var(--cfp-amber);
+        font-weight: 600;
+      }
+      .cfp-page .cfp-toc a.cfp-toc-cta {
+        margin-top: 18px;
+        border-left: 0;
+        padding: 11px 16px;
+        border-radius: var(--r, 6px);
+        background: var(--cfp-navy);
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+      }
+      .cfp-page .cfp-toc a.cfp-toc-cta:hover { background: var(--cfp-navy3); }
+
+      /* Sections */
+      .cfp-sec {
+        padding: 40px 0;
+        border-bottom: 1px solid var(--cfp-line);
+        scroll-margin-top: 100px;
+      }
+      .cfp-sec:first-child { padding-top: 8px; }
+      .cfp-sec:last-child { border-bottom: 0; }
+      .cfp-sec > h3 {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        font-family: 'Lora', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--cfp-navy);
+        margin: 0 0 14px;
+      }
+      .cfp-sec > h3 .n {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--cfp-amber);
+      }
+      .cfp-summary { font-size: 15px; font-weight: 600; color: var(--cfp-navy); margin-bottom: 10px !important; }
+
+      .cfp-list { margin: 6px 0 16px; padding: 0; list-style: none; }
+      .cfp-list:last-child { margin-bottom: 0; }
+      .cfp-list li { position: relative; padding: 5px 0 5px 22px; line-height: 1.65; }
+      .cfp-list li::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 15px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--cfp-amber);
+      }
+      .cfp-list.two { columns: 2; column-gap: 36px; }
+      .cfp-list.two li { break-inside: avoid; }
+
+      .cfp-note {
+        margin-top: 18px;
+        padding: 4px 0 4px 16px;
+        border-left: 3px solid var(--cfp-amber);
+        font-size: 15px;
+        color: var(--cfp-muted);
+        line-height: 1.7;
+      }
+      .cfp-note strong { color: var(--cfp-navy); }
+      .cfp-note.danger { border-left-color: var(--cfp-navy); background: var(--cfp-soft); padding: 12px 16px; }
+
+      /* Tracks (tabs) */
+      .cfp-tabs {
+        display: flex;
+        gap: 6px;
+        border-bottom: 1px solid var(--cfp-line);
+        margin: 22px 0 24px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .cfp-tabs::-webkit-scrollbar { display: none; }
+      .cfp-tab {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px 14px;
+        border: 0;
+        background: none;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -1px;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--cfp-muted);
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .cfp-tab .cfp-short { display: none; }
+      .cfp-tab .k {
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--cfp-amber);
+      }
+      .cfp-tab:hover { color: var(--cfp-navy); }
+      .cfp-tab[aria-selected="true"] { color: var(--cfp-navy); border-bottom-color: var(--cfp-amber); }
+      .cfp-panel[hidden] { display: none; }
+      .cfp-panel-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 6px;
+      }
+      .cfp-panel-head i {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--cfp-tint);
+        color: var(--cfp-navy);
+        font-size: 17px;
+      }
+      .cfp-panel-head h4 {
+        margin: 0;
+        font-family: 'Lora', serif;
+        font-size: 20px;
+        color: var(--cfp-navy);
+      }
+      .cfp-panel-head small { display: block; font-size: 13px; color: var(--cfp-muted); font-weight: 500; }
+      .cfp-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+      .cfp-topics span {
+        padding: 7px 13px;
+        border-radius: 999px;
+        border: 1px solid var(--cfp-line);
+        background: var(--cfp-tint);
+        font-size: 14px;
+        color: var(--cfp-navy);
+        line-height: 1.35;
+      }
+
+      /* Peer-review flow */
+      .cfp-flow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        list-style: none;
+        margin: 24px 0 26px;
+        padding: 0;
+        counter-reset: flow;
+      }
+      .cfp-flow li {
+        counter-increment: flow;
+        position: relative;
+        text-align: center;
+        padding: 0 6px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--cfp-navy);
+        line-height: 1.4;
+      }
+      .cfp-flow li::before {
+        content: counter(flow);
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 12px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid var(--cfp-amber);
+        color: var(--cfp-navy);
+        font-weight: 800;
+        position: relative;
+        z-index: 1;
+      }
+      .cfp-flow li:last-child::before {
+        content: "\2713";
+        background: var(--cfp-navy);
+        color: #fff;
+      }
+      .cfp-flow li + li::after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: 50%;
+        width: 100%;
+        height: 2px;
+        background: var(--cfp-line);
+      }
+
+      /* Publication */
+      .cfp-book {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-top: 16px;
+        padding: 6px 0 6px 20px;
+        border-left: 3px solid var(--cfp-amber);
+      }
+      .cfp-book i { font-size: 26px; color: var(--cfp-amber); margin-top: 4px; }
+      .cfp-book strong {
+        display: block;
+        font-family: 'Lora', serif;
+        font-size: 20px;
+        line-height: 1.4;
+        color: var(--cfp-navy);
+      }
+      .cfp-book span { font-size: 14px; color: var(--cfp-muted); }
+
+      /* Submission band */
+      .cfp-submit {
+        margin-top: 8px;
+        padding: 32px;
+        border-radius: var(--r2, 10px);
+        background: linear-gradient(135deg, var(--cfp-navy) 0%, var(--cfp-navy3) 60%, var(--cfp-navy) 100%);
+        color: rgba(255, 255, 255, 0.85);
+        display: grid;
+        grid-template-columns: 1.3fr auto;
+        gap: 28px;
+        align-items: center;
+      }
+      .cfp-page .cfp-submit a.cfp-btn-amber { background: #fff; color: var(--cfp-navy); }
+      .cfp-page .cfp-submit a.cfp-btn-amber:hover { background: var(--cfp-tint); }
+      .cfp-submit h4 {
+        font-family: 'Lora', serif;
+        font-size: 24px;
+        color: #fff;
+        margin: 0 0 8px;
+      }
+      .cfp-submit p { margin: 0; }
+      .cfp-submit code {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+        word-break: break-all;
+      }
+
+      /* Guidelines groups */
+      .cfp-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px; margin-top: 8px; }
+      .cfp-group { padding: 18px 0; border-top: 1px solid var(--cfp-line); }
+      .cfp-group.wide { grid-column: 1 / -1; }
+      .cfp-group h4 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 6px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--cfp-navy);
+      }
+      .cfp-group h4 i { color: var(--cfp-amber); width: 18px; text-align: center; }
+
+      .cfp-specs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--cfp-line);
+        border-bottom: 1px solid var(--cfp-line);
+        margin: 20px 0 10px;
+      }
+      .cfp-specs div { padding: 18px 16px; }
+      .cfp-specs div + div { border-left: 1px solid var(--cfp-line); }
+      .cfp-specs strong {
+        display: block;
+        font-family: 'Lora', serif;
+        font-size: 22px;
+        color: var(--cfp-navy);
+        line-height: 1.2;
+      }
+      .cfp-specs span { font-size: 13px; color: var(--cfp-muted); }
+
+      .cfp-cite { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+      .cfp-cite span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: var(--cfp-soft);
+        border: 1px solid var(--cfp-line);
+        font-size: 14px;
+      }
+      .cfp-cite code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-weight: 700;
+        color: var(--cfp-navy);
+      }
+
+      /* Similarity stat */
+      .cfp-stat {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin: 6px 0 16px;
+      }
+      .cfp-stat > strong {
+        font-family: 'Lora', serif;
+        font-size: 44px;
+        line-height: 1;
+        color: var(--cfp-navy);
+      }
+      .cfp-stat span { font-size: 15px; color: var(--cfp-muted); line-height: 1.5; max-width: 420px; }
+
+      /* Reviewer section */
+      .cfp-reviewer {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 36px;
+        align-items: start;
+      }
+      .cfp-contact { display: flex; flex-direction: column; gap: 10px; }
+      .cfp-contact a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--cfp-navy);
+        font-weight: 600;
+        word-break: break-word;
+      }
+      .cfp-contact a:hover { color: var(--cfp-navy3); text-decoration: underline; }
+      .cfp-contact i { width: 18px; text-align: center; color: var(--cfp-amber); }
+      .cfp-phone-label { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--cfp-navy); }
+      .cfp-phones { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-left: 30px; }
+      .cfp-phones a { font-weight: 500; font-size: 15px; }
+
+      /* Responsive */
+      @media (max-width: 1080px) {
+        .cfp-flow li { font-size: 13px; }
+      }
+      @media (max-width: 960px) {
+        .cfp-layout { grid-template-columns: 1fr; gap: 0; }
+        .cfp-toc { display: none; }
+        .cfp-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+      }
+      @media (max-width: 860px) {
+        .cfp-timeline { grid-template-columns: 1fr; padding-left: 4px; }
+        .cfp-timeline::before { top: 6px; bottom: 6px; left: 10px; right: auto; width: 2px; height: auto; }
+        .cfp-timeline li { padding: 0 0 22px 36px; }
+        .cfp-timeline li:last-child { padding-bottom: 0; }
+        .cfp-timeline li::before { left: 4px; top: 4px; }
+        .cfp-flow { grid-template-columns: 1fr; gap: 0; }
+        .cfp-flow li {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          text-align: left;
+          padding: 0 0 18px;
+          font-size: 15px;
+        }
+        .cfp-flow li::before { margin: 0; flex-shrink: 0; }
+        .cfp-flow li + li::after { top: auto; bottom: calc(100% - 2px); right: auto; left: 19px; width: 2px; height: 18px; }
+        .cfp-submit { grid-template-columns: 1fr; }
+        .cfp-reviewer { grid-template-columns: 1fr; gap: 24px; }
+        .cfp-groups { grid-template-columns: 1fr; }
+        .cfp-specs { grid-template-columns: 1fr 1fr; }
+        .cfp-specs div:nth-child(3) { border-left: 0; }
+        .cfp-specs div:nth-child(n+3) { border-top: 1px solid var(--cfp-line); }
+      }
+      @media (max-width: 600px) {
+        .cfp-list.two { columns: 1; }
+        .cfp-intro { padding-top: 40px; }
+        .cfp-submit { padding: 24px; }
+        .cfp-btn { width: 100%; }
+        .cfp-tab { padding: 10px 10px 12px; font-size: 14px; }
+        .cfp-tab .k { display: none; }
+        .cfp-tab .cfp-long { display: none; }
+        .cfp-tab .cfp-short { display: inline; }
+        .cfp-specs strong { font-size: 19px; }
+      }
+    </style>
   </head>
   <body>
     <!-- WhatsApp Button -->
-    <a 
-      href="https://api.whatsapp.com/send?phone=919467717120"
-      class="whatsapp-btn"
-      target="_blank"
-    >
+    <a href="https://api.whatsapp.com/send?phone=919467717120" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Sticky Brochure Link -->
+    <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">Brochure</a>
 
-  <!-- Sticky Brochure Link -->
-  <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">
-    Brochure
-  </a>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-        
-        <header class="site-header">
+    <header class="site-header">
       <div class="">
         <div class="header-inner">
-          <!-- <div class="hlogo">
-            <img src="./images/logo.png" alt="">
-          </div> -->
           <div class="hlogo">
-              <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
-                <div>
-                  <div class="hconf-name">SS-MOM 2027</div>
-                  <div class="hconf-sub">
-                    International Conference on Smart &amp; Sustainable manufacturing, Operations
-                  </div>
+            <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
+            <div>
+              <div class="hconf-name">SS-MOM 2027</div>
+              <div class="hconf-sub">
+                International Conference on Smart &amp; Sustainable manufacturing, Operations
               </div>
+            </div>
           </div>
           <nav class="hnav">
             <a href="./index.html">Home</a>
             <a href="./about.html">About</a>
-     
             <div class="hnav-item">
               <a href="./committee.html">Committee</a>
               <div class="hnav-drop">
@@ -61,11 +639,9 @@
                 <a href="./committee.html#peer">Peer Review Committee</a>
               </div>
             </div>
-     
             <a href="./call-for-papers.html">Call for Papers</a>
             <a href="./publications.html">Publications</a>
             <a href="./speakers.html">Speakers</a>
-     
             <div class="hnav-item">
               <a href="./paper-submission-guidelines.html">For Authors</a>
               <div class="hnav-drop">
@@ -73,69 +649,497 @@
                 <a href="./registration.html">Registration</a>
               </div>
             </div>
-     
             <a href="./special-track.html">Special Track</a>
             <a href="./sponsorship.html">Sponsorship</a>
-     
             <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank">Jaipur Tourism</a>
-     
             <a href="./view-source.html">View Source</a>
-     
-            <a href="./index.html#submit" class="hnav-cta">
-              Submit Paper
-            </a>
+            <a href="./index.html#submit" class="hnav-cta">Submit Paper</a>
           </nav>
-          <button
-            class="hamburger"
-            id="HB"
-            onclick="openDrawer()"
-            aria-label="Menu"
-          >
+          <button class="hamburger" id="HB" onclick="openDrawer()" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
     </header>
-     
-    <div
-      class="drawer-overlay"
-      id="drawerOverlay"
-      onclick="closeDrawer()"
-    ></div>
+
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
     <nav class="mobile-drawer" id="mobileDrawer">
       <button class="drawer-close" onclick="closeDrawer()">&#x2715;</button>
-     
       <a href="./index.html" onclick="closeDrawer()">Home</a>
       <a href="./about.html" onclick="closeDrawer()">About</a>
-     
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
       <a href="./committee.html#org" onclick="closeDrawer()">— Organizing Committee</a>
       <a href="./committee.html#adv" onclick="closeDrawer()">— Advisory Committee</a>
       <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review Committee</a>
-     
       <a href="./call-for-papers.html" onclick="closeDrawer()">Call for Papers</a>
       <a href="./publications.html" onclick="closeDrawer()">Publications</a>
       <a href="./speakers.html" onclick="closeDrawer()">Speakers</a>
-     
       <a href="./paper-submission-guidelines.html" onclick="closeDrawer()">Paper Submission Guidelines</a>
       <a href="./registration.html" onclick="closeDrawer()">Registration</a>
-     
       <a href="./special-track.html" onclick="closeDrawer()">Special Track</a>
       <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a>
       <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank" onclick="closeDrawer()">Jaipur Tourism</a>
-     
-      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">
-        Submit Paper
-      </a>
-    </nav> 
+      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">Submit Paper</a>
+    </nav>
 
-
-    <div style="display: flex;align-items: center;justify-content: center;height: 70vh;">
-        <h1>Coming Soon</h1>
+    <!-- Breadcrumb Header -->
+    <div class="breadcrumb-header">
+      <div class="wrap">
+        <div class="breadcrumb-nav">
+          <a href="./index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 10px; opacity: 0.5;"></i>
+          <span class="breadcrumb-current">Call for Papers</span>
+        </div>
+        <h1 class="page-title-main">Call for Papers</h1>
+      </div>
     </div>
 
+    <main class="cfp-page">
 
-        
+      <!-- ===== Intro ===== -->
+      <section class="cfp-intro">
+        <div class="wrap">
+          <div class="cfp-intro-grid">
+            <div>
+              <span class="cfp-eyebrow">Call for Original Research Papers</span>
+              <h2 class="cfp-h2">Share Your Research at SS-MOM 2027</h2>
+              <p class="cfp-lead">
+                SS-MOM 2027 invites full-length original research contributions from researchers,
+                faculty members, scientists, engineers, industry professionals, R&amp;D
+                organisations, academic institutions, government organisations, and research
+                scholars from across the world.
+              </p>
+              <div class="cfp-intro-actions">
+                <a class="cfp-btn cfp-btn-amber" href="https://cmt3.research.microsoft.com/SSMOM2027/Submission/Index" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-paper-plane"></i> Submit Your Paper
+                </a>
+                <a class="cfp-btn cfp-btn-line" href="#guidelines">
+                  <i class="fa-solid fa-file-lines"></i> Author Guidelines
+                </a>
+              </div>
+            </div>
+            <div class="cfp-intro-meta">
+              <div class="cfp-meta-row">
+                <i class="fa-regular fa-calendar"></i>
+                <div><small>Submission deadline</small><strong>November 25, 2026</strong></div>
+              </div>
+              <div class="cfp-meta-row">
+                <i class="fa-solid fa-display"></i>
+                <div><small>Conference</small><strong>February 04–05, 2027 · Hybrid mode</strong></div>
+              </div>
+              <div class="cfp-meta-row">
+                <i class="fa-solid fa-layer-group"></i>
+                <div><small>Tracks</small><strong>Manufacturing · Operations &amp; IE · Materials</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Important dates ===== -->
+      <section class="cfp-dates" id="dates">
+        <div class="wrap">
+          <div class="cfp-dates-title">
+            <h3>Important Dates</h3>
+            <span>Plan your submission around these milestones</span>
+          </div>
+          <ol class="cfp-timeline">
+            <li>
+              <span class="d">Nov 25, 2026</span>
+              <span class="l">Full Paper Submission Deadline</span>
+            </li>
+            <li>
+              <span class="d">Dec 15, 2026</span>
+              <span class="l">Notification of Paper Acceptance</span>
+            </li>
+            <li>
+              <span class="d">Dec 25, 2026</span>
+              <span class="l">Registration Start</span>
+            </li>
+            <li>
+              <span class="d">Jan 05, 2027</span>
+              <span class="l">Final Registration Deadline</span>
+            </li>
+            <li class="is-final">
+              <span class="d">Feb 04–05, 2027</span>
+              <span class="l">Conference</span>
+              <span class="tag">Hybrid Mode</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== Body ===== -->
+      <section class="cfp-body">
+        <div class="wrap">
+          <div class="cfp-layout">
+
+            <aside class="cfp-toc" aria-label="On this page">
+              <div class="cfp-toc-title">On this page</div>
+              <a href="#scope">Scope &amp; Eligibility</a>
+              <a href="#tracks">Conference Tracks</a>
+              <a href="#review">Peer-Review Process</a>
+              <a href="#publication">Proposed Publication</a>
+              <a href="#submission">Paper Submission</a>
+              <a href="#guidelines">Author Guidelines</a>
+              <a href="#originality">Originality &amp; Similarity</a>
+              <a href="#reviewers">Join as Reviewer</a>
+              <a class="cfp-toc-cta" href="https://cmt3.research.microsoft.com/SSMOM2027/Submission/Index" target="_blank" rel="noopener">Submit Paper</a>
+            </aside>
+
+            <div>
+              <!-- 01 Scope -->
+              <div class="cfp-sec" id="scope">
+                <h3><span class="n">01</span> What We're Looking For</h3>
+                <p>
+                  Submitted manuscripts should present original research, innovative methodologies,
+                  theoretical developments, experimental results, modelling and simulation, empirical
+                  findings, industrial applications, or significant case studies relevant to one or
+                  more conference tracks.
+                </p>
+                <p class="cfp-summary">Submitted manuscripts must:</p>
+                <ul class="cfp-list two">
+                  <li>Be original and unpublished</li>
+                  <li>Not be under consideration for publication elsewhere</li>
+                  <li>Fall within the scope of SS-MOM 2027</li>
+                  <li>Clearly identify the corresponding author</li>
+                  <li>Include the affiliation and email address of all authors</li>
+                  <li>Follow the prescribed manuscript template and submission guidelines</li>
+                  <li>Meet the required standards of academic quality and research ethics</li>
+                </ul>
+              </div>
+
+              <!-- 02 Tracks -->
+              <div class="cfp-sec" id="tracks">
+                <h3><span class="n">02</span> Conference Tracks</h3>
+                <p>Choose the track that best fits your work. Topics include, but are not limited to, the areas below.</p>
+
+                <div class="cfp-tabs" role="tablist" aria-label="Conference tracks">
+                  <button class="cfp-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">
+                    <span class="k">01</span> Manufacturing
+                  </button>
+                  <button class="cfp-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">
+                    <span class="k">02</span> <span>Operations<span class="cfp-long"> &amp; Industrial Engineering</span><span class="cfp-short"> &amp; IE</span></span>
+                  </button>
+                  <button class="cfp-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">
+                    <span class="k">03</span> Materials
+                  </button>
+                </div>
+
+                <div class="cfp-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                  <div class="cfp-panel-head">
+                    <i class="fa-solid fa-industry"></i>
+                    <div><small>Track 1</small><h4>Smart &amp; Sustainable Manufacturing</h4></div>
+                  </div>
+                  <div class="cfp-topics">
+                    <span>Smart manufacturing systems</span>
+                    <span>Industry 4.0 and Industry 5.0</span>
+                    <span>Artificial Intelligence and Machine Learning in manufacturing</span>
+                    <span>Industrial Internet of Things (IIoT)</span>
+                    <span>Digital twins and cyber-physical production systems</span>
+                    <span>Robotics and industrial automation</span>
+                    <span>Intelligent production systems</span>
+                    <span>Additive and advanced manufacturing</span>
+                    <span>Digital manufacturing</span>
+                    <span>Intelligent machining and manufacturing processes</span>
+                    <span>Predictive maintenance</span>
+                    <span>Intelligent quality control</span>
+                    <span>Lean manufacturing and Lean Six Sigma</span>
+                    <span>Green and sustainable manufacturing</span>
+                    <span>Circular manufacturing</span>
+                    <span>Sustainable product and process design</span>
+                    <span>Energy-efficient manufacturing</span>
+                    <span>Resource-efficient production</span>
+                    <span>Low-carbon manufacturing</span>
+                    <span>Sustainable manufacturing systems</span>
+                    <span>Human-centric manufacturing</span>
+                    <span>Resilient manufacturing systems</span>
+                    <span>Smart factories</span>
+                    <span>Manufacturing analytics and data-driven production</span>
+                  </div>
+                </div>
+
+                <div class="cfp-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+                  <div class="cfp-panel-head">
+                    <i class="fa-solid fa-gears"></i>
+                    <div><small>Track 2</small><h4>Smart &amp; Sustainable Operations and Industrial Engineering</h4></div>
+                  </div>
+                  <div class="cfp-topics">
+                    <span>Smart operations management</span>
+                    <span>Sustainable operations management</span>
+                    <span>Sustainable supply chain management</span>
+                    <span>Circular and closed-loop supply chains</span>
+                    <span>Supply chain resilience and risk management</span>
+                    <span>Sustainable logistics and transportation</span>
+                    <span>Production planning and scheduling</span>
+                    <span>Operations research</span>
+                    <span>Mathematical modelling and optimization</span>
+                    <span>Multi-criteria decision-making</span>
+                    <span>Data-driven decision-making</span>
+                    <span>Industrial analytics</span>
+                    <span>Digital transformation of industrial systems</span>
+                    <span>Lean management</span>
+                    <span>Six Sigma and operational excellence</span>
+                    <span>Quality management and continuous improvement</span>
+                    <span>Sustainable procurement</span>
+                    <span>Supplier selection and evaluation</span>
+                    <span>Industrial engineering applications</span>
+                    <span>Human factors and ergonomics</span>
+                    <span>Sustainable facility planning and layout</span>
+                    <span>Inventory management</span>
+                    <span>Reverse logistics</span>
+                    <span>Green logistics</span>
+                    <span>Industrial sustainability assessment</span>
+                    <span>Smart and resilient industrial systems</span>
+                  </div>
+                </div>
+
+                <div class="cfp-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+                  <div class="cfp-panel-head">
+                    <i class="fa-solid fa-atom"></i>
+                    <div><small>Track 3</small><h4>Smart &amp; Sustainable Materials</h4></div>
+                  </div>
+                  <div class="cfp-topics">
+                    <span>Advanced materials</span>
+                    <span>Smart and functional materials</span>
+                    <span>Sustainable and green materials</span>
+                    <span>Composite materials</span>
+                    <span>Nanocomposites</span>
+                    <span>Bio-based materials</span>
+                    <span>Biodegradable materials</span>
+                    <span>Recycled and circular materials</span>
+                    <span>Lightweight materials</span>
+                    <span>Materials for additive manufacturing</span>
+                    <span>Materials informatics</span>
+                    <span>AI-enabled materials discovery</span>
+                    <span>Sustainable materials processing</span>
+                    <span>Materials characterization</span>
+                    <span>Materials modelling and simulation</span>
+                    <span>Material selection and optimization</span>
+                    <span>Materials recycling and recovery</span>
+                    <span>Circular materials management</span>
+                    <span>Materials for electric mobility</span>
+                    <span>Materials for renewable energy applications</span>
+                    <span>Energy-efficient materials</span>
+                    <span>Sustainable material design</span>
+                    <span>Life-cycle assessment of materials</span>
+                    <span>Emerging materials for sustainable engineering</span>
+                  </div>
+                </div>
+
+                <p class="cfp-note">
+                  Have a focused theme that doesn't fit neatly into one track?
+                  <a href="./special-track.html"><strong>Propose a Special Track →</strong></a>
+                </p>
+              </div>
+
+              <!-- 03 Peer review -->
+              <div class="cfp-sec" id="review">
+                <h3><span class="n">03</span> Peer-Review Process</h3>
+                <p>All submitted manuscripts will undergo a <strong>rigorous peer-review process</strong>, which broadly consists of:</p>
+
+                <ol class="cfp-flow">
+                  <li>Initial Screening</li>
+                  <li>Technical Peer Review</li>
+                  <li>Revision</li>
+                  <li>Final Evaluation</li>
+                  <li>Acceptance</li>
+                </ol>
+
+                <p>
+                  Each submission will first undergo an editorial screening to assess its
+                  <strong>scope, originality, quality, and compliance with submission requirements</strong>.
+                </p>
+                <p>
+                  Manuscripts meeting the initial requirements will be assigned to appropriate
+                  reviewers with relevant subject expertise. Authors may be requested to revise their
+                  manuscripts based on reviewer comments.
+                </p>
+                <p>
+                  The final decision regarding acceptance will be made by the conference's Technical
+                  Program Committee/Editorial Committee based on the reviewers' recommendations and the
+                  overall quality and relevance of the manuscript.
+                </p>
+              </div>
+
+              <!-- 04 Publication -->
+              <div class="cfp-sec" id="publication">
+                <h3><span class="n">04</span> Proposed Publication</h3>
+                <p>
+                  Selected high-quality papers that successfully complete the review process and
+                  satisfy the applicable publication requirements will be considered for inclusion in
+                  the proposed conference proceedings volume:
+                </p>
+                <div class="cfp-book">
+                  <i class="fa-solid fa-book-open"></i>
+                  <div>
+                    <strong>Smart and Sustainable Manufacturing, Operations, and Materials: Select Proceedings of SS-MOM 2027</strong>
+                    <span>Proposed conference proceedings volume</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 05 Submission -->
+              <div class="cfp-sec" id="submission">
+                <h3><span class="n">05</span> Paper Submission</h3>
+                <p>
+                  Authors are invited to submit their original full-length manuscripts through the
+                  <strong>official online submission system</strong>. Please select the appropriate
+                  conference track during submission.
+                </p>
+                <div class="cfp-submit">
+                  <div>
+                    <h4>Ready to submit?</h4>
+                    <p>Full papers are due by <strong style="color:#fff">November 25, 2026</strong>.</p>
+                    <code>cmt3.research.microsoft.com/SSMOM2027</code>
+                  </div>
+                  <a class="cfp-btn cfp-btn-amber" href="https://cmt3.research.microsoft.com/SSMOM2027/Submission/Index" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Your Paper
+                  </a>
+                </div>
+              </div>
+
+              <!-- 06 Guidelines -->
+              <div class="cfp-sec" id="guidelines">
+                <h3><span class="n">06</span> Author Guidelines</h3>
+                <p>Authors are requested to carefully follow the conference manuscript template and formatting instructions.</p>
+
+                <!-- Quick specs -->
+                <div class="cfp-specs">
+                  <div><strong>≤ 18 pages</strong><span>Single column, 1.5 line spacing</span></div>
+                  <div><strong>≤ 250 words</strong><span>Abstract length</span></div>
+                  <div><strong>A4 · 2.5 cm</strong><span>European A4, all margins</span></div>
+                  <div><strong>400 / 600 dpi</strong><span>Image figures / line art</span></div>
+                </div>
+
+                <div class="cfp-groups">
+                  <div class="cfp-group">
+                    <h4><i class="fa-solid fa-file-pen"></i> Content &amp; scope</h4>
+                    <ul class="cfp-list">
+                      <li>Manuscripts must present original research and should not have been previously published.</li>
+                      <li>The manuscript should clearly state the <strong>title, abstract, keywords, authors, affiliations, and corresponding author's email address</strong>.</li>
+                      <li>The manuscript should fall within the scope of one of the three conference tracks.</li>
+                      <li>Contents of papers presented should lie within the general scope of the conference.</li>
+                      <li>The abstract should not exceed <strong>250 words</strong>.</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfp-group">
+                    <h4><i class="fa-solid fa-ruler-combined"></i> Length &amp; layout</h4>
+                    <ul class="cfp-list">
+                      <li>Full-length original research contributions and review articles should not exceed <strong>18 pages</strong> in single column format, with <strong>1.5 line spacing</strong>.</li>
+                      <li>Paper size should be <strong>European A4</strong>.</li>
+                      <li>Margins should be <strong>2.5 cm</strong> (top and bottom) and <strong>2.5 cm</strong> (left and right).</li>
+                      <li>There should be no page numbers, or headers and footers, within the paper.</li>
+                      <li>All pages should be portrait.</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfp-group">
+                    <h4><i class="fa-solid fa-image"></i> Figures</h4>
+                    <ul class="cfp-list">
+                      <li>Figures in image format should be of minimum <strong>400 dpi</strong>.</li>
+                      <li>Line art figures in image format should be of minimum <strong>600 dpi</strong>.</li>
+                      <li>Figures should be placed within the text and should not be collected at the end of the document.</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfp-group">
+                    <h4><i class="fa-solid fa-file-pdf"></i> File format</h4>
+                    <ul class="cfp-list">
+                      <li>The paper should be submitted in <strong>.pdf format</strong> without any password protection.</li>
+                      <li>The PDF should be free from formatting errors (e.g. corrupt equations, missing or low-resolution figures), since conversion from Word to PDF can introduce formatting errors.</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfp-group">
+                    <h4><i class="fa-solid fa-spell-check"></i> Language &amp; permissions</h4>
+                    <ul class="cfp-list">
+                      <li>A thorough proofread should be conducted to check the standard of English and ensure that wording is clear and concise.</li>
+                      <li>Ensure that all permissions have been obtained for any material within the manuscript that is not from the submitted original work, or from previously published work.</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfp-group">
+                    <h4><i class="fa-solid fa-magnifying-glass"></i> Review &amp; survey papers</h4>
+                    <ul class="cfp-list">
+                      <li>Literature review / survey papers should present a totally new vision in the respective field, or at least benefit the field with a new perspective, if they are to be published.</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfp-group wide">
+                    <h4><i class="fa-solid fa-quote-right"></i> References &amp; citations</h4>
+                    <ul class="cfp-list">
+                      <li>The reference list should be checked for accuracy. References can only be linked via Crossref if they are correct and complete.</li>
+                      <li>Authors are advised to follow the <strong>APA style</strong> of reference citation.</li>
+                      <li>All the references given in the list of references should be cited in the body of the text.</li>
+                      <li>Citations should be given by number, whether sequential by order of citation or according to the sequence in an alphabetized list. For example:</li>
+                    </ul>
+                    <div class="cfp-cite">
+                      <span>Single citation <code>[9]</code></span>
+                      <span>Multiple citation <code>[4–6, 9]</code></span>
+                    </div>
+                    <p class="cfp-note">
+                      Multiple citations should be in numerical order. With sequential citation by order of citation,
+                      reference 7 cannot be cited before reference 5.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 07 Originality -->
+              <div class="cfp-sec" id="originality">
+                <h3><span class="n">07</span> Originality and Similarity</h3>
+                <div class="cfp-stat">
+                  <strong>10%</strong>
+                  <span>Maximum similarity index. Every paper is checked with <strong style="color: var(--cfp-navy)">Turnitin</strong>.</span>
+                </div>
+                <p>
+                  All submitted papers will go through a "Plagiarism &amp; Similarity test" by Turnitin
+                  software. Papers with more than 10% similarity index will not be examined and will
+                  face rejection / withdrawal without a formal review.
+                </p>
+                <p class="cfp-note danger">
+                  Manuscripts containing substantial similarity, plagiarism, duplicate publication,
+                  fabricated or manipulated data, or other forms of academic misconduct may be rejected
+                  in accordance with applicable publication ethics and conference policies.
+                </p>
+              </div>
+
+              <!-- 08 Reviewers -->
+              <div class="cfp-sec" id="reviewers">
+                <h3><span class="n">08</span> Want to be a Review Committee Member?</h3>
+                <div class="cfp-reviewer">
+                  <div>
+                    <p>
+                      On behalf of the organizing team, we are pleased to invite you to this conference
+                      as a <strong>Review Committee Member</strong>. If you are willing to work with us,
+                      please fill out the Google Form.
+                    </p>
+                    <a class="cfp-btn cfp-btn-line" href="https://forms.gle/ycx6gctUqkicHgXv6" target="_blank" rel="noopener" style="margin-top: 8px;">
+                      <i class="fa-solid fa-user-check"></i> Join Review Committee
+                    </a>
+                  </div>
+                  <div class="cfp-contact">
+                    <p class="cfp-summary" style="margin-bottom: 4px !important;">Feel free to contact us</p>
+                    <a href="mailto:ssmom2027@gmail.com"><i class="fa-solid fa-envelope"></i> ssmom2027@gmail.com</a>
+                    <span class="cfp-phone-label"><i class="fa-solid fa-phone"></i> Phone</span>
+                    <div class="cfp-phones">
+                      <a href="tel:+919467717120">+91 94677 17120</a>
+                      <a href="tel:+919887870601">+91 98878 70601</a>
+                      <a href="tel:+918233343423">+91 82333 43423</a>
+                      <a href="tel:+919934780757">+91 99347 80757</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- CTA -->
     <div id="contact" class="cta-section">
       <div class="wrap">
@@ -151,7 +1155,7 @@
               scientists, and industry professionals.
             </p>
             <div style="display: flex; gap: 12px; flex-wrap: wrap">
-              <a href="mailto:ssmom2027@gmail.com" class="btn btn-amber">Submit a Paper</a>
+              <a href="https://cmt3.research.microsoft.com/SSMOM2027/Submission/Index" target="_blank" rel="noopener" class="btn btn-amber">Submit a Paper</a>
               <a href="https://forms.gle/ycx6gctUqkicHgXv6" target="_blank" class="btn btn-ghost-white">Join Review Committee</a>
               <a href="./special-track.html" class="btn btn-ghost-white">Submit a Proposal For Track Chair</a>
               <a href="./paper-submission-guidelines.html" class="btn btn-ghost-white">Paper Submission Guidelines</a>
@@ -160,15 +1164,50 @@
         </div>
       </div>
     </div>
-     
-    <button
-      id="btt"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      title="Back to Top"
-    >
-      &#8679;
-    </button>
 
+    <button id="btt" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="Back to Top">&#8679;</button>
+
+    <script src="./app.js"></script>
+    <script>
+      // Track tabs
+      (function () {
+        var tabs = Array.prototype.slice.call(document.querySelectorAll('.cfp-tab'));
+        function select(tab) {
+          tabs.forEach(function (t) {
+            var on = t === tab;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.tabIndex = on ? 0 : -1;
+            document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+          });
+        }
+        tabs.forEach(function (t, i) {
+          t.addEventListener('click', function () { select(t); });
+          t.addEventListener('keydown', function (e) {
+            var n = null;
+            if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+            if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+            if (n) { e.preventDefault(); n.focus(); select(n); }
+          });
+        });
+      })();
+
+      // Highlight the current section in the "On this page" sidebar
+      (function () {
+        var links = document.querySelectorAll('.cfp-toc a:not(.cfp-toc-cta)');
+        if (!links.length || !('IntersectionObserver' in window)) return;
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              links.forEach(function (a) { a.classList.remove('active'); });
+              var a = map[e.target.id];
+              if (a) a.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        document.querySelectorAll('.cfp-sec').forEach(function (s) { obs.observe(s); });
+      })();
+    </script>
   </body>
-  <script src="./app.js"></script>
 </html>

@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      SS MOM 2027 | International Conference on Smart & Sustainable
+      Registration | SS-MOM 2027 | International Conference on Smart &amp; Sustainable
       Manufacturing, Operations, and Materials
     </title>
+    <meta name="description" content="Register for SS-MOM 2027 (04–05 February 2027, Manipal University Jaipur, hybrid). Registration fees for Indian and international participants, payment links and registration form." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link
@@ -14,45 +15,389 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+      /* ---------- Breadcrumb header ---------- */
+      .breadcrumb-header {
+        background: var(--navy, #1d3655);
+        padding: 30px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .breadcrumb-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 8px;
+      }
+      .breadcrumb-nav a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s; }
+      .breadcrumb-nav a:hover { color: #fff; }
+      .breadcrumb-current { color: var(--amber2, #bdcfdd); font-weight: 500; }
+      .page-title-main { font-family: 'Lora', serif; font-size: 28px; color: #fff; font-weight: 700; margin: 0; }
+
+      /* ---------- Registration page (rg- prefix to avoid clashes) ----------
+         Uses the site's own palette from style.css (navy + light blue).
+         Sections alternate white / soft blue so each part is easy to tell apart. */
+      .rg-page {
+        --rg-navy: var(--navy, #1d3655);
+        --rg-navy3: var(--navy3, #1e4475);
+        --rg-tint: var(--sky, #e8f0fb);
+        --rg-band: #eef3fa;
+        --rg-text: var(--txt, #000);
+        --rg-muted: #4a5568;
+        --rg-line: var(--border, #c9d5eb);
+        --rg-shadow: 0 1px 2px rgba(15, 42, 74, 0.04), 0 12px 32px -12px rgba(15, 42, 74, 0.16);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--rg-text);
+        font-size: 16px;
+      }
+      .rg-page p { line-height: 1.75; margin: 0 0 12px; }
+      .rg-page p:last-child { margin-bottom: 0; }
+
+      /* Buttons */
+      .rg-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-sizing: border-box;
+        padding: 12px 20px;
+        border-radius: var(--r, 6px);
+        font-weight: 700;
+        font-size: 14.5px;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      }
+      .rg-btn i { font-size: 12px; opacity: 0.8; }
+      .rg-btn:hover { transform: translateY(-1px); }
+      .rg-page a.rg-btn-solid { background: var(--rg-navy); color: #fff; box-shadow: 0 6px 16px -8px rgba(29, 54, 85, 0.7); }
+      .rg-page a.rg-btn-solid:hover { background: var(--rg-navy3); }
+      .rg-page a.rg-btn-line { border: 1px solid var(--rg-line); color: var(--rg-navy); background: #fff; }
+      .rg-page a.rg-btn-line:hover { border-color: var(--rg-navy); }
+
+      /* ===== Bands ===== */
+      .rg-band { padding: 72px 0; background: #fff; scroll-margin-top: 140px; }
+      .rg-band.alt { background: var(--rg-band); }
+      .rg-split {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+      .rg-split > * { min-width: 0; }
+      .rg-head { position: sticky; top: 150px; }
+      .rg-num {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--rg-navy);
+        margin-bottom: 14px;
+      }
+      .rg-num::after { content: ""; width: 32px; height: 1px; background: var(--rg-navy); opacity: 0.4; }
+      .rg-head h2 {
+        font-family: 'Lora', serif;
+        font-size: clamp(26px, 2.8vw, 32px);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--rg-navy);
+        margin: 0 0 12px;
+      }
+      .rg-head p { font-size: 15px; color: var(--rg-muted); }
+
+      /* ===== Intro ===== */
+      .rg-intro { padding: 64px 0 0; background: #fff; }
+      .rg-eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--rg-navy);
+        margin-bottom: 12px;
+      }
+      .rg-title {
+        font-family: 'Lora', serif;
+        font-size: clamp(30px, 4vw, 44px);
+        font-weight: 700;
+        color: var(--rg-navy);
+        line-height: 1.15;
+        margin: 0 0 14px;
+        max-width: 760px;
+      }
+      .rg-lead { font-size: 17px; color: var(--rg-muted); max-width: 680px; }
+      .rg-facts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 40px;
+        border-top: 1px solid var(--rg-line);
+      }
+      .rg-facts div { padding: 22px 24px 26px 0; }
+      .rg-facts div + div { padding-left: 24px; border-left: 1px solid var(--rg-line); }
+      .rg-facts small {
+        display: block;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--rg-muted);
+        margin-bottom: 6px;
+      }
+      .rg-facts strong { font-family: 'Lora', serif; font-size: 18px; font-weight: 700; color: var(--rg-navy); line-height: 1.4; }
+
+      /* ===== Sticky section bar ===== */
+      .rg-subnav {
+        position: sticky;
+        top: 70px;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: saturate(1.4) blur(8px);
+        -webkit-backdrop-filter: saturate(1.4) blur(8px);
+        border-top: 1px solid var(--rg-line);
+        border-bottom: 1px solid var(--rg-line);
+      }
+      .rg-subnav-inner { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+      .rg-subnav-inner::-webkit-scrollbar { display: none; }
+      .rg-subnav a {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 16px 14px;
+        border-bottom: 2px solid transparent;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--rg-muted);
+        text-decoration: none;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .rg-subnav a span { font-size: 11.5px; font-weight: 800; color: var(--rg-navy); opacity: 0.55; }
+      .rg-subnav a:hover, .rg-subnav a.active { color: var(--rg-navy); border-bottom-color: var(--rg-navy); }
+      .rg-subnav a.active span { opacity: 1; }
+
+      /* ===== Panel (white surface on tinted bands) ===== */
+      .rg-panel {
+        background: #fff;
+        border: 1px solid rgba(201, 213, 235, 0.7);
+        border-radius: var(--r2, 10px);
+        box-shadow: var(--rg-shadow);
+      }
+
+      /* ===== 01 Steps ===== */
+      .rg-steps { list-style: none; margin: 0; padding: 0; }
+      .rg-step {
+        display: grid;
+        grid-template-columns: 44px 1fr auto;
+        gap: 22px;
+        align-items: center;
+        padding: 26px 30px;
+      }
+      .rg-step + .rg-step { border-top: 1px solid var(--rg-line); }
+      .rg-step-num {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--rg-tint);
+        color: var(--rg-navy);
+        font-family: 'Lora', serif;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .rg-step h3 { margin: 0 0 3px; font-size: 17px; font-weight: 700; color: var(--rg-navy); }
+      .rg-step p { font-size: 15px; color: var(--rg-muted); }
+      .rg-step p a { color: var(--rg-navy); font-weight: 600; }
+      .rg-step-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+
+      .rg-page .rg-note {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-top: 22px;
+        font-size: 15px;
+        color: var(--rg-navy);
+        line-height: 1.6;
+      }
+      .rg-note i { margin-top: 4px; }
+
+      /* ===== 02 Fees ===== */
+      .rg-fees { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .rg-fee-card { padding: 28px 28px 10px; }
+      .rg-fee-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--rg-line);
+      }
+      .rg-fee-top h3 { margin: 0; font-family: 'Lora', serif; font-size: 20px; color: var(--rg-navy); }
+      .rg-fee-top span {
+        font-size: 11.5px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        color: var(--rg-navy);
+        background: var(--rg-tint);
+        padding: 5px 10px;
+        border-radius: 999px;
+      }
+      .rg-fee-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px 0;
+      }
+      .rg-fee-row + .rg-fee-row { border-top: 1px dashed var(--rg-line); }
+      .rg-fee-row .who { font-size: 15px; font-weight: 500; line-height: 1.5; }
+      .rg-fee-row .who small { display: block; font-size: 13px; color: var(--rg-muted); }
+      .rg-fee-row .amt { flex: none; font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--rg-navy); white-space: nowrap; }
+      .rg-fee-row .amt small { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: var(--rg-muted); margin-right: 5px; }
+
+      .rg-included {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        margin-top: 24px;
+        border-top: 1px solid var(--rg-line);
+        border-bottom: 1px solid var(--rg-line);
+      }
+      .rg-included div { padding: 18px 16px 18px 0; display: flex; gap: 12px; align-items: center; font-size: 14.5px; font-weight: 600; color: var(--rg-navy); }
+      .rg-included div + div { padding-left: 16px; border-left: 1px solid var(--rg-line); }
+      .rg-included i { color: var(--rg-navy); opacity: 0.7; width: 18px; text-align: center; }
+      .rg-included-label { margin: 0 0 4px !important; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rg-muted); }
+      .rg-page .rg-gst { margin-top: 14px; font-size: 14px; color: var(--rg-muted); }
+
+      /* ===== 03 Notes ===== */
+      .rg-notes { list-style: none; margin: 0; padding: 6px 30px; counter-reset: n; }
+      .rg-notes li {
+        counter-increment: n;
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 18px;
+        align-items: baseline;
+        padding: 20px 0;
+        line-height: 1.65;
+      }
+      .rg-notes li + li { border-top: 1px solid var(--rg-line); }
+      .rg-notes li::before {
+        content: counter(n, decimal-leading-zero);
+        font-family: 'Lora', serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--rg-navy);
+        opacity: 0.45;
+      }
+      .rg-notes strong { color: var(--rg-navy); }
+
+      /* ===== 04 Contact ===== */
+      .rg-contact { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+      .rg-contact address { font-style: normal; line-height: 1.8; color: var(--rg-muted); }
+      .rg-contact address strong { display: block; margin-bottom: 4px; font-family: 'Lora', serif; font-size: 19px; color: var(--rg-navy); }
+      .rg-links { display: flex; flex-direction: column; }
+      .rg-links a {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--rg-line);
+        text-decoration: none;
+        color: var(--rg-navy);
+        transition: padding 0.2s;
+      }
+      .rg-links a:first-child { border-top: 1px solid var(--rg-line); }
+      .rg-links a:hover { padding-left: 6px; }
+      .rg-links i.ic {
+        width: 40px;
+        height: 40px;
+        flex: none;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--rg-tint);
+        color: var(--rg-navy);
+        font-size: 15px;
+      }
+      .rg-links small { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rg-muted); }
+      .rg-links strong { font-weight: 700; word-break: break-word; }
+      .rg-links .go { margin-left: auto; font-size: 13px; opacity: 0.5; }
+      .rg-page .rg-closing {
+        margin-top: 48px;
+        padding-top: 32px;
+        border-top: 1px solid var(--rg-line);
+        text-align: center;
+        font-family: 'Lora', serif;
+        font-style: italic;
+        font-size: clamp(18px, 2.2vw, 22px);
+        color: var(--rg-navy);
+      }
+
+      /* Responsive */
+      @media (max-width: 1080px) {
+        .rg-split { grid-template-columns: 1fr; gap: 28px; }
+        .rg-head { position: static; }
+        .rg-head p { max-width: 640px; }
+      }
+      @media (max-width: 860px) {
+        .rg-fees { grid-template-columns: 1fr; }
+        .rg-contact { grid-template-columns: 1fr; gap: 28px; }
+        .rg-facts, .rg-included { grid-template-columns: 1fr 1fr; }
+        .rg-facts div:nth-child(3), .rg-included div:nth-child(3) { border-left: 0; padding-left: 0; }
+        .rg-facts div:nth-child(n+3), .rg-included div:nth-child(n+3) { border-top: 1px solid var(--rg-line); }
+      }
+      @media (max-width: 700px) {
+        .rg-band { padding: 52px 0; scroll-margin-top: 120px; }
+        .rg-step { grid-template-columns: 40px 1fr; gap: 6px 16px; align-items: start; padding: 22px 20px; }
+        .rg-step-num { width: 40px; height: 40px; font-size: 16px; }
+        .rg-step-actions { grid-column: 2; justify-content: flex-start; margin-top: 12px; }
+        .rg-notes { padding: 4px 20px; }
+        .rg-notes li { grid-template-columns: 34px 1fr; gap: 12px; }
+        .rg-fee-card { padding: 22px 20px 6px; }
+      }
+      @media (max-width: 480px) {
+        .rg-intro { padding-top: 44px; }
+        .rg-facts { grid-template-columns: 1fr; }
+        .rg-facts div, .rg-facts div + div { padding: 16px 0; border-left: 0; }
+        .rg-facts div + div { border-top: 1px solid var(--rg-line); }
+        .rg-included { grid-template-columns: 1fr; }
+        .rg-included div, .rg-included div + div { padding: 14px 0; border-left: 0; }
+        .rg-included div + div { border-top: 1px solid var(--rg-line); }
+        .rg-step-actions, .rg-step-actions .rg-btn { width: 100%; }
+        .rg-fee-row .amt { font-size: 22px; }
+        .rg-subnav a { padding: 14px 12px 12px; font-size: 13.5px; }
+      }
+    </style>
   </head>
   <body>
     <!-- WhatsApp Button -->
-    <a 
-      href="https://api.whatsapp.com/send?phone=919467717120"
-      class="whatsapp-btn"
-      target="_blank"
-    >
+    <a href="https://api.whatsapp.com/send?phone=919467717120" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Sticky Brochure Link -->
+    <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">Brochure</a>
 
-  <!-- Sticky Brochure Link -->
-  <a href="./ss-mom-brochure.pdf" class="brochure-btn" target="_blank">
-    Brochure
-  </a>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-        
-        <header class="site-header">
+    <header class="site-header">
       <div class="">
         <div class="header-inner">
-          <!-- <div class="hlogo">
-            <img src="./images/logo.png" alt="">
-          </div> -->
           <div class="hlogo">
-              <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
-                <div>
-                  <div class="hconf-name">SS-MOM 2027</div>
-                  <div class="hconf-sub">
-                    International Conference on Smart &amp; Sustainable manufacturing, Operations
-                  </div>
+            <div class="hlogo-mark">SS<br />MOM<span>2027</span></div>
+            <div>
+              <div class="hconf-name">SS-MOM 2027</div>
+              <div class="hconf-sub">
+                International Conference on Smart &amp; Sustainable manufacturing, Operations
               </div>
+            </div>
           </div>
           <nav class="hnav">
             <a href="./index.html">Home</a>
             <a href="./about.html">About</a>
-     
             <div class="hnav-item">
               <a href="./committee.html">Committee</a>
               <div class="hnav-drop">
@@ -61,11 +406,9 @@
                 <a href="./committee.html#peer">Peer Review Committee</a>
               </div>
             </div>
-     
             <a href="./call-for-papers.html">Call for Papers</a>
             <a href="./publications.html">Publications</a>
             <a href="./speakers.html">Speakers</a>
-     
             <div class="hnav-item">
               <a href="./paper-submission-guidelines.html">For Authors</a>
               <div class="hnav-drop">
@@ -73,66 +416,272 @@
                 <a href="./registration.html">Registration</a>
               </div>
             </div>
-     
             <a href="./special-track.html">Special Track</a>
             <a href="./sponsorship.html">Sponsorship</a>
-     
             <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank">Jaipur Tourism</a>
-     
             <a href="./view-source.html">View Source</a>
-     
-            <a href="./index.html#submit" class="hnav-cta">
-              Submit Paper
-            </a>
+            <a href="./index.html#submit" class="hnav-cta">Submit Paper</a>
           </nav>
-          <button
-            class="hamburger"
-            id="HB"
-            onclick="openDrawer()"
-            aria-label="Menu"
-          >
+          <button class="hamburger" id="HB" onclick="openDrawer()" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
     </header>
-     
-    <div
-      class="drawer-overlay"
-      id="drawerOverlay"
-      onclick="closeDrawer()"
-    ></div>
+
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
     <nav class="mobile-drawer" id="mobileDrawer">
       <button class="drawer-close" onclick="closeDrawer()">&#x2715;</button>
-     
       <a href="./index.html" onclick="closeDrawer()">Home</a>
       <a href="./about.html" onclick="closeDrawer()">About</a>
-     
       <a href="./committee.html" onclick="closeDrawer()">Committee</a>
       <a href="./committee.html#org" onclick="closeDrawer()">— Organizing Committee</a>
       <a href="./committee.html#adv" onclick="closeDrawer()">— Advisory Committee</a>
       <a href="./committee.html#peer" onclick="closeDrawer()">— Peer Review Committee</a>
-     
       <a href="./call-for-papers.html" onclick="closeDrawer()">Call for Papers</a>
       <a href="./publications.html" onclick="closeDrawer()">Publications</a>
       <a href="./speakers.html" onclick="closeDrawer()">Speakers</a>
-     
       <a href="./paper-submission-guidelines.html" onclick="closeDrawer()">Paper Submission Guidelines</a>
       <a href="./registration.html" onclick="closeDrawer()">Registration</a>
-     
       <a href="./special-track.html" onclick="closeDrawer()">Special Track</a>
       <a href="./sponsorship.html" onclick="closeDrawer()">Sponsorship</a>
       <a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank" onclick="closeDrawer()">Jaipur Tourism</a>
-     
-      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">
-        Submit Paper
-      </a>
-    </nav> 
+      <a href="./index.html#submit" onclick="closeDrawer()" class="drawer-btn">Submit Paper</a>
+    </nav>
 
-    <div style="display: flex;align-items: center;justify-content: center;height: 70vh;">
-        <h1>Coming Soon</h1>
+    <!-- Breadcrumb Header -->
+    <div class="breadcrumb-header">
+      <div class="wrap">
+        <div class="breadcrumb-nav">
+          <a href="./index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 10px; opacity: 0.5;"></i>
+          <span class="breadcrumb-current">Registration</span>
+        </div>
+        <h1 class="page-title-main">Registration</h1>
+      </div>
     </div>
-    
+
+    <main class="rg-page">
+
+      <!-- ===== Intro ===== -->
+      <section class="rg-intro">
+        <div class="wrap">
+          <span class="rg-eyebrow">SS-MOM 2027 · Registration</span>
+          <h2 class="rg-title">Register for the Conference</h2>
+          <p class="rg-lead">
+            International Conference on Smart and Sustainable Manufacturing, Operations, and Materials.
+            Please read the registration instructions carefully and complete the payment before
+            submitting the registration form.
+          </p>
+
+          <div class="rg-facts">
+            <div><small>Date</small><strong>04–05 February 2027</strong></div>
+            <div><small>Mode</small><strong>Hybrid (Physical &amp; Online)</strong></div>
+            <div><small>Venue</small><strong>Manipal University Jaipur, Rajasthan</strong></div>
+            <div><small>Organized by</small><strong>Dept. of Mechanical Engineering, MUJ</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Sticky section bar ===== -->
+      <nav class="rg-subnav" aria-label="Registration sections">
+        <div class="wrap">
+          <div class="rg-subnav-inner">
+            <a href="#steps"><span>01</span> How to Register</a>
+            <a href="#fees"><span>02</span> Fees</a>
+            <a href="#notes"><span>03</span> Important Notes</a>
+            <a href="#contact-info"><span>04</span> Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ===== 01 How to register (tinted) ===== -->
+      <section class="rg-band alt" id="steps">
+        <div class="wrap">
+          <div class="rg-split">
+            <div class="rg-head">
+              <div class="rg-num">Section 01</div>
+              <h2>How to Register</h2>
+              <p>Three steps. Pay first, then fill out the registration form.</p>
+            </div>
+
+            <div>
+              <ol class="rg-steps rg-panel">
+                <li class="rg-step">
+                  <span class="rg-step-num">1</span>
+                  <div>
+                    <h3>Pay the registration fee</h3>
+                    <p>Use the link for your category. See <a href="#fees">fees</a>.</p>
+                  </div>
+                  <div class="rg-step-actions">
+                    <!-- TODO: replace # with the payment link for Indian participants -->
+                    <a class="rg-btn rg-btn-solid" href="#" target="_blank" rel="noopener">Indian Participants <i class="fa-solid fa-arrow-right"></i></a>
+                    <!-- TODO: replace # with the payment link for foreign participants -->
+                    <a class="rg-btn rg-btn-line" href="#" target="_blank" rel="noopener">Foreign Participants <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </li>
+                <li class="rg-step">
+                  <span class="rg-step-num">2</span>
+                  <div>
+                    <h3>Fill the registration form</h3>
+                    <p>Submit the online form after your payment is complete.</p>
+                  </div>
+                  <div class="rg-step-actions">
+                    <!-- TODO: replace # with the registration form link -->
+                    <a class="rg-btn rg-btn-solid" href="#" target="_blank" rel="noopener">Registration Form <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </li>
+                <li class="rg-step">
+                  <span class="rg-step-num">3</span>
+                  <div>
+                    <h3>Keep your receipt</h3>
+                    <p>Save the payment receipt and transaction reference number.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <p class="rg-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <span><strong>Important:</strong> Complete your registration payment first and then fill out the online registration form.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 02 Fees (white) ===== -->
+      <section class="rg-band" id="fees">
+        <div class="wrap">
+          <div class="rg-split">
+            <div class="rg-head">
+              <div class="rg-num">Section 02</div>
+              <h2>Registration Fees</h2>
+              <p>Find your category below.</p>
+            </div>
+
+            <div>
+              <div class="rg-fees">
+                <div class="rg-panel rg-fee-card">
+                  <div class="rg-fee-top">
+                    <h3>Indian Participants</h3>
+                    <span>INR</span>
+                  </div>
+                  <div class="rg-fee-row">
+                    <div class="who">Faculty / Academicians / Industry Professionals</div>
+                    <div class="amt"><small>INR</small>6,000</div>
+                  </div>
+                  <div class="rg-fee-row">
+                    <div class="who">UG / PG / PhD Students / Research Scholars</div>
+                    <div class="amt"><small>INR</small>5,000</div>
+                  </div>
+                  <div class="rg-fee-row">
+                    <div class="who">Conference Participants <small>Without paper presentation</small></div>
+                    <div class="amt"><small>INR</small>3,000</div>
+                  </div>
+                </div>
+
+                <div class="rg-panel rg-fee-card">
+                  <div class="rg-fee-top">
+                    <h3>International Delegates</h3>
+                    <span>USD</span>
+                  </div>
+                  <div class="rg-fee-row">
+                    <div class="who">Faculty / Academicians / Industry Professionals</div>
+                    <div class="amt"><small>USD</small>150</div>
+                  </div>
+                  <div class="rg-fee-row">
+                    <div class="who">UG / PG / PhD Students / Research Scholars</div>
+                    <div class="amt"><small>USD</small>100</div>
+                  </div>
+                  <div class="rg-fee-row">
+                    <div class="who">Foreign Participants <small>Without paper presentation</small></div>
+                    <div class="amt"><small>USD</small>50</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 36px;">
+                <p class="rg-included-label">Registration fee includes</p>
+                <div class="rg-included">
+                  <div><i class="fa-solid fa-chalkboard-user"></i> All conference sessions</div>
+                  <div><i class="fa-solid fa-briefcase"></i> Conference kit</div>
+                  <div><i class="fa-solid fa-mug-hot"></i> Lunch &amp; refreshments</div>
+                  <div><i class="fa-solid fa-award"></i> Certificate / receipt</div>
+                </div>
+                <p class="rg-gst"><strong>Note:</strong> GST charges as applicable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 03 Notes (tinted) ===== -->
+      <section class="rg-band alt" id="notes">
+        <div class="wrap">
+          <div class="rg-split">
+            <div class="rg-head">
+              <div class="rg-num">Section 03</div>
+              <h2>Important Registration Notes</h2>
+              <p>Please read these before you register.</p>
+            </div>
+
+            <ol class="rg-notes rg-panel">
+              <li><span>Registration is considered complete only after <strong>successful payment</strong> and <strong>submission of the online registration form</strong>.</span></li>
+              <li><span>Participants must complete the payment <strong>before</strong> filling out the registration form.</span></li>
+              <li><span>Please retain the payment receipt and transaction reference number for future communication.</span></li>
+              <li><span>Authors presenting accepted papers must follow the conference's paper registration and presentation requirements.</span></li>
+              <li><span>Please use a valid email address and mobile number for all conference communications.</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 04 Contact (white) ===== -->
+      <section class="rg-band" id="contact-info">
+        <div class="wrap">
+          <div class="rg-split">
+            <div class="rg-head">
+              <div class="rg-num">Section 04</div>
+              <h2>Contact Information</h2>
+              <p>For registration-related queries, please contact us.</p>
+            </div>
+
+            <div>
+              <div class="rg-contact">
+                <address>
+                  <strong>Organizing Committee</strong>
+                  1st International Conference on Smart and Sustainable Manufacturing,
+                  Operations, and Materials (SS-MOM 2027)<br />
+                  Department of Mechanical Engineering<br />
+                  Manipal University Jaipur<br />
+                  Jaipur, Rajasthan, India
+                </address>
+                <div class="rg-links">
+                  <a href="mailto:ssmom2027@gmail.com?subject=Registration%20Query%20-%20SS-MOM%202027">
+                    <i class="ic fa-solid fa-envelope"></i>
+                    <span><small>Email</small><strong>ssmom2027@gmail.com</strong></span>
+                    <i class="go fa-solid fa-arrow-right"></i>
+                  </a>
+                  <a href="tel:+919467717120">
+                    <i class="ic fa-solid fa-phone"></i>
+                    <span><small>Mobile</small><strong>+91 94677 17120</strong></span>
+                    <i class="go fa-solid fa-arrow-right"></i>
+                  </a>
+                  <a href="https://ss-mom.com/">
+                    <i class="ic fa-solid fa-globe"></i>
+                    <span><small>Website</small><strong>ss-mom.com</strong></span>
+                    <i class="go fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="rg-closing">We look forward to welcoming you to SS-MOM 2027 at Manipal University Jaipur.</p>
+        </div>
+      </section>
+    </main>
+
     <!-- CTA -->
     <div id="contact" class="cta-section">
       <div class="wrap">
@@ -148,7 +697,7 @@
               scientists, and industry professionals.
             </p>
             <div style="display: flex; gap: 12px; flex-wrap: wrap">
-              <a href="mailto:ssmom2027@gmail.com" class="btn btn-amber">Submit a Paper</a>
+              <a href="https://cmt3.research.microsoft.com/SSMOM2027/Submission/Index" target="_blank" rel="noopener" class="btn btn-amber">Submit a Paper</a>
               <a href="https://forms.gle/ycx6gctUqkicHgXv6" target="_blank" class="btn btn-ghost-white">Join Review Committee</a>
               <a href="./special-track.html" class="btn btn-ghost-white">Submit a Proposal For Track Chair</a>
               <a href="./paper-submission-guidelines.html" class="btn btn-ghost-white">Paper Submission Guidelines</a>
@@ -157,15 +706,28 @@
         </div>
       </div>
     </div>
-     
-    <button
-      id="btt"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      title="Back to Top"
-    >
-      &#8679;
-    </button>
 
+    <button id="btt" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="Back to Top">&#8679;</button>
+
+    <script src="./app.js"></script>
+    <script>
+      // Highlight the current section in the "On this page" sidebar
+      (function () {
+        var links = document.querySelectorAll('.rg-subnav a');
+        if (!links.length || !('IntersectionObserver' in window)) return;
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              links.forEach(function (a) { a.classList.remove('active'); });
+              var a = map[e.target.id];
+              if (a) a.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        document.querySelectorAll('.rg-band').forEach(function (s) { obs.observe(s); });
+      })();
+    </script>
   </body>
-  <script src="./app.js"></script>
 </html>
