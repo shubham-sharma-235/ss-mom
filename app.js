@@ -1,6 +1,6 @@
 (function tick() {
   // Set target date: 25 August 2026
-  const targetDate = new Date("2026-11-25T23:59:59");
+  const targetDate = new Date("2026-12-25T23:59:59");
   
   // Current date/time
   const now = new Date();
