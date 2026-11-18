@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      SS MOM 2027 | International Conference on Smart & Sustainable
+      Publications | SS-MOM 2027 | International Conference on Smart &amp; Sustainable
       Manufacturing, Operations, and Materials
     </title>
+    <meta name="description" content="SS-MOM 2027 publication opportunities: Scopus-indexed conference proceedings with Elsevier, Wiley, Taylor &amp; Francis, De Gruyter Brill and Springer Nature, plus extended journal articles in special issues." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="./images/logo.png">
     <link
@@ -14,6 +15,227 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css">
+    <style>
+      /* ---------- Breadcrumb header ---------- */
+      .breadcrumb-header { background: var(--navy, #1d3655); padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .breadcrumb-nav { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+      .breadcrumb-nav a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+      .breadcrumb-nav a:hover { color: #fff; }
+      .breadcrumb-current { color: var(--amber2, #bdcfdd); font-weight: 500; }
+      .page-title-main { font-family: 'Lora', serif; font-size: 28px; color: #fff; font-weight: 700; margin: 0; }
+
+      /* ---------- Publications page (pb- prefix to avoid clashes) ----------
+         Uses the site's own palette from style.css (navy + light blue) */
+      .pb-page {
+        --pb-navy: var(--navy, #1d3655);
+        --pb-navy3: var(--navy3, #1e4475);
+        --pb-tint: var(--sky, #e8f0fb);
+        --pb-tint2: var(--sky2, #d6e5f8);
+        --pb-band: #eef3fa;
+        --pb-text: var(--txt, #000);
+        --pb-muted: #4a5568;
+        --pb-line: var(--border, #c9d5eb);
+        --pb-shadow: 0 1px 2px rgba(15,42,74,0.04), 0 12px 32px -12px rgba(15,42,74,0.16);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--pb-text);
+        font-size: 16px;
+      }
+      .pb-page p { line-height: 1.75; margin: 0 0 12px; }
+      .pb-page p:last-child { margin-bottom: 0; }
+      .pb-page strong { color: var(--pb-navy); }
+
+      .pb-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pb-navy); margin-bottom: 12px; }
+
+      /* Buttons */
+      .pb-btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        box-sizing: border-box; padding: 13px 22px; border-radius: var(--r, 6px);
+        font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap;
+        transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      }
+      .pb-btn:hover { transform: translateY(-1px); }
+      .pb-page a.pb-btn-solid { background: var(--pb-navy); color: #fff; box-shadow: 0 8px 18px -10px rgba(29,54,85,0.8); }
+      .pb-page a.pb-btn-solid:hover { background: var(--pb-navy3); }
+      .pb-page a.pb-btn-line { background: #fff; border: 1px solid var(--pb-line); color: var(--pb-navy); }
+      .pb-page a.pb-btn-line:hover { border-color: var(--pb-navy); }
+
+      /* ===== Intro ===== */
+      .pb-intro { padding: 64px 0 56px; background: #fff; }
+      .pb-title { font-family: 'Lora', serif; font-size: clamp(30px, 4vw, 44px); font-weight: 700; color: var(--pb-navy); line-height: 1.15; margin: 0 0 14px; }
+      .pb-lead { font-size: 17px; color: var(--pb-muted); max-width: 760px; }
+      .pb-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+      .pb-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 44px; border-top: 1px solid var(--pb-line); }
+      .pb-stats div { padding: 22px 24px 26px 0; }
+      .pb-stats div + div { padding-left: 24px; border-left: 1px solid var(--pb-line); }
+      .pb-stats strong { display: block; font-family: 'Lora', serif; font-size: 28px; line-height: 1.15; color: var(--pb-navy); }
+      .pb-stats span { font-size: 14px; color: var(--pb-muted); }
+
+      /* ===== Sticky section bar ===== */
+      .pb-subnav {
+        position: sticky; top: 70px; z-index: 20;
+        background: rgba(255,255,255,0.94);
+        backdrop-filter: saturate(1.4) blur(8px); -webkit-backdrop-filter: saturate(1.4) blur(8px);
+        border-top: 1px solid var(--pb-line); border-bottom: 1px solid var(--pb-line);
+      }
+      .pb-subnav-inner { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+      .pb-subnav-inner::-webkit-scrollbar { display: none; }
+      .pb-subnav a {
+        flex: none; display: inline-flex; align-items: center; gap: 8px;
+        padding: 16px 16px 14px; border-bottom: 2px solid transparent;
+        font-size: 14px; font-weight: 600; color: var(--pb-muted); text-decoration: none;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .pb-subnav a span { font-size: 11.5px; font-weight: 800; color: var(--pb-navy); opacity: 0.55; }
+      .pb-subnav a:hover, .pb-subnav a.active { color: var(--pb-navy); border-bottom-color: var(--pb-navy); }
+      .pb-subnav a.active span { opacity: 1; }
+
+      /* ===== Bands ===== */
+      .pb-band { padding: 72px 0; background: #fff; scroll-margin-top: 130px; }
+      .pb-band.alt { background: var(--pb-band); }
+      .pb-split { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: start; }
+      .pb-split > * { min-width: 0; }
+      .pb-head { position: sticky; top: 150px; }
+      .pb-num { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pb-navy); margin-bottom: 14px; }
+      .pb-num::after { content: ""; width: 32px; height: 1px; background: var(--pb-navy); opacity: 0.4; }
+      .pb-head h2 { font-family: 'Lora', serif; font-size: clamp(26px, 2.8vw, 32px); font-weight: 700; line-height: 1.2; color: var(--pb-navy); margin: 0 0 12px; }
+      .pb-head p { font-size: 15px; color: var(--pb-muted); }
+
+      .pb-panel { background: #fff; border: 1px solid rgba(201,213,235,0.7); border-radius: var(--r2, 10px); box-shadow: var(--pb-shadow); }
+
+      /* ===== 01 Proceedings ===== */
+      .pb-publishers { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 26px; }
+      .pb-publishers span {
+        padding: 10px 16px; border-radius: 999px; background: var(--pb-tint);
+        border: 1px solid var(--pb-line); font-weight: 700; font-size: 15px; color: var(--pb-navy);
+      }
+      .pb-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--pb-line); }
+      .pb-feature { display: flex; gap: 14px; padding: 22px 22px 22px 0; border-bottom: 1px solid var(--pb-line); }
+      .pb-feature:nth-child(even) { padding-left: 22px; padding-right: 0; border-left: 1px solid var(--pb-line); }
+      .pb-feature i { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--pb-tint); color: var(--pb-navy); font-size: 15px; }
+      .pb-feature h3 { margin: 0 0 4px; font-size: 16px; font-weight: 700; color: var(--pb-navy); }
+      .pb-feature p { font-size: 14.5px; color: var(--pb-muted); line-height: 1.6; }
+
+      .pb-includes { margin-top: 28px; padding: 26px 28px; }
+      .pb-includes h3 { margin: 0 0 6px; font-family: 'Lora', serif; font-size: 20px; color: var(--pb-navy); }
+      .pb-includes > p { font-size: 15px; color: var(--pb-muted); margin-bottom: 16px !important; }
+      .pb-checks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+      .pb-checks li { position: relative; padding-left: 28px; font-size: 15px; line-height: 1.55; }
+      .pb-checks li::before {
+        content: "\2713"; position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%;
+        background: var(--pb-navy); color: #fff; font-size: 11px; font-weight: 800; display: grid; place-items: center;
+      }
+
+      /* ===== 02 Journals ===== */
+      .pb-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+      .pb-filter button {
+        font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+        padding: 9px 16px; border-radius: 999px; border: 1px solid var(--pb-line);
+        background: #fff; color: var(--pb-muted); transition: all 0.2s;
+      }
+      .pb-filter button span { margin-left: 6px; font-size: 12px; opacity: 0.7; }
+      .pb-filter button:hover { border-color: var(--pb-navy); color: var(--pb-navy); }
+      .pb-filter button[aria-pressed="true"] { background: var(--pb-navy); border-color: var(--pb-navy); color: #fff; }
+
+      .pb-journals { list-style: none; margin: 0; padding: 4px 28px; counter-reset: j; }
+      .pb-journal {
+        counter-increment: j;
+        display: grid; grid-template-columns: 40px 1fr auto; gap: 18px; align-items: start;
+        padding: 20px 0; border-top: 1px solid var(--pb-line);
+      }
+      .pb-journal:first-child { border-top: 0; }
+      .pb-journal[hidden] { display: none; }
+      .pb-journal::before { content: counter(j, decimal-leading-zero); font-family: 'Lora', serif; font-size: 18px; font-weight: 700; color: var(--pb-navy); opacity: 0.4; padding-top: 1px; }
+      .pb-journal h3 { margin: 0 0 4px; font-size: 16px; font-weight: 700; line-height: 1.45; color: var(--pb-navy); }
+      .pb-journal .src { font-size: 14.5px; color: var(--pb-muted); line-height: 1.55; }
+      .pb-journal .src em { font-style: italic; color: var(--pb-text); }
+      .pb-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+      .pb-tag { font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; padding: 3px 9px; border-radius: 4px; background: var(--pb-tint); color: var(--pb-navy); }
+      .pb-status { white-space: nowrap; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; }
+      .pb-status.open { background: var(--pb-navy); color: #fff; }
+      .pb-status.soon { background: #fff; color: var(--pb-muted); border: 1px dashed var(--pb-line); }
+      .pb-more { margin-top: 14px !important; font-size: 14.5px; font-style: italic; color: var(--pb-muted); }
+
+      /* ===== 03 Support ===== */
+      .pb-points { list-style: none; margin: 0; padding: 0; }
+      .pb-point { display: grid; grid-template-columns: 44px 1fr; gap: 18px; padding: 22px 0; border-top: 1px solid var(--pb-line); }
+      .pb-point:first-child { border-top: 0; padding-top: 0; }
+      .pb-point i { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--pb-tint); color: var(--pb-navy); font-size: 16px; }
+      .pb-point h3 { margin: 0 0 6px; font-size: 17px; font-weight: 700; color: var(--pb-navy); }
+      .pb-point p { font-size: 15px; color: var(--pb-muted); }
+      .pb-apc { margin-top: 26px; display: flex; gap: 14px; align-items: flex-start; padding: 18px 22px; border-left: 3px solid var(--pb-navy); background: var(--pb-band); border-radius: 0 var(--r, 6px) var(--r, 6px) 0; font-size: 15px; line-height: 1.65; }
+      .pb-apc i { margin-top: 4px; color: var(--pb-navy); }
+
+      /* ===== Closing CTA ===== */
+      .pb-close {
+        display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center;
+        padding: 36px 40px; border-radius: var(--r2, 10px);
+        background: linear-gradient(135deg, var(--pb-navy) 0%, var(--pb-navy3) 60%, var(--pb-navy) 100%);
+        color: rgba(255,255,255,0.85);
+      }
+      .pb-close h2 { font-family: 'Lora', serif; font-size: clamp(22px, 2.6vw, 28px); color: #fff; margin: 0 0 8px; }
+      .pb-close .pb-actions { margin-top: 0; }
+      .pb-page .pb-close a.pb-btn-solid { background: #fff; color: var(--pb-navy); box-shadow: none; }
+      .pb-page .pb-close a.pb-btn-solid:hover { background: var(--pb-tint); }
+      .pb-page .pb-close a.pb-btn-line { background: transparent; border-color: rgba(255,255,255,0.35); color: #fff; }
+      .pb-page .pb-close a.pb-btn-line:hover { background: rgba(255,255,255,0.1); }
+
+
+      /* Plain content panels (content kept exactly as supplied) */
+      .pb-body { padding: 30px 32px; }
+      .pb-body p { font-size: 16px; line-height: 1.8; margin: 0 0 16px; }
+      .pb-body p:last-child { margin-bottom: 0; }
+      .pb-page .pb-body .pb-publishers {
+        display: block; margin: 0 0 18px; padding: 14px 18px;
+        background: var(--pb-tint); border-radius: var(--r, 6px);
+        font-weight: 700; color: var(--pb-navy); line-height: 1.6;
+      }
+      .pb-page .pb-intro-text { font-size: 16px; line-height: 1.8; margin: 0 0 20px; }
+      .pb-journals { list-style: none; margin: 0; padding: 6px 28px; counter-reset: j; }
+      .pb-journal {
+        counter-increment: j; display: grid; grid-template-columns: 40px 1fr; gap: 14px;
+        padding: 16px 0; border-top: 1px solid var(--pb-line);
+      }
+      .pb-journal:first-child { border-top: 0; }
+      .pb-journal::before { content: counter(j) "."; font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: var(--pb-navy); }
+      .pb-page .pb-journal p { margin: 0; font-size: 15.5px; line-height: 1.65; }
+      .pb-journal:not(.soon) p { font-weight: 600; color: var(--pb-navy); }
+      .pb-page .pb-more { margin-top: 14px; font-size: 15px; font-style: italic; color: var(--pb-muted); }
+      @media (max-width: 640px) {
+        .pb-body { padding: 22px 20px; }
+        .pb-journals { padding: 4px 18px; }
+        .pb-journal { grid-template-columns: 30px 1fr; gap: 10px; }
+      }
+
+      /* Responsive */
+      @media (max-width: 1080px) {
+        .pb-split { grid-template-columns: 1fr; gap: 28px; }
+        .pb-head { position: static; }
+      }
+      @media (max-width: 860px) {
+        .pb-stats { grid-template-columns: 1fr 1fr; }
+        .pb-stats div:nth-child(3) { border-left: 0; padding-left: 0; }
+        .pb-stats div:nth-child(n+3) { border-top: 1px solid var(--pb-line); }
+        .pb-features { grid-template-columns: 1fr; }
+        .pb-feature, .pb-feature:nth-child(even) { padding: 20px 0; border-left: 0; }
+        .pb-checks { grid-template-columns: 1fr; }
+        .pb-close { grid-template-columns: 1fr; padding: 28px; }
+      }
+      @media (max-width: 640px) {
+        .pb-band { padding: 52px 0; scroll-margin-top: 120px; }
+        .pb-intro { padding-top: 44px; }
+        .pb-journals { padding: 4px 18px; }
+        .pb-journal { grid-template-columns: 30px 1fr; gap: 6px 12px; }
+        .pb-journal .pb-status { grid-column: 2; justify-self: start; margin-top: 4px; }
+        .pb-includes { padding: 22px 20px; }
+        .pb-actions .pb-btn { width: 100%; }
+        .pb-subnav a { padding: 14px 12px 12px; font-size: 13.5px; }
+      }
+      @media (max-width: 420px) {
+        .pb-stats { grid-template-columns: 1fr; }
+        .pb-stats div, .pb-stats div + div { padding: 16px 0; border-left: 0; }
+        .pb-stats div + div { border-top: 1px solid var(--pb-line); }
+      }
+    </style>
   </head>
   <body>
     <!-- WhatsApp Button -->
@@ -126,9 +348,114 @@
     </nav>
 
 
-    <div style="display: flex;align-items: center;justify-content: center;height: 70vh;">
-        <h1>Coming Soon</h1>
+    <!-- Breadcrumb Header -->
+    <div class="breadcrumb-header">
+      <div class="wrap">
+        <div class="breadcrumb-nav">
+          <a href="./index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 10px; opacity: 0.5;"></i>
+          <span class="breadcrumb-current">Publications</span>
+        </div>
+        <h1 class="page-title-main">Publication Opportunities</h1>
+      </div>
     </div>
+
+    <main class="pb-page">
+
+      <!-- ===== Intro ===== -->
+      <section class="pb-intro">
+        <div class="wrap">
+          <span class="pb-eyebrow">Publication Opportunities</span>
+          <h2 class="pb-title">Share your research. Extend its impact.</h2>
+          <p class="pb-lead">SS-MOM 2027 brings together research in smart and sustainable manufacturing, operations, and materials. The conference offers eligible authors a pathway to disseminate their work through scholarly proceedings, along with opportunities to develop selected research into full journal articles.</p>
+        </div>
+      </section>
+
+      <!-- ===== Sticky section bar ===== -->
+      <nav class="pb-subnav" aria-label="Publication sections">
+        <div class="wrap">
+          <div class="pb-subnav-inner">
+            <a href="#proceedings"><span>01</span> Conference Proceedings</a>
+            <a href="#journals"><span>02</span> Extended Journal Articles</a>
+            <a href="#support"><span>03</span> Support for Journal Publications</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ===== 01 Conference proceedings ===== -->
+      <section class="pb-band alt" id="proceedings">
+        <div class="wrap">
+          <div class="pb-split">
+            <div class="pb-head">
+              <div class="pb-num">Section 01</div>
+              <h2>Conference proceedings</h2>
+            </div>
+
+            <div class="pb-panel pb-body">
+              <p>Accepted, registered, and presented papers will be submitted for publication in book proceedings of:</p>
+              <p class="pb-publishers">Elsevier · Wiley · Taylor &amp; Francis / Routledge · De Gruyter Brill · Springer Nature</p>
+              <p>Each paper will have its own DOI, as with Scopus conference proceedings, and will be indexed in the Scopus database.</p>
+              <p>The appropriate proceedings outlet will be determined by the paper’s subject, quality, and the requirements of the relevant publisher or series.</p>
+              <p>All papers shall be published in proceedings as mentioned above without any extra charges. Your registration includes the presentation of one accepted paper at the SS-MOM-2027 conference, publication of one accepted paper in Scopus-indexed conference proceedings, access to all sessions (keynote/special track, and parallel sessions) at the conference, conference kits, and lunch during conference days.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 02 Extended journal articles ===== -->
+      <section class="pb-band" id="journals">
+        <div class="wrap">
+          <div class="pb-split">
+            <div class="pb-head">
+              <div class="pb-num">Section 02</div>
+              <h2>Opportunities for extended journal articles</h2>
+            </div>
+
+            <div>
+              <p class="pb-intro-text">Authors of selected, high-quality work may be invited to develop extended manuscripts for relevant journal special issues or topical collections. Publication opportunities span the following journals:</p>
+              <ol class="pb-journals pb-panel">
+                  <li class="pb-journal"><p>Special Issue on Enhancing Materials Processing and Performance by Industry 4.0 Perspectives – Journal of Mechanical Behavior of Materials (De Gruyter Brill, Scopus and WoS)</p></li>
+                  <li class="pb-journal"><p>Industry 4.0-enabled Sustainable Manufacturing: Tools, Techniques and Frameworks – Sustainability (MDPI, Scopus and WoS)</p></li>
+                  <li class="pb-journal"><p>Next-Generation Information Technologies for Intelligent Decision Systems - International Journal of Information Technology &amp; Decision Making (World Scientific, Scopus and WoS)</p></li>
+                  <li class="pb-journal"><p>Intelligent and Sustainable Manufacturing in the Era of Industry 4.0 - Recent Patents in Mechanical Engineering (Bentham Science, Scopus)</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Results in Engineering (Elsevier, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Discover Applied Science (Springer Nature, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Discover Mechanical Engineering (Springer Nature, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Advances in Mechanical Engineering (Sage, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Nanotechnology Reviews (De Gruyter Brill, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Materials Research Express (IoP, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Discover Materials (Springer Nature, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Discover Sustainability (Springer Nature, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in International Journal of Materials Research (De Gruyter Brill, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Journal of Manufacturing Science and Engineering (ASME, Scopus and WoS) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Journal of Innovation and Entrepreneurship (Springer Nature, Scopus) – Will be online soon</p></li>
+                  <li class="pb-journal soon"><p>Special Issue in Surface Review and Letters (World Scientific, Scopus and WoS) – Will be online soon</p></li>
+              </ol>
+              <p class="pb-more">More to be added soon…</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 03 Support ===== -->
+      <section class="pb-band alt" id="support">
+        <div class="wrap">
+          <div class="pb-split">
+            <div class="pb-head">
+              <div class="pb-num">Section 03</div>
+              <h2>Support for journal publications</h2>
+            </div>
+
+            <div class="pb-panel pb-body">
+              <p>The editorial committee and organizers will decide which manuscripts to submit to journals based on the quality of the work and available publication options. The organizers aim to publish more and more papers as journal articles, subject to further revision of the extended manuscript.</p>
+              <p>Each special issue or journal collection will have its own theme, scope, submission instructions, and deadline. Only the Organizer will decide and invite authors for the possible options based on certain factors and feasibility. Authors are free to decide whether to prepare and submit an extended article.</p>
+              <p>Authors are responsible for applicable charges unless a partial or full waiver or support is confirmed by the organizers. However, the updated list of journals associated with the conference will be updated from time to time, and APC support may be provided by the organizers for some journals and selected high-quality papers, as per the publisher's agreement with the organizers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     
     <!-- CTA -->
     <div id="contact" class="cta-section">
@@ -165,4 +492,23 @@
 
   </body>
   <script src="./app.js"></script>
+    <script>
+      // Highlight the current section in the sticky bar
+      (function () {
+        var links = document.querySelectorAll('.pb-subnav a');
+        if (!links.length || !('IntersectionObserver' in window)) return;
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && map[e.target.id]) {
+              links.forEach(function (a) { a.classList.remove('active'); });
+              map[e.target.id].classList.add('active');
+            }
+          });
+        }, { rootMargin: '-35% 0px -55% 0px' });
+        document.querySelectorAll('.pb-band[id]').forEach(function (s) { obs.observe(s); });
+      })();
+    </script>
+
 </html>
